@@ -33,6 +33,7 @@
 						</li>
 					</ul>
 				</li>
+				
 
 		</ul>
 		<img alt="배너용 사진" src="img/banner.jpg" width="1600px" height="300px"><br>
@@ -48,6 +49,9 @@
 		</c:if>
 		<c:if test="${param.req == 'memory' }">
 			<jsp:include page="./memory/memory.jsp"></jsp:include>
+		</c:if>
+		<c:if test="${param.req == 'writeMemory' }">
+			<jsp:include page="./memory/memoryWrite.jsp"></jsp:include>
 		</c:if>
 	</div>
 </body>

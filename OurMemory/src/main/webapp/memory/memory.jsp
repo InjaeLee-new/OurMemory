@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="./css/showoff.css">
+<link rel="stylesheet" type="text/css" href="./css/showoff.css?v=1">
 </head>
 <body>
 	<div class="wrap">
@@ -42,6 +42,7 @@
     			<div><span class="good">추천</span><span class="bad">비추천</span>추천수 : <span class="points">978</span></div>
     		</div>
     	</div>
+    	<input type="button" id="forMemoryButton" value="새 글 추가" onclick="location.href='index.jsp?req=writeMemory'">
    	</div>
 </body>
 </html>

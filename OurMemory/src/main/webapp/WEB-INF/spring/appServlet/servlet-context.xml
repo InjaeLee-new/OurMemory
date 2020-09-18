@@ -23,6 +23,12 @@
 	
 	<context:component-scan base-package="src.main.java" />
 	
+	<!-- 우리가 사용할 리소스중 css 파일을 등록해준다. -->
+	<resources location="/css/" mapping="/css/**" />
+	
+	<!-- 우리가 사용할 리소스중 이미지 파일을 등록해준다. -->
+	<resources location="/img/" mapping="/img/**" />
+	
 	
 	
 </beans:beans>
