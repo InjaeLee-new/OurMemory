@@ -18,16 +18,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>appServlet</servlet-name>
-    <url-pattern>/</url-pattern>
+    <url-pattern>*.memory</url-pattern>
   </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>MemoryController</display-name>
-    <servlet-name>MemoryController</servlet-name>
-    <servlet-class>memory.controller.MemoryController</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>MemoryController</servlet-name>
-    <url-pattern>/MemoryController</url-pattern>
-  </servlet-mapping>
+  
 </web-app>

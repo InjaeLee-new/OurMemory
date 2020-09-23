@@ -16,9 +16,24 @@
 	<resources mapping="/resources/**" location="/resources/" />
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+<!-- // 이건 안쓸거니까 주석처리하자
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+ -->	
+ 	<!-- Controller 클래스를 빈(bean) 객체로 설정 -->
+	<beans:bean id="memoryWriteFormController" class="memory.controller.MemoryWriteFormController" />
+	<beans:bean id="memoryWriteController" class="memory.controller.MemoryWriteController" ></beans:bean>
+	
+	<!-- HandlerMapping 등록 -->
+	<beans:bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<beans:property name="mappings">
+			<beans:props>
+				<beans:prop key="/memoryWriteForm.memory">memoryWriteFormController</beans:prop>
+				<beans:prop key="/memoryWrite.memory">memoryWriteController</beans:prop>
+			</beans:props>
+		</beans:property>
 	</beans:bean>
 	
 	<context:component-scan base-package="src.main.java" />

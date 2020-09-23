@@ -34,6 +34,17 @@
 					</ul>
 				</li>
 				
+				<li id="login">
+					<a>
+						로그인
+					</a>
+				</li>
+				
+				<li id="join">
+					<a>
+						회원가입
+					</a>
+				</li>
 
 		</ul>
 		<img alt="배너용 사진" src="img/banner.jpg" width="1600px" height="300px"><br>
@@ -51,7 +62,7 @@
 			<jsp:include page="./memory/memory.jsp"></jsp:include>
 		</c:if>
 		<c:if test="${param.req == 'writeMemory' }">
-			<jsp:include page="./memory/memoryWrite.jsp"></jsp:include>
+			<jsp:include page="./memory/memoryWriteForm.jsp"></jsp:include>
 		</c:if>
 	</div>
 </body>
