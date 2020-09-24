@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="./css/showoff.css?v=1">
 </head>
 <body>
-	<div class="wrap">
+	<div id="wrap" class="wrap">
 		<h1 class="title">추억 모음전</h1>
 		<div class="itemlist">
 			<div class="items">

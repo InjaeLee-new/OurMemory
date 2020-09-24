@@ -10,7 +10,7 @@ public class MemoryWriteController implements Controller {
 
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		// TODO Auto-generated method stub
+		ModelAndView modelAndView = new ModelAndView();
 		return null;
 	}
 

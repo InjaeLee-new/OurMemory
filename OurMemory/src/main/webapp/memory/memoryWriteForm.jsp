@@ -17,15 +17,15 @@
 			
 			<tr>
 				<td>
-					<input type="text" name="value1" placeholder="첫 번째 내용을 입력해주세요.">
+					<input type="text" name="value1" placeholder="첫 번째 내용을 입력해주세요..">
 				</td>
 				
 				<td>
-					<input type="text" name="value2" placeholder="두 번째 내용을 입력해주세요.">
+					<input type="text" name="value2" placeholder="두 번째 내용을 입력해주세요..">
 				</td>
 				
 				<td>
-					<input type="text" name="value3" placeholder="세 번째 내용을 입력해주세요.">
+					<input type="text" name="value3" placeholder="세 번째 내용을 입력해주세요..">
 				</td>
 			</tr>
 		</table>
