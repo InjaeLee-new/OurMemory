@@ -29,7 +29,11 @@
 							<a href="#">나중에 추가하면 돼</a>
 						</li>
 						<li>
+<<<<<<< HEAD
 							<a href="#">여기도 수정준비</a>
+=======
+							<a href="#">할 수 있음!</a>
+>>>>>>> refs/remotes/origin/master
 						</li>
 					</ul>
 				</li>
@@ -49,7 +53,7 @@
 		</ul>
 		<img alt="배너용 사진" src="img/banner.jpg" width="1600px" height="300px"><br>
 	</div>
-	
+	<input type = "hidden" value = "값" >
 	<div align="center">
    	
 		<c:if test="${param.req == null }">
