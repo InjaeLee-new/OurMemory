@@ -17,5 +17,4 @@ public class MemoryWriteFormController implements Controller {
 		
 		return modelAndView;
 	}
-
 }

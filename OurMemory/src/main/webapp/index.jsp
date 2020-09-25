@@ -29,11 +29,8 @@
 							<a href="#">나중에 추가하면 돼</a>
 						</li>
 						<li>
-<<<<<<< HEAD
 							<a href="#">여기도 수정준비</a>
-=======
 							<a href="#">할 수 있음!</a>
->>>>>>> refs/remotes/origin/master
 						</li>
 					</ul>
 				</li>
