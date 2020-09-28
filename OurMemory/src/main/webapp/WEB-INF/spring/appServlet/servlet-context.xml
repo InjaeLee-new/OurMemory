@@ -22,21 +22,21 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
  -->	
- 	<!-- Controller 클래스를 빈(bean) 객체로 설정 -->
-	<beans:bean id="memoryWriteFormController" class="memory.controller.MemoryWriteFormController" />
-	<beans:bean id="memoryWriteController" class="memory.controller.MemoryWriteController" ></beans:bean>
+ 	<!-- MultipartResolver bean 객체 설정
+		 반드시 id="multipartResolver"를 사용해야 한다.
+	 -->
+	 <beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	 	<beans:property name="maxUploadSize" value="5000000" />
+	 	<beans:property name="defaultEncoding" value="UTF-8" />
+	 </beans:bean>
 	
-	<!-- HandlerMapping 등록 -->
-	<beans:bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
-		<beans:property name="mappings">
-			<beans:props>
-				<beans:prop key="/memoryWriteForm.memory">memoryWriteFormController</beans:prop>
-				<beans:prop key="/memoryWrite.memory">memoryWriteController</beans:prop>
-			</beans:props>
-		</beans:property>
-	</beans:bean>
+	<!-- storage 폴더 등록 -->
+	<resources location="/storage/" mapping="/storage/**" />
 	
 	<context:component-scan base-package="src.main.java" />
+	
+	<context:component-scan base-package="memory" />
+	<context:component-scan base-package="showoff" />
 	
 	<!-- 우리가 사용할 리소스중 css 파일을 등록해준다. -->
 	<resources location="/css/" mapping="/css/**" />

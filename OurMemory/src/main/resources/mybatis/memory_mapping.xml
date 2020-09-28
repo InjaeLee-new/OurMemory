@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.memoryMapper">
+	<!--  //insert : 글저장
+		public int writeContent(BoardDTO boardDTO);  -->
+		<insert id="memoryBoardWrite" parameterType="memoryDTO">
+			insert into mymemoryalbum values
+			(seq_memory_num.nextval, #{memory_name}, #{memory_pass}, #{memory_subject}, #{memory_content}, #{memory_file}, sysdate)
+		</insert>
+		
+		
+</mapper>

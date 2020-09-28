@@ -42,7 +42,7 @@
     			<div><span class="good">추천</span><span class="bad">비추천</span>추천수 : <span class="points">978</span></div>
     		</div>
     	</div>
-    	<input type="button" id="forMemoryButton" value="새 글 추가" onclick="location.href='memoryWriteForm.memory'">
+    	<input type="button" id="forMemoryButton" value="새 글 추가" onclick="location.href='memoryWriteForm'">
    	</div>
 </body>
 </html>

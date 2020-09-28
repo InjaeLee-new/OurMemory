@@ -65,6 +65,9 @@
 		<c:if test="${param.req == 'writeMemory' }">
 			<jsp:include page="./memory/memoryWriteForm.jsp"></jsp:include>
 		</c:if>
+		<c:if test="${param.req == 'writeMemoryPro' }">
+			<jsp:include page="./memory/memoryWrite.jsp"></jsp:include>
+		</c:if>
 	</div>
 </body>
 </html>
