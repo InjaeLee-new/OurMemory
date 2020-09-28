@@ -15,16 +15,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-import memory.dao.memoryDAO;
 import memory.dto.memoryDTO;
 
 @Controller
 public class MemoryWriteController {
 	@Autowired
-	OurMemoryServiceImpl ourMemoryServiceImpl;
+	OurMemoryService ourMemoryService;
 	
 	@RequestMapping(value = "/memoryWrite")
-	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response, MultipartFile img) throws Exception {
+	public ModelAndView memoryWrite(HttpServletRequest request, HttpServletResponse response, MultipartFile img) throws Exception {
 		String filePath = "C:\\Users\\USER\\git\\repository\\OurMemory\\src\\main\\webapp\\img";
 		
 		String fileName = img.getOriginalFilename();
@@ -52,7 +51,7 @@ public class MemoryWriteController {
 		memoryDto.setMemory_content(request.getParameter("memory_content"));
 		memoryDto.setMemory_file(fileName);
 		
-		int result = ourMemoryServiceImpl.memoryBoardWrite(memoryDto);
+		int result = ourMemoryService.memoryBoardWrite(memoryDto);
 		
 		modelAndView.addObject("result", result);
 		
