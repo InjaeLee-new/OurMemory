@@ -14,6 +14,8 @@ public class MemoryViewController {
 	public ModelAndView memoryView(HttpServletRequest request) {
 		ModelAndView modelAndView = new ModelAndView();
 		
+		modelAndView.setViewName("index.jsp?req=memory");
+		
 		return modelAndView;
 	}
 }

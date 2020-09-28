@@ -50,7 +50,7 @@
 		</ul>
 		<img alt="배너용 사진" src="img/banner.jpg" width="1600px" height="300px"><br>
 	</div>
-	<input type = "hidden" value = "값" >
+	<input type = "hidden" value = "값">
 	<div align="center">
    	
 		<c:if test="${param.req == null }">
