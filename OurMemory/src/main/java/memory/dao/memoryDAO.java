@@ -6,7 +6,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +31,9 @@ public class memoryDAO {
 	//select : 목록 List 불러오기
 	public List<memoryDTO> memoryBoardList(int startNum, int endNum) {
 		List<memoryDTO> list = new ArrayList<memoryDTO>();
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		map.put("startNum", startNum);
+		map.put("endNum", endNum);
 		
 		return list;
 	}

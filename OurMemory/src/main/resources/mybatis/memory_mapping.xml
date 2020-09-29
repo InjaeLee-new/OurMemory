@@ -12,7 +12,12 @@
 	
 	<!-- // select : List 불러오기 -->
 	<select id="memoryBoardList" parameterType="java.util.Map" resultType="java.util.List">
-		
+		<![CDATA[
+		select * from
+		(select rownum rn, tt.* from 
+		(select * from mymemoryalbum order by memory_num desc) tt)
+		where rn>= #{startNum} and rn<= #{endNum}
+		]]>
 	</select>
 		
 		
