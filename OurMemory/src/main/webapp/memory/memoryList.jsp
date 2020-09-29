@@ -17,12 +17,24 @@
 				<a href="location.href='memoryView'">
 				<img alt="추억6" src="img/${memoryDTO.memory_file }">
 				</a>
+				<br> 제목 : ${memoryDTO.memory_subject }
 				<p>${memoryDTO.memory_date }</p>
 				<div><span class="good">추천 : ${memoryDTO.memory_rec }</span><span class="bad">비추천 : ${memoryDTO.memory_nrec }</span>조회수 : <span class="points">${memoryDTO.memory_hit }</span></div>
 				<br> 작성자 : ${memoryDTO.memory_name }
 			</div>
 			</c:forEach>
     	</div>
+    	<div>
+			<c:if test="${startPage > 3 }">
+	           	[<a href="showoffList?pg=${startPage -1 }">이전</a>]
+         	</c:if>
+           	<c:forEach var="i" begin="${startPage }" end="${endPage }" step="1">  
+        	 	[<a href="showoffList?pg=${i }">${i }</a>]
+    	   	</c:forEach>
+    	   	<c:if test="${endPage < maxPage }">
+	    	   	[<a href="showoffList?pg=${endPage + 1 }">다음</a>]
+			</c:if>	
+		</div>
     	<input type="button" id="forMemoryButton" value="새 글 추가" onclick="location.href='memoryWriteForm'">
    	</div>
 </body>

@@ -12,8 +12,6 @@ public class MemoryWriteFormController  {
 	
 	@RequestMapping(value = "/memoryWriteForm")
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		int result = 0;
-		
 		ModelAndView modelAndView = new ModelAndView();
 		
 		modelAndView.setViewName("index.jsp?req=writeMemory");

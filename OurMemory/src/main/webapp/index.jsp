@@ -54,19 +54,25 @@
 	<div align="center">
    	
 		<c:if test="${param.req == null }">
-			<jsp:include page="./main/mainpage.jsp"></jsp:include>
+			<jsp:include page="./main/mainpage.jsp" />
 		</c:if>
 		<c:if test="${param.req == 'showoffList' }">
-			<jsp:include page="./showoff/showoffList.jsp"></jsp:include>
+			<jsp:include page="./showoff/showoffList.jsp" />
 		</c:if>
 		<c:if test="${param.req == 'memoryList' }">
-			<jsp:include page="./memory/memoryList.jsp"></jsp:include>
+			<jsp:include page="./memory/memoryList.jsp" />
 		</c:if>
 		<c:if test="${param.req == 'writeMemory' }">
-			<jsp:include page="./memory/memoryWriteForm.jsp"></jsp:include>
+			<jsp:include page="./memory/memoryWriteForm.jsp" />
 		</c:if>
 		<c:if test="${param.req == 'writeMemoryPro' }">
-			<jsp:include page="./memory/memoryWrite.jsp"></jsp:include>
+			<jsp:include page="./memory/memoryWrite.jsp" />
+		</c:if>
+		<c:if test="${param.req == 'writeShowOff' }">
+			<jsp:include page="./showoff/showoffWriteForm.jsp" />
+		</c:if>
+		<c:if test="${param.req == 'writeShowOffPro' }">
+			<jsp:include page="./showoff/showoffWrite.jsp" />
 		</c:if>
 	</div>
 </body>

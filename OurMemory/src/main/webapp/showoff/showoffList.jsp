@@ -17,13 +17,14 @@
 				<a href="location.href='memoryView'">
 				<img alt="추억6" src="img/${showoffDTO.board_file }">
 				</a>
+				<br> 제목 : ${showoffDTO.board_subject }
 				<p>${showoffDTO.board_date }</p>
 				<div><span class="good">추천 : ${showoffDTO.board_rec }</span><span class="bad">비추천 : ${showoffDTO.board_nrec }</span>조회수 : <span class="points">${showoffDTO.board_hit }</span></div>
-				<br> 제목 : ${showoffDTO.board_subject }
 				<br> 작성자 : ${showoffDTO.board_name }
 			</div>
 			</c:forEach>
     	</div>
+    	<hr>
     	<div>
 				<c:if test="${startPage > 3 }">
 	            	[<a href="showoffList?pg=${startPage -1 }">이전</a>]
@@ -36,6 +37,9 @@
 				</c:if>
 				
 		</div>
+		<hr>
+		<br>
+		<input type="button" id="forMemoryButton" value="새 글 추가" onclick="location.href='showoffWriteForm'">
    	</div>
 </body>
 </html>

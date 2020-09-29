@@ -27,11 +27,51 @@ select * from tab;
 
 -- 데이터 저장
 insert into showoffboard values
-(sequence_num.nextval, '김승원', '1234', '사진1', '내용1', 0, 0, 0, 'hamster2.jpg', sysdate);
+(sequence_num.nextval, '홍길동', '1234', '테스트', '내용1', 0, 0, 0, 'navi.jpg', sysdate);
+insert into showoffboard values
+(sequence_num.nextval, '이인제', '1234', '테스트', '내용1', 0, 0, 0, 'navi.jpg', sysdate);
+insert into showoffboard values
+(sequence_num.nextval, '전성환', '1234', '테스트', '내용1', 0, 0, 0, 'navi.jpg', sysdate);
+insert into showoffboard values
+(sequence_num.nextval, '전상만', '1234', '테스트', '내용1', 0, 0, 0, 'navi.jpg', sysdate);
+insert into showoffboard values
+(sequence_num.nextval, '문성하', '1234', '테스트', '내용1', 0, 0, 0, 'navi.jpg', sysdate);
+insert into showoffboard values
+(sequence_num.nextval, '김승원', '1234', '테스트', '내용1', 0, 0, 0, 'navi.jpg', sysdate);
+insert into showoffboard values
+(sequence_num.nextval, '홍성인', '1234', '테스트', '내용1', 0, 0, 0, 'navi.jpg', sysdate);
+insert into showoffboard values
+(sequence_num.nextval, '정성빈', '1234', '테스트', '내용1', 0, 0, 0, 'navi.jpg', sysdate);
+insert into showoffboard values
+(sequence_num.nextval, '홍길동', '1234', '테스트', '내용1', 0, 0, 0, 'navi.jpg', sysdate);
+insert into showoffboard values
+(sequence_num.nextval, '이인제', '1234', '테스트', '내용1', 0, 0, 0, 'navi.jpg', sysdate);
+insert into showoffboard values
+(sequence_num.nextval, '전성환', '1234', '테스트', '내용1', 0, 0, 0, 'navi.jpg', sysdate);
+insert into showoffboard values
+(sequence_num.nextval, '전상만', '1234', '테스트', '내용1', 0, 0, 0, 'navi.jpg', sysdate);
+insert into showoffboard values
+(sequence_num.nextval, '문성하', '1234', '테스트', '내용1', 0, 0, 0, 'navi.jpg', sysdate);
+insert into showoffboard values
+(sequence_num.nextval, '김승원', '1234', '테스트', '내용1', 0, 0, 0, 'navi.jpg', sysdate);
+insert into showoffboard values
+(sequence_num.nextval, '홍성인', '1234', '테스트', '내용1', 0, 0, 0, 'navi.jpg', sysdate);
+insert into showoffboard values
+(sequence_num.nextval, '정성빈', '1234', '테스트', '내용1', 0, 0, 0, 'navi.jpg', sysdate);
 
 -- 데이터 확인
 select * from showoffboard;
 select * from showoffboard where board_num = 1;
+
+-- 데이터 수정
+update showoffboard set board_subject = '너도나와칸쵸' where board_num = 11;
+update showoffboard set board_subject = '햄찌' where board_num = 7;
+update showoffboard set board_file = 'tungtung.jpg' where board_num = 23;
+
+select * from
+(select rownum rn, tt.* from 
+(select * from showoffboard order by board_num desc) tt)
+where rn>=1 and rn<=5;
 
 -- 데이터 저장
 commit;
@@ -66,7 +106,39 @@ select * from tab;
 
 -- 데이터 저장
 insert into mymemoryalbum values
-(seq_memory_num.nextval,'게시자', '1234', '사진1', '내용1', 0, 0, 0, 'memory6.jpg' , sysdate);
+(seq_memory_num.nextval,'홍길동', '1234', '사진1', '내용1', 0, 0, 0, 'memory6.jpg' , sysdate);
+insert into mymemoryalbum values
+(seq_memory_num.nextval,'이인제', '1234', '사진1', '내용1', 0, 0, 0, 'memory6.jpg' , sysdate);
+insert into mymemoryalbum values
+(seq_memory_num.nextval,'전성환', '1234', '사진1', '내용1', 0, 0, 0, 'memory6.jpg' , sysdate);
+insert into mymemoryalbum values
+(seq_memory_num.nextval,'전상만', '1234', '사진1', '내용1', 0, 0, 0, 'memory6.jpg' , sysdate);
+insert into mymemoryalbum values
+(seq_memory_num.nextval,'문성하', '1234', '사진1', '내용1', 0, 0, 0, 'memory6.jpg' , sysdate);
+insert into mymemoryalbum values
+(seq_memory_num.nextval,'김승원', '1234', '사진1', '내용1', 0, 0, 0, 'memory6.jpg' , sysdate);
+insert into mymemoryalbum values
+(seq_memory_num.nextval,'홍성인', '1234', '사진1', '내용1', 0, 0, 0, 'memory6.jpg' , sysdate);
+insert into mymemoryalbum values
+(seq_memory_num.nextval,'정성빈', '1234', '사진1', '내용1', 0, 0, 0, 'memory6.jpg' , sysdate);
+insert into mymemoryalbum values
+(seq_memory_num.nextval,'홍길동', '1234', '사진1', '내용1', 0, 0, 0, 'memory6.jpg' , sysdate);
+insert into mymemoryalbum values
+(seq_memory_num.nextval,'이인제', '1234', '사진1', '내용1', 0, 0, 0, 'memory6.jpg' , sysdate);
+insert into mymemoryalbum values
+(seq_memory_num.nextval,'전성환', '1234', '사진1', '내용1', 0, 0, 0, 'memory6.jpg' , sysdate);
+insert into mymemoryalbum values
+(seq_memory_num.nextval,'전상만', '1234', '사진1', '내용1', 0, 0, 0, 'memory6.jpg' , sysdate);
+insert into mymemoryalbum values
+(seq_memory_num.nextval,'문성하', '1234', '사진1', '내용1', 0, 0, 0, 'memory6.jpg' , sysdate);
+insert into mymemoryalbum values
+(seq_memory_num.nextval,'김승원', '1234', '사진1', '내용1', 0, 0, 0, 'memory6.jpg' , sysdate);
+insert into mymemoryalbum values
+(seq_memory_num.nextval,'홍성인', '1234', '사진1', '내용1', 0, 0, 0, 'memory6.jpg' , sysdate);
+insert into mymemoryalbum values
+(seq_memory_num.nextval,'정성빈', '1234', '사진1', '내용1', 0, 0, 0, 'memory6.jpg' , sysdate);
+
+
 
 -- 데이터 확인
 select * from mymemoryalbum;
