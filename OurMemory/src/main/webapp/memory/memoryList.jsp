@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,36 +12,14 @@
 	<div id="wrap" class="wrap">
 		<h1 class="title">추억 모음전</h1>
 		<div class="itemlist">
+			<c:forEach var="memoryDTO" items="${list }">
 			<div class="items">
-				<img alt="추억6" src="img/memory6.jpg">
-				<p>2020년 10월 3일</p>
-				<div><span class="good">추천</span><span class="bad">비추천</span>추천수 : <span class="points">978</span></div>
+				<img alt="추억6" src="img/${memoryDTO.memory_file }">
+				<p>${memoryDTO.memory_date }</p>
+				<div><span class="good">추천 : ${memoryDTO.memory_rec }</span><span class="bad">비추천 : ${memoryDTO.memory_nrec }</span>조회수 : <span class="points">${memoryDTO.memory_hit }</span></div>
+				<br> 작성자 : ${memoryDTO.memory_name }
 			</div>
-			<div class="items">
-    			<img alt="추억5" src="img/memory5.jpg">
-    			<p>2020년 9월 28일</p>
-    			<div><span class="good">추천</span><span class="bad">비추천</span>추천수 : <span class="points">978</span></div>
-    		</div>
-    		<div class="items">
-    			<img alt="추억4" src="img/memory4.jpg">
-    			<p>2020년 8월 12일</p>
-    			<div><span class="good">추천</span><span class="bad">비추천</span>추천수 : <span class="points">978</span></div>
-    		</div>
-    		<div class="items">
-    			<img alt="추억3" src="img/memory3.jpg">
-    			<p>2020년 7월 20일</p>
-    			<div><span class="good">추천</span><span class="bad">비추천</span>추천수 : <span class="points">978</span></div>
-    		</div>
-    		<div class="items">
-    			<img alt="추억2" src="img/memory2.jpg">
-    			<p>2020년 6월 30일</p>
-    			<div><span class="good">추천</span><span class="bad">비추천</span>추천수 : <span class="points">978</span></div>
-    		</div>
-    		<div class="items">
-    			<img alt="추억1" src="img/memory1.jpg">
-    			<p>2020년 6월 8일</p>
-    			<div><span class="good">추천</span><span class="bad">비추천</span>추천수 : <span class="points">978</span></div>
-    		</div>
+			</c:forEach>
     	</div>
     	<input type="button" id="forMemoryButton" value="새 글 추가" onclick="location.href='memoryWriteForm'">
    	</div>

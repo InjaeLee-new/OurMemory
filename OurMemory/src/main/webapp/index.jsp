@@ -19,7 +19,7 @@
 							<a href="index.jsp?req=showoff">귀요미들 사진첩</a>
 						</li>
 						<li>
-							<a href="index.jsp?req=memoryList">추억 저장소?</a>
+							<a href="memoryList">추억 저장소?</a>
 						</li>		
 					</ul>
 				<li id="introduce">
@@ -30,7 +30,7 @@
 						</li>
 						<li>
 							<a href="#">여기도 수정준비</a>
-							<a href="#">할 수 있음!</a>
+							<a href="#">지우자</a>
 						</li>
 					</ul>
 				</li>

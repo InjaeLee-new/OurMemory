@@ -6,6 +6,21 @@ public class memoryDTO {
 	private String memory_pass;
 	private String memory_subject;
 	private String memory_content;
+	private int memory_rec;
+	private int memory_nrec;
+	private int memory_hit;
+	public int getMemory_rec() {
+		return memory_rec;
+	}
+	public void setMemory_rec(int memory_rec) {
+		this.memory_rec = memory_rec;
+	}
+	public int getMemory_nrec() {
+		return memory_nrec;
+	}
+	public void setMemory_nrec(int memory_nrec) {
+		this.memory_nrec = memory_nrec;
+	}
 	private String memory_file;
 	private String memory_date;
 	
@@ -50,6 +65,12 @@ public class memoryDTO {
 	}
 	public void setMemory_date(String memory_date) {
 		this.memory_date = memory_date;
+	}
+	public int getMemory_hit() {
+		return memory_hit;
+	}
+	public void setMemory_hit(int memory_hit) {
+		this.memory_hit = memory_hit;
 	}
 	
 	
