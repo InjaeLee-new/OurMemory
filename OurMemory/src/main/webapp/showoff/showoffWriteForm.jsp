@@ -11,19 +11,19 @@
 		<table>	
 			<tr>
 				<td>
-					<input type="text" name="memory_name" placeholder="작성자 이름을 입력해주세요">
+					<input type="text" name="board_name" placeholder="작성자 이름을 입력해주세요">
 				</td>
 				
 				<td>
-					<input type="text" name="memory_pass" placeholder="글 비밀번호를 입력해주세요.">
+					<input type="text" name="board_pass" placeholder="글 비밀번호를 입력해주세요.">
 				</td>
 				
 				<td>
-					<input type="text" name="memory_subject" placeholder="글의 제목을 입력해주세요.">
+					<input type="text" name="board_subject" placeholder="글의 제목을 입력해주세요.">
 				</td>
 				
 				<td>
-					<input type="text" name="memory_content" placeholder="글의 내용을 입력해주세요.">
+					<input type="text" name="board_content" placeholder="글의 내용을 입력해주세요.">
 				</td>
 				
 				<td>
