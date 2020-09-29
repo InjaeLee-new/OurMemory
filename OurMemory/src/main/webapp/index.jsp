@@ -19,7 +19,7 @@
 							<a href="index.jsp?req=showoff">귀요미들 사진첩</a>
 						</li>
 						<li>
-							<a href="index.jsp?req=memory">추억 저장소?</a>
+							<a href="index.jsp?req=memoryList">추억 저장소?</a>
 						</li>		
 					</ul>
 				<li id="introduce">
@@ -59,8 +59,8 @@
 		<c:if test="${param.req == 'showoff' }">
 			<jsp:include page="./showoff/showoff.jsp"></jsp:include>
 		</c:if>
-		<c:if test="${param.req == 'memory' }">
-			<jsp:include page="./memory/memory.jsp"></jsp:include>
+		<c:if test="${param.req == 'memoryList' }">
+			<jsp:include page="./memory/memoryList.jsp"></jsp:include>
 		</c:if>
 		<c:if test="${param.req == 'writeMemory' }">
 			<jsp:include page="./memory/memoryWriteForm.jsp"></jsp:include>

@@ -30,10 +30,12 @@ public class memoryDAO {
 	
 	//select : 목록 List 불러오기
 	public List<memoryDTO> memoryBoardList(int startNum, int endNum) {
-		List<memoryDTO> list = new ArrayList<memoryDTO>();
 		Map<String, Integer> map = new HashMap<String, Integer>();
 		map.put("startNum", startNum);
 		map.put("endNum", endNum);
+		List<memoryDTO> list = 
+						sqlSession.selectList("mybatis.memoryMapper.memoryBoardList" , map);
+		
 		
 		return list;
 	}

@@ -18,5 +18,10 @@ public class OurMemoryServiceImpl implements OurMemoryService {
 		return memoryDAO.memoryBoardWrite(memoryDTO);
 	}
 
+	@Override
+	public List<memoryDTO> memoryBoardList(int startNum, int endNum) {
+		return memoryDAO.memoryBoardList(startNum, endNum);
+	}
+
 	
 }
