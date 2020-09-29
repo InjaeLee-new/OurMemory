@@ -1,6 +1,5 @@
-package memory.controller;
+package showoff.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,15 +10,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import OurMemory.service.OurMemoryService;
-import memory.dto.memoryDTO;
+import showoff.dto.showoffDTO;
 
 @Controller
-public class MemoryListController {
+public class ShowOffListController {
 	@Autowired
 	OurMemoryService ourMemoryService;
 	
-	@RequestMapping(value = "/memoryList")
-	public ModelAndView memoryList(HttpServletRequest request) {
+	@RequestMapping(value = "/showoffList")
+	public ModelAndView showoffList(HttpServletRequest request) {
 		ModelAndView modelAndView = new ModelAndView();
 		
 		int pg = 1;
@@ -32,7 +31,6 @@ public class MemoryListController {
 		int endNum = pg * 10 ;
 		
 		int startNum = endNum - 9 ;
-		
 		int totalNum = ourMemoryService.getTotalA();
 
 		int startPage = (pg - 1) / 5 * 5 + 1;
@@ -41,10 +39,9 @@ public class MemoryListController {
 
 		int maxPage = (totalNum - 4) / 5;
 
-		if (endPage > maxPage)
-			endPage = maxPage;
+		if (endPage > maxPage) endPage = maxPage;
 		
-		List<memoryDTO> list = ourMemoryService.memoryBoardList(startNum, endNum);
+		List<showoffDTO> list = ourMemoryService.showoffBoardList(startNum, endNum);
 		
 		modelAndView.addObject("pg" , pg);
 		modelAndView.addObject("endPage" , endPage);
@@ -52,9 +49,9 @@ public class MemoryListController {
 		modelAndView.addObject("maxPage" , maxPage);
 		modelAndView.addObject("list", list);
 		
-		modelAndView.setViewName("index.jsp?req=memoryList");
+		modelAndView.setViewName("index.jsp?req=showoffList");
+		
 		
 		return modelAndView;
 	}
-	
 }

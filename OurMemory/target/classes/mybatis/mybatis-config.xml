@@ -6,10 +6,12 @@
 	 <!-- 클래스에 별명 설정 -->
 	 <typeAliases>
 	 	<typeAlias type="memory.dto.memoryDTO" alias="memoryDTO"/>
+	 	<typeAlias type="showoff.dto.showoffDTO" alias="showoffDTO"/>
 	 </typeAliases>
 	 
 	 <!-- SQL Mapper 설정 -->
 	 <mappers>
 	 	<mapper resource="mybatis/memory_mapping.xml"/>
+	 	<mapper resource="mybatis/showoff_mapping.xml"/>
 	 </mappers>
 </configuration>

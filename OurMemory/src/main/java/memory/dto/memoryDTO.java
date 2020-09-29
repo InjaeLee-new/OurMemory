@@ -9,6 +9,9 @@ public class memoryDTO {
 	private int memory_rec;
 	private int memory_nrec;
 	private int memory_hit;
+	private String memory_file;
+	private String memory_date;
+	
 	public int getMemory_rec() {
 		return memory_rec;
 	}
@@ -21,8 +24,6 @@ public class memoryDTO {
 	public void setMemory_nrec(int memory_nrec) {
 		this.memory_nrec = memory_nrec;
 	}
-	private String memory_file;
-	private String memory_date;
 	
 	public int getMemory_num() {
 		return memory_num;

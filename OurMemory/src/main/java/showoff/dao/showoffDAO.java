@@ -5,72 +5,41 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import showoff.dto.showoffDTO;
 
-
+@Repository
 public class showoffDAO {
-	String driver ="oracle.jdbc.driver.OracleDriver";
-	String url = "jdbc:oracle:thin:@localhost:1521:xe";
-	String user="javaexam";
-	String password = "l1234";
+	@Autowired
+	private SqlSessionTemplate sqlSession;
 	
-	Connection conn;
-	PreparedStatement pstmt;
-	ResultSet rs;
-	
-	// 1. driver 라이브러리가 등록되어있는지 확인
-	public showoffDAO() {
-		try {
-			Class.forName(driver);
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
+	//insert : 글저장
+	public int showoffBoardWrite(showoffDTO showoffDTO) {
+		int result = sqlSession.insert("mybatis.showoffMapper.showoffBoardWrite", showoffDTO);
+		return result;
 	}
 	
-	// 2. 커넥션 객체 얻기
-	public Connection getConnection() {
-		try {
-			conn = DriverManager.getConnection(url,user,password);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return conn;
-	}
-	
-	// 3. 커넥션 객체 닫기
-	public void close() {
-		try {
-			if(rs != null) rs.close();
-			if(pstmt != null) pstmt.close();
-			if(conn != null) conn.close();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-	}
-	
-	// 데이터 저장 : insert
-	public int showOffWrite(showoffDTO showoffDTO) {
-		int su = 0;
-		String sql = " insert into imageboard values " + 
-					 " (sequence_num.nextval, ?, ?, ?, ?, ?, sysdate) ";
-	    try {
-	       conn = getConnection();
-	       pstmt = conn.prepareStatement(sql);              
-	       //pstmt.setString(1, boardDTO.getId());
-	       //pstmt.setString(2, boardDTO.getName());
-	       //pstmt.setString(3, boardDTO.getSubject());
-	       //pstmt.setString(4, boardDTO.getContent());
-	      
-	       su = pstmt.executeUpdate();
-	       
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} finally {
-			close();
-		}
+	//select : 목록 List 불러오기
+	public List<showoffDTO> showoffBoardList(int startNum, int endNum) {
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		map.put("startNum", startNum);
+		map.put("endNum", endNum);
+		List<showoffDTO> list = 
+						sqlSession.selectList("mybatis.showoffMapper.showoffBoardList" , map);
 		
-		return su;
+		
+		return list;
+	}
+	
+	//총 글수 얻기
+	public int getTotalA() {
+		return sqlSession.selectOne("mybatis.showoffMapper.getTotalA");
 	}
 }

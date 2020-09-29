@@ -16,7 +16,7 @@
 					<a>게시판</a>
 					<ul>
 						<li>
-							<a href="index.jsp?req=showoff">귀요미들 사진첩</a>
+							<a href="showoffList">귀요미들 사진첩</a>
 						</li>
 						<li>
 							<a href="memoryList">추억 저장소?</a>
@@ -56,8 +56,8 @@
 		<c:if test="${param.req == null }">
 			<jsp:include page="./main/mainpage.jsp"></jsp:include>
 		</c:if>
-		<c:if test="${param.req == 'showoff' }">
-			<jsp:include page="./showoff/showoff.jsp"></jsp:include>
+		<c:if test="${param.req == 'showoffList' }">
+			<jsp:include page="./showoff/showoffList.jsp"></jsp:include>
 		</c:if>
 		<c:if test="${param.req == 'memoryList' }">
 			<jsp:include page="./memory/memoryList.jsp"></jsp:include>

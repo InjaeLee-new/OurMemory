@@ -11,7 +11,7 @@
 	<c:if test="${result > 0 }">
 		<script type="text/javascript">
 			alert('등록 성공!');
-			location.href='./index.jsp?req=memory';
+			location.href='memoryList';
 		</script>
 	</c:if>
 	

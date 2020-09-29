@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import OurMemory.service.OurMemoryService;
 import memory.dto.memoryDTO;
 
 @Controller
