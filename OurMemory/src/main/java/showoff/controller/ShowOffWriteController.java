@@ -24,8 +24,8 @@ public class ShowOffWriteController {
 	@Autowired
 	OurMemoryService ourMemoryService;
 	
-	@RequestMapping(value = "/memoryWrite")
-	public ModelAndView memoryWrite(HttpServletRequest request, HttpServletResponse response, MultipartFile img) throws Exception {
+	@RequestMapping(value = "/showoffWrite")
+	public ModelAndView showoffWrite(HttpServletRequest request, HttpServletResponse response, MultipartFile img) throws Exception {
 		String filePath = "C:\\Users\\USER\\git\\repository\\OurMemory\\src\\main\\webapp\\img";
 		
 		String fileName = img.getOriginalFilename();
