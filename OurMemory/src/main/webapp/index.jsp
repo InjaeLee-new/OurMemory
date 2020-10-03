@@ -73,7 +73,13 @@
 		</c:if>
 		<c:if test="${param.req == 'writeShowOffPro' }">
 			<jsp:include page="./showoff/showoffWrite.jsp" />
+		</c:if>		
+		<c:if test="${param.req == 'memoryView' }">
+			<jsp:include page="./memory/memoryView.jsp" />
 		</c:if>
+		<c:if test="${param.req == 'showoffView' }">
+			<jsp:include page="./showoff/showoffView.jsp" />
+		</c:if>		
 	</div>
 </body>
 </html>

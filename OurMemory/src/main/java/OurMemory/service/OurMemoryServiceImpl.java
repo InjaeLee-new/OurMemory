@@ -48,5 +48,15 @@ public class OurMemoryServiceImpl implements OurMemoryService {
 		return showoffDao.getTotalShowoff();
 	}
 
+	@Override
+	public memoryDTO memoryBoardView(int seq) {
+		return memoryDao.memoryBoardView(seq);
+	}
+
+	@Override
+	public showoffDTO showoffBoardView(int seq) {
+		return showoffDao.showoffBoardView(seq);
+	}
+
 	
 }

@@ -14,7 +14,7 @@
 		<div class="itemlist">
 			<c:forEach var="memoryDTO" items="${list }">
 			<div class="items">
-				<a href="location.href='memoryView'">
+				<a href="memoryView?memory_num=${memoryDTO.memory_num }">
 				<img alt="추억6" src="img/${memoryDTO.memory_file }">
 				</a>
 				<br> 제목 : ${memoryDTO.memory_subject }

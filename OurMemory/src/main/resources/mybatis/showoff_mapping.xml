@@ -26,7 +26,7 @@
 	</select>
 	
 	<!-- 글 하나 불러오기 -->
-	<select id="showoffBoardView" parameterType="string" resultType="showoffDTO">
+	<select id="showoffBoardView" parameterType="int" resultType="showoffDTO">
 		select * from showoffboard where board_num = #{board_num}
 	</select>
 		

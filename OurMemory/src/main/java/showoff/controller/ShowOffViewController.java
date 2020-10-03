@@ -1,4 +1,4 @@
-package memory.controller;
+package showoff.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -8,24 +8,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import OurMemory.service.OurMemoryService;
-import memory.dto.memoryDTO;
+import showoff.dto.showoffDTO;
 
 @Controller
-public class MemoryViewController {
+public class ShowOffViewController {
 	@Autowired
 	OurMemoryService ourMemoryService;
 	
-	@RequestMapping(value = "/memoryView")
-	public ModelAndView memoryView(HttpServletRequest request) {
+	@RequestMapping(value = "/showoffView")
+	public ModelAndView showoffView(HttpServletRequest request) {
 		ModelAndView modelAndView = new ModelAndView();
 		
-		int memory_num = Integer.parseInt(request.getParameter("memory_num"));
+		int board_num = Integer.parseInt(request.getParameter("board_num"));
 		
-		memoryDTO dto = ourMemoryService.memoryBoardView(memory_num);
+		showoffDTO dto = ourMemoryService.showoffBoardView(board_num);
 		
 		modelAndView.addObject("dto", dto);
 		
-		modelAndView.setViewName("index.jsp?req=memoryView");
+		modelAndView.setViewName("index.jsp?req=showoffView");
 		
 		return modelAndView;
 	}

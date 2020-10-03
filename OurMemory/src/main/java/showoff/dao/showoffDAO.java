@@ -39,7 +39,7 @@ public class showoffDAO {
 	}
 	
 	//select : 글 하나 얻어오기
-	public int showoffBoardView() {
-		return sqlSession.selectOne("mybatis.showoffMapper.showoffBoardView");
+	public showoffDTO showoffBoardView(int seq) {
+		return sqlSession.selectOne("mybatis.showoffMapper.showoffBoardView", seq);
 	}
 }

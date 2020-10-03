@@ -40,8 +40,8 @@ public class memoryDAO {
 	}
 	
 	//select : 글 하나 얻어오기
-	public int memoryBoardView() {
-		return sqlSession.selectOne("mybatis.memoryMapper.memoryBoardView");
+	public memoryDTO memoryBoardView(int seq) {
+		return sqlSession.selectOne("mybatis.memoryMapper.memoryBoardView", seq);
 	}
 	
 }

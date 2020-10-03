@@ -26,7 +26,7 @@
 	</select>
 	
 	<!-- 글 하나 불러오기 -->
-	<select id="memoryBoardView" parameterType="string" resultType="memoryDTO">
+	<select id="memoryBoardView" parameterType="int" resultType="memoryDTO">
 		select * from mymemoryalbum where memory_num = #{memory_num}
 	</select>
 		

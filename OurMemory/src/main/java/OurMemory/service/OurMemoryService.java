@@ -17,6 +17,9 @@ public interface OurMemoryService {
 	//memory의 총 글 수 가져오기
 	public int getTotalMemory();
 	
+	//select : 글 하나 얻어오기
+	public memoryDTO memoryBoardView(int seq);
+	
 	//showoffBoardWrite : 반려동물 자랑하기 글 저장
 	public int showoffBoardWrite(showoffDTO showoffDTO);
 	
@@ -25,5 +28,8 @@ public interface OurMemoryService {
 	
 	//showoff의 총 글 수 가져오기
 	public int getTotalShowoff();
+	
+	//select : 글 하나 얻어오기
+	public showoffDTO showoffBoardView(int seq);
 	
 }
