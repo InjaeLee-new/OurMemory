@@ -31,7 +31,7 @@ public class ShowOffListController {
 		int endNum = pg * 10 ;
 		
 		int startNum = endNum - 9 ;
-		int totalNum = ourMemoryService.getTotalA();
+		int totalNum = ourMemoryService.getTotalShowoff();
 
 		int startPage = (pg - 1) / 5 * 5 + 1;
 

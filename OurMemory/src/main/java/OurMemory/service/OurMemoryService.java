@@ -14,6 +14,9 @@ public interface OurMemoryService {
 	//memoryBoardList : N개씩 목록 끊어오는 함수 (우리가 startNum,endNum을 설정할 때마다 바뀐다.)
 	public List<memoryDTO> memoryBoardList(int startNum, int endNum);
 	
+	//memory의 총 글 수 가져오기
+	public int getTotalMemory();
+	
 	//showoffBoardWrite : 반려동물 자랑하기 글 저장
 	public int showoffBoardWrite(showoffDTO showoffDTO);
 	
@@ -21,5 +24,6 @@ public interface OurMemoryService {
 	public List<showoffDTO> showoffBoardList(int startNum, int endNum);
 	
 	//showoff의 총 글 수 가져오기
-	public int getTotalA();
+	public int getTotalShowoff();
+	
 }

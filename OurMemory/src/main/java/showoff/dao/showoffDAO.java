@@ -1,10 +1,5 @@
 package showoff.dao;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,8 +33,13 @@ public class showoffDAO {
 		return list;
 	}
 	
-	//총 글수 얻기
-	public int getTotalA() {
-		return sqlSession.selectOne("mybatis.showoffMapper.getTotalA");
+	//select : 총 글수 얻기
+	public int getTotalShowoff() {
+		return sqlSession.selectOne("mybatis.showoffMapper.getTotalShowoff");
+	}
+	
+	//select : 글 하나 얻어오기
+	public int showoffBoardView() {
+		return sqlSession.selectOne("mybatis.showoffMapper.showoffBoardView");
 	}
 }

@@ -21,9 +21,13 @@
 	</select>
 	
 	<!-- 전체 글 수 가져오기 -->
-	<select id="getTotalA" resultType="int">
+	<select id="getTotalShowoff" resultType="int">
 			select count(*) as cnt from showoffboard
 	</select>
-		
+	
+	<!-- 글 하나 불러오기 -->
+	<select id="showoffBoardView" parameterType="string" resultType="showoffDTO">
+		select * from showoffboard where board_num = #{board_num}
+	</select>
 		
 </mapper>

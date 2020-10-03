@@ -1,11 +1,5 @@
 package memory.dao;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,6 +32,16 @@ public class memoryDAO {
 		
 		
 		return list;
+	}
+	
+	//총 글수 얻기
+	public int getTotalMemory() {
+		return sqlSession.selectOne("mybatis.memoryMapper.getTotalMemory");
+	}
+	
+	//select : 글 하나 얻어오기
+	public int memoryBoardView() {
+		return sqlSession.selectOne("mybatis.memoryMapper.memoryBoardView");
 	}
 	
 }

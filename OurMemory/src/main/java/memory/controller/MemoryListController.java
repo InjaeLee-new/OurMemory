@@ -1,6 +1,5 @@
 package memory.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -33,7 +32,7 @@ public class MemoryListController {
 		
 		int startNum = endNum - 9 ;
 		
-		int totalNum = ourMemoryService.getTotalA();
+		int totalNum = ourMemoryService.getTotalMemory();
 
 		int startPage = (pg - 1) / 5 * 5 + 1;
 

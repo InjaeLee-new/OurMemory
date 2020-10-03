@@ -24,7 +24,7 @@
 			</div>
 			</c:forEach>
     	</div>
-    	<hr>
+    	
     	<div>
 				<c:if test="${startPage > 3 }">
 	            	[<a href="showoffList?pg=${startPage -1 }">이전</a>]
@@ -35,9 +35,8 @@
     	     	<c:if test="${endPage < maxPage }">
 	         	[<a href="showoffList?pg=${endPage + 1 }">다음</a>]
 				</c:if>
-				
 		</div>
-		<hr>
+		
 		<br>
 		<input type="button" id="forMemoryButton" value="새 글 추가" onclick="location.href='showoffWriteForm'">
    	</div>

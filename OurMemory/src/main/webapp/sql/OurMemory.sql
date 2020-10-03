@@ -27,37 +27,21 @@ select * from tab;
 
 -- 데이터 저장
 insert into showoffboard values
-(sequence_num.nextval, '홍길동', '1234', '테스트', '내용1', 0, 0, 0, 'navi.jpg', sysdate);
+(sequence_num.nextval, '홍길동', '1234', '나비나비', '내용1', 0, 0, 0, 'navi.jpg', sysdate);
 insert into showoffboard values
-(sequence_num.nextval, '이인제', '1234', '테스트', '내용1', 0, 0, 0, 'navi.jpg', sysdate);
+(sequence_num.nextval, '이인제', '1234', '퉁퉁이', '내용1', 0, 0, 0, 'tungtung.jpg', sysdate);
 insert into showoffboard values
-(sequence_num.nextval, '전성환', '1234', '테스트', '내용1', 0, 0, 0, 'navi.jpg', sysdate);
+(sequence_num.nextval, '전성환', '1234', '귤이ㅠㅠㅠ', '내용1', 0, 0, 0, 'gyul2.jpg', sysdate);
 insert into showoffboard values
-(sequence_num.nextval, '전상만', '1234', '테스트', '내용1', 0, 0, 0, 'navi.jpg', sysdate);
+(sequence_num.nextval, '전상만', '1234', '귤이귀여워ㅠㅠ', '내용1', 0, 0, 0, 'gyul3.jpg', sysdate);
 insert into showoffboard values
-(sequence_num.nextval, '문성하', '1234', '테스트', '내용1', 0, 0, 0, 'navi.jpg', sysdate);
+(sequence_num.nextval, '문성하', '1234', '귤이최고야ㅠㅠ', '내용1', 0, 0, 0, 'gyul1.jpg', sysdate);
 insert into showoffboard values
-(sequence_num.nextval, '김승원', '1234', '테스트', '내용1', 0, 0, 0, 'navi.jpg', sysdate);
+(sequence_num.nextval, '김승원', '1234', '옷안칸쵸~', '내용1', 0, 0, 0, 'kancho2.jpg', sysdate);
 insert into showoffboard values
-(sequence_num.nextval, '홍성인', '1234', '테스트', '내용1', 0, 0, 0, 'navi.jpg', sysdate);
+(sequence_num.nextval, '홍성인', '1234', '코코!!', '내용1', 0, 0, 0, 'coco.jpg', sysdate);
 insert into showoffboard values
-(sequence_num.nextval, '정성빈', '1234', '테스트', '내용1', 0, 0, 0, 'navi.jpg', sysdate);
-insert into showoffboard values
-(sequence_num.nextval, '홍길동', '1234', '테스트', '내용1', 0, 0, 0, 'navi.jpg', sysdate);
-insert into showoffboard values
-(sequence_num.nextval, '이인제', '1234', '테스트', '내용1', 0, 0, 0, 'navi.jpg', sysdate);
-insert into showoffboard values
-(sequence_num.nextval, '전성환', '1234', '테스트', '내용1', 0, 0, 0, 'navi.jpg', sysdate);
-insert into showoffboard values
-(sequence_num.nextval, '전상만', '1234', '테스트', '내용1', 0, 0, 0, 'navi.jpg', sysdate);
-insert into showoffboard values
-(sequence_num.nextval, '문성하', '1234', '테스트', '내용1', 0, 0, 0, 'navi.jpg', sysdate);
-insert into showoffboard values
-(sequence_num.nextval, '김승원', '1234', '테스트', '내용1', 0, 0, 0, 'navi.jpg', sysdate);
-insert into showoffboard values
-(sequence_num.nextval, '홍성인', '1234', '테스트', '내용1', 0, 0, 0, 'navi.jpg', sysdate);
-insert into showoffboard values
-(sequence_num.nextval, '정성빈', '1234', '테스트', '내용1', 0, 0, 0, 'navi.jpg', sysdate);
+(sequence_num.nextval, '정성빈', '1234', '거북이법규', '내용1', 0, 0, 0, 'turtle.png', sysdate);
 
 -- 데이터 확인
 select * from showoffboard;
@@ -106,38 +90,21 @@ select * from tab;
 
 -- 데이터 저장
 insert into mymemoryalbum values
-(seq_memory_num.nextval,'홍길동', '1234', '사진1', '내용1', 0, 0, 0, 'memory6.jpg' , sysdate);
+(seq_memory_num.nextval,'홍길동', '1234', '추억1', '내용1', 0, 0, 0, 'memory1.jpg' , sysdate);
 insert into mymemoryalbum values
-(seq_memory_num.nextval,'이인제', '1234', '사진1', '내용1', 0, 0, 0, 'memory6.jpg' , sysdate);
+(seq_memory_num.nextval,'이인제', '1234', '추억2', '내용1', 0, 0, 0, 'memory2.jpg' , sysdate);
 insert into mymemoryalbum values
-(seq_memory_num.nextval,'전성환', '1234', '사진1', '내용1', 0, 0, 0, 'memory6.jpg' , sysdate);
+(seq_memory_num.nextval,'전성환', '1234', '추억3', '내용1', 0, 0, 0, 'memory3.jpg' , sysdate);
 insert into mymemoryalbum values
-(seq_memory_num.nextval,'전상만', '1234', '사진1', '내용1', 0, 0, 0, 'memory6.jpg' , sysdate);
+(seq_memory_num.nextval,'전상만', '1234', '추억4', '내용1', 0, 0, 0, 'memory4.jpg' , sysdate);
 insert into mymemoryalbum values
-(seq_memory_num.nextval,'문성하', '1234', '사진1', '내용1', 0, 0, 0, 'memory6.jpg' , sysdate);
+(seq_memory_num.nextval,'문성하', '1234', '추억5', '내용1', 0, 0, 0, 'memory5.jpg' , sysdate);
 insert into mymemoryalbum values
-(seq_memory_num.nextval,'김승원', '1234', '사진1', '내용1', 0, 0, 0, 'memory6.jpg' , sysdate);
+(seq_memory_num.nextval,'김승원', '1234', '추억6', '내용1', 0, 0, 0, 'memory6.jpg' , sysdate);
 insert into mymemoryalbum values
-(seq_memory_num.nextval,'홍성인', '1234', '사진1', '내용1', 0, 0, 0, 'memory6.jpg' , sysdate);
+(seq_memory_num.nextval,'홍성인', '1234', '추억7', '내용1', 0, 0, 0, 'memory1.jpg' , sysdate);
 insert into mymemoryalbum values
-(seq_memory_num.nextval,'정성빈', '1234', '사진1', '내용1', 0, 0, 0, 'memory6.jpg' , sysdate);
-insert into mymemoryalbum values
-(seq_memory_num.nextval,'홍길동', '1234', '사진1', '내용1', 0, 0, 0, 'memory6.jpg' , sysdate);
-insert into mymemoryalbum values
-(seq_memory_num.nextval,'이인제', '1234', '사진1', '내용1', 0, 0, 0, 'memory6.jpg' , sysdate);
-insert into mymemoryalbum values
-(seq_memory_num.nextval,'전성환', '1234', '사진1', '내용1', 0, 0, 0, 'memory6.jpg' , sysdate);
-insert into mymemoryalbum values
-(seq_memory_num.nextval,'전상만', '1234', '사진1', '내용1', 0, 0, 0, 'memory6.jpg' , sysdate);
-insert into mymemoryalbum values
-(seq_memory_num.nextval,'문성하', '1234', '사진1', '내용1', 0, 0, 0, 'memory6.jpg' , sysdate);
-insert into mymemoryalbum values
-(seq_memory_num.nextval,'김승원', '1234', '사진1', '내용1', 0, 0, 0, 'memory6.jpg' , sysdate);
-insert into mymemoryalbum values
-(seq_memory_num.nextval,'홍성인', '1234', '사진1', '내용1', 0, 0, 0, 'memory6.jpg' , sysdate);
-insert into mymemoryalbum values
-(seq_memory_num.nextval,'정성빈', '1234', '사진1', '내용1', 0, 0, 0, 'memory6.jpg' , sysdate);
-
+(seq_memory_num.nextval,'정성빈', '1234', '추억8', '내용1', 0, 0, 0, 'memory2.jpg' , sysdate);
 
 
 -- 데이터 확인

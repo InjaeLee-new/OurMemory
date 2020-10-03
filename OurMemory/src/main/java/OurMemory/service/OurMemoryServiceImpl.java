@@ -39,8 +39,13 @@ public class OurMemoryServiceImpl implements OurMemoryService {
 	}
 
 	@Override
-	public int getTotalA() {
-		return showoffDao.getTotalA();
+	public int getTotalMemory() {
+		return memoryDao.getTotalMemory();
+	}
+	
+	@Override
+	public int getTotalShowoff() {
+		return showoffDao.getTotalShowoff();
 	}
 
 	

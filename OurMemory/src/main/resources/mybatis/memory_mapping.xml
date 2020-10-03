@@ -19,6 +19,16 @@
 		where rn>=#{startNum} and rn<=#{endNum}
 		]]>
 	</select>
+	
+	<!-- 전체 글 수 가져오기 -->
+	<select id="getTotalMemory" resultType="int">
+			select count(*) as cnt from mymemoryalbum
+	</select>
+	
+	<!-- 글 하나 불러오기 -->
+	<select id="memoryBoardView" parameterType="string" resultType="memoryDTO">
+		select * from mymemoryalbum where memory_num = #{memory_num}
+	</select>
 		
 		
 </mapper>

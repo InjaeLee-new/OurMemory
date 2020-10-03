@@ -16,7 +16,6 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import OurMemory.service.OurMemoryService;
-import memory.dto.memoryDTO;
 import showoff.dto.showoffDTO;
 
 @Controller
