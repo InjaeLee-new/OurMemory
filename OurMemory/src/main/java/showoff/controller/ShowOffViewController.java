@@ -20,10 +20,12 @@ public class ShowOffViewController {
 		ModelAndView modelAndView = new ModelAndView();
 		
 		int board_num = Integer.parseInt(request.getParameter("board_num"));
+		int pg = Integer.parseInt(request.getParameter("pg"));
 		
 		showoffDTO dto = ourMemoryService.showoffBoardView(board_num);
 		
 		modelAndView.addObject("dto", dto);
+		modelAndView.addObject("pg", pg);
 		
 		modelAndView.setViewName("index.jsp?req=showoffView");
 		

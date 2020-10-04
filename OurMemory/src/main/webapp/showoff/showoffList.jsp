@@ -14,7 +14,7 @@
 		<div class="itemlist">
 			<c:forEach var="showoffDTO" items="${list }">
 			<div class="items">
-				<a href="showoffView?board_num=${showoffDTO.board_num }">
+				<a href="showoffView?board_num=${showoffDTO.board_num }&pg=1">
 				<img alt="추억6" src="img/${showoffDTO.board_file }">
 				</a>
 				<br> 제목 : ${showoffDTO.board_subject }

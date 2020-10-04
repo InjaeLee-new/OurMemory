@@ -20,12 +20,14 @@ public class MemoryViewController {
 		ModelAndView modelAndView = new ModelAndView();
 		
 		int memory_num = Integer.parseInt(request.getParameter("memory_num"));
+		int pg = Integer.parseInt(request.getParameter("pg"));
 		
 		memoryDTO dto = ourMemoryService.memoryBoardView(memory_num);
 		
 		modelAndView.addObject("dto", dto);
 		
 		modelAndView.setViewName("index.jsp?req=memoryView");
+		modelAndView.addObject("pg", pg);
 		
 		return modelAndView;
 	}

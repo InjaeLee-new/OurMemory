@@ -7,11 +7,26 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>${dto.memory_subject }</h1>
+	
 	<table>
 		<tr>
+			<td rowspan="3">
+				<img width="400" height="400" alt="" src="./img/${dto.memory_file }">
+			</td>
 			<td>
-				<img width="100" height="100" alt="" src="./img/${dto.memory_file }">
+				<h1>글 제목 : ${dto.memory_subject }</h1>
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				<h2>글 내용</h2>
+				<p>${dto.memory_content }</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="button" onclick="location.href='memoryList?pg=${i }'" value="목록보기">
 			</td>
 		</tr>
 	</table>

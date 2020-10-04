@@ -11,7 +11,7 @@
 <body>
 	<div class="menubar" >
 		<ul>
-			<li id="title"><a href="index.jsp" style="text-align: center">IJ's Gallery</a></li>
+			<li id="title"><a href="index.jsp" style="text-align: center">Our Gallery</a></li>
 				<li id="storyboard">
 					<a>게시판</a>
 					<ul>
