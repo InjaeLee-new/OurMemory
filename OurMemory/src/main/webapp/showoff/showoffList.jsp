@@ -10,10 +10,10 @@
 </head>
 <body>
 	<div class="wrap">
-		<h1 class="title">귀요미들 사진첩(WriteForm, Write 수정하기.)</h1>
+		<h1 class="title">귀요미들 사진첩</h1>
 		<div class="itemlist">
 			<c:forEach var="showoffDTO" items="${list }">
-				<div class="items">
+			<div class="items">
 				<a href="showoffView?board_num=${showoffDTO.board_num }">
 				<img alt="추억6" src="img/${showoffDTO.board_file }">
 				</a>
