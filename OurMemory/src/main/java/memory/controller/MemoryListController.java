@@ -28,9 +28,9 @@ public class MemoryListController {
 			}
 		}
 		
-		int endNum = pg * 10 ;
+		int endNum = pg * 8 ;
 		
-		int startNum = endNum - 9 ;
+		int startNum = endNum - 7 ;
 		
 		int totalNum = ourMemoryService.getTotalMemory();
 

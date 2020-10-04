@@ -6,10 +6,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="./css/index.css?v=1">
+<link rel="stylesheet" type="text/css" href="./css/index.css?v=2">
 </head>
 <body>
-	<div class="menubar" align="center">
+	<div class="menubar" >
 		<ul>
 			<li id="title"><a href="index.jsp" style="text-align: center">IJ's Gallery</a></li>
 				<li id="storyboard">
@@ -51,7 +51,7 @@
 		<img alt="배너용 사진" src="img/banner.jpg" width="1600px" height="300px"><br>
 	</div>
 	<input type = "hidden" value = "값">
-	<div align="center">
+	<div class="center" align="center">
    	
 		<c:if test="${param.req == null }">
 			<jsp:include page="./main/mainpage.jsp" />
@@ -80,6 +80,12 @@
 		<c:if test="${param.req == 'showoffView' }">
 			<jsp:include page="./showoff/showoffView.jsp" />
 		</c:if>		
+	</div>
+	
+	<div id="footer" style="border-top: 1px solid; width: 1600px; margin: 0 auto;">
+		&copy;우리팀<br>
+		문의전화 : 010 - xxxx - xxxx<br>
+		주      소 : 서울특별시 강남구 이젠로 302-1 이젠it아카데미
 	</div>
 </body>
 </html>

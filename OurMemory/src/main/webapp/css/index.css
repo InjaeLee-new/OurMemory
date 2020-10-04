@@ -34,7 +34,7 @@ body {
     font-weight:bold;
 }
    
-   .menubar ul{
+.menubar ul{
    background: mistyrose;
    height:50px;
    list-style:none;
@@ -42,14 +42,14 @@ body {
    padding:0;
    }
    
-   .menubar ul > li{
+.menubar ul > li{
    float:left;
    padding:0px;
    width: 200px;
-   }
+}
    
- /*메뉴바 조정을 위해 새로 추가한 부분 나중에 필요없으면 지울것.*/
-   .menubar li p{
+/*메뉴바 조정을 위해 새로 추가한 부분 나중에 필요없으면 지울것.*/
+.menubar li p{
    background: mistyrose;
    color:#cccccc;
    display:block;
@@ -63,13 +63,13 @@ body {
    margin-left:20px;
    }
 
-   .menubar > ul > li > p:hover, .menubar > ul > li:hover a{
+.menubar > ul > li > p:hover, .menubar > ul > li:hover a{
    background: rgb(71,71,71);
    color:#FFFFFF;
    text-decoration:none;
-   }
+}
 
-   .menubar  ul  li  a{
+.menubar  ul  li  a{
    background: mistyrose;
    color: rgb(120,120,220);
    display:block;
@@ -80,15 +80,15 @@ body {
    padding:0px;
    text-align:center;
    text-decoration:none;
-   }
+}
    
-   .menubar li a:hover, .menubar ul li:hover a{
+.menubar li a:hover, .menubar ul li:hover a{
    background: rgb(253,253,150);
    color: blue;
    text-decoration:none;
-   }
+}
    
-   .menubar #storyboard ul{
+.menubar #storyboard ul{
    background: rgb(253,253,130);
    display:none;
    height:auto;
@@ -100,9 +100,9 @@ body {
    position: absolute;
    width:200px;
    z-index:200;
-   }
+}
 
-   .menubar #introduce ul{
+.menubar #introduce ul{
    background: rgb(109,109,109);
    display:none;
    height:auto;
@@ -113,30 +113,30 @@ body {
    position:absolute;
    width:200px;
    z-index:200;
-   }
+}
    
-   .menubar #introduce:hover ul{
+.menubar #introduce:hover ul{
    display:block;
-   }
+}
 
-   .menubar #storyboard:hover ul{
+.menubar #storyboard:hover ul{
    display:block;
-   }
+}
    
-   .menubar li li {
+.menubar li li {
    background: rgb(180,180,120));
    display:block;
    float:left;
    margin:0px;
    padding:0px;
    width:200px;
-   }
+}
    
-   .menubar li:hover li a{
+.menubar li:hover li a{
    background: rgb(140,140,100);
-   }
+}
    
-   .menubar li ul a{
+.menubar li ul a{
    background: rgb(140,140,100);
    display:block;
    height:50px;
@@ -145,9 +145,9 @@ body {
    margin:0px;
    padding:0px;
    text-align:center;
-   }
+}
    
-   .menubar li ul a:hover, .menubar li ul li:hover a{
+.menubar li ul a:hover, .menubar li ul li:hover a{
    background: rgb(180,180,100);
    border:0px;
    width:200px;
@@ -155,8 +155,12 @@ body {
    padding:0px;
    text-decoration:none;
    text-align:center;
-   }
+}
    
-   .menubar p{
+.menubar p{
    clear:left;
-   }
+}
+
+.center {
+	margin: 0 auto;
+}

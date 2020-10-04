@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Document</title>
-<link rel="stylesheet" type="text/css" href="./css/showoff.css">
+<link rel="stylesheet" type="text/css" href="./css/showoff.css?v=2">
 </head>
 <body>
 	<div class="wrap">
@@ -38,7 +38,7 @@
 		</div>
 		
 		<br>
-		<input type="button" id="forMemoryButton" value="새 글 추가" onclick="location.href='showoffWriteForm'">
+		<input type="button" id="forshowoffButton" value="새 글 추가" onclick="location.href='showoffWriteForm'">
    	</div>
 </body>
 </html>
