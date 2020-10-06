@@ -20,6 +20,12 @@ public interface OurMemoryService {
 	//select : 글 하나 얻어오기
 	public memoryDTO memoryBoardView(int seq);
 	
+	//update : 조회수 증가시키기
+	public int memoryBoardHit(int memory_num);
+	
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// 여기부턴 showoff 관련 DAO 모음
+	
 	//showoffBoardWrite : 반려동물 자랑하기 글 저장
 	public int showoffBoardWrite(showoffDTO showoffDTO);
 	
@@ -31,5 +37,20 @@ public interface OurMemoryService {
 	
 	//select : 글 하나 얻어오기
 	public showoffDTO showoffBoardView(int seq);
+	
+	//update : 조회수 증가시키기
+	public int showoffBoardHit(int memory_num);
+	
+	//update : 추천수 증가시키기
+	public int memoryBoardRec(int memory_num);
+	
+	//update : 비추천수 증가시키기
+	public int memoryBoardNrec(int memory_num);
+	
+	//update : 추천수 증가시키기
+	public int showoffBoardRec(int board_num);
+	
+	//update : 비추천수 증가시키기
+	public int showoffBoardNrec(int board_num);
 	
 }

@@ -58,5 +58,35 @@ public class OurMemoryServiceImpl implements OurMemoryService {
 		return showoffDao.showoffBoardView(seq);
 	}
 
+	@Override
+	public int memoryBoardHit(int memory_num) {
+		return memoryDao.memoryBoardHit(memory_num);
+	}
+
+	@Override
+	public int showoffBoardHit(int board_num) {
+		return showoffDao.showoffBoardHit(board_num);
+	}
+
+	@Override
+	public int memoryBoardRec(int memory_num) {
+		return memoryDao.memoryBoardRec(memory_num);
+	}
+
+	@Override
+	public int memoryBoardNrec(int memory_num) {
+		return memoryDao.memoryBoardNrec(memory_num);
+	}
+
+	@Override
+	public int showoffBoardRec(int board_num) {
+		return showoffDao.showoffBoardRec(board_num);
+	}
+
+	@Override
+	public int showoffBoardNrec(int board_num) {
+		return showoffDao.showoffBoardNrec(board_num);
+	}
+
 	
 }

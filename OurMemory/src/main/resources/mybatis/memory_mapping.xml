@@ -29,6 +29,20 @@
 	<select id="memoryBoardView" parameterType="int" resultType="memoryDTO">
 		select * from mymemoryalbum where memory_num = #{memory_num}
 	</select>
-		
-		
+	
+	<!-- 조회수 증가 -->
+	<update id="memoryBoardHit" parameterType="int">
+		update mymemoryalbum set memory_hit = memory_hit + 1 where memory_num = #{memory_num}
+	</update>
+	
+	<!-- 추천수 증가 -->
+	<update id="memoryBoardRec" parameterType="int">
+		update mymemoryalbum set memory_rec = memory_rec + 1 where memory_num = #{memory_num}
+	</update>
+	
+	<!-- 비추천수 증가 -->
+	<update id="memoryBoardNrec" parameterType="int">
+		update mymemoryalbum set memory_nrec = memory_nrec + 1 where memory_num = #{memory_num}
+	</update>
+	
 </mapper>

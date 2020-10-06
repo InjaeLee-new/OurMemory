@@ -44,4 +44,17 @@ public class memoryDAO {
 		return sqlSession.selectOne("mybatis.memoryMapper.memoryBoardView", seq);
 	}
 	
+	//update : 조회수 증가시키기
+	public int memoryBoardHit(int memory_num) {
+		return sqlSession.update("mybatis.memoryMapper.memoryBoardHit", memory_num);
+	}
+	
+	//update : 추천수 증가시키기
+	public int memoryBoardRec(int memory_num) {
+		return sqlSession.update("mybatis.memoryMapper.memoryBoardRec", memory_num);
+	}
+	//update : 비추천수 증가시키기
+	public int memoryBoardNrec(int memory_num) {
+		return sqlSession.update("mybatis.memoryMapper.memoryBoardNrec", memory_num);
+	}
 }

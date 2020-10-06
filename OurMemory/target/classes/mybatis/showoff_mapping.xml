@@ -29,5 +29,20 @@
 	<select id="showoffBoardView" parameterType="int" resultType="showoffDTO">
 		select * from showoffboard where board_num = #{board_num}
 	</select>
+	
+	<!-- 조회수 증가 -->
+	<update id="showoffBoardHit" parameterType="int">
+		update showoffboard set board_hit = board_hit + 1 where board_num = #{board_num}
+	</update>
+	
+	<!-- 추천수 증가 -->
+	<update id="showoffBoardRec" parameterType="int">
+		update showoffboard set board_rec = board_rec + 1 where board_num = #{board_num}
+	</update>
+	
+	<!-- 비추천수 증가 -->
+	<update id="showoffBoardNrec" parameterType="int">
+		update showoffboard set board_nrec = board_nrec + 1 where board_num = #{board_num}
+	</update>
 		
 </mapper>

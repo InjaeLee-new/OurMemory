@@ -45,12 +45,25 @@ insert into showoffboard values
 
 -- 데이터 확인
 select * from showoffboard;
-select * from showoffboard where board_num = 1;
+select * from showoffboard where board_num = 2;
 
 -- 데이터 수정
 update showoffboard set board_subject = '너도나와칸쵸' where board_num = 11;
 update showoffboard set board_subject = '햄찌' where board_num = 7;
 update showoffboard set board_file = 'tungtung.jpg' where board_num = 23;
+
+-- 내용 1이라고만 써있는 내용을 좀 길게 써서 view에서 확인할 수 있도록.
+update showoffboard set board_content = '일단 임의로 내용을 무지하게 늘려서 있어보이게 만들거야. 나중에 수정은 따로 할 수 있으니까 긴 글을
+쓸 수 있게만 만들자 그게 최고인거같아.';
+
+-- 조회수 증가
+update showoffboard set board_hit = board_hit + 1 where board_num = 2;
+
+-- 추천수 증가
+update showoffboard set board_rec = board_rec + 1 where board_num = 2;
+
+-- 비추천수 증가
+update showoffboard set board_nrec = board_nrec + 1 where board_num = 2;
 
 select * from
 (select rownum rn, tt.* from 
@@ -114,10 +127,21 @@ select * from mymemoryalbum where memory_num = 1;
 -- 데이터 수정
 update mymemoryalbum set memory_name = '요기까지!' where memory_num = 6;
 
+-- 조회수 증가
+update mymemoryalbum set memory_hit = memory_hit + 1 where memory_num = 2;
+
+-- 추천수 증가
+update mymemoryalbum set memory_rec = memory_rec + 1 where memory_num = 2;
+
+-- 비추천수 증가
+update mymemoryalbum set memory_nrec = memory_nrec + 1 where memory_num = 2;
+
 select * from
 (select rownum rn, tt.* from 
 (select * from mymemoryalbum order by memory_num desc) tt)
 where rn>=1 and rn<=5;
+
+select * from mymemoryalbum where memory_num = 2;
 
 -- 데이터 저장
 commit;

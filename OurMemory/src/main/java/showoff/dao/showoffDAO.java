@@ -42,4 +42,18 @@ public class showoffDAO {
 	public showoffDTO showoffBoardView(int seq) {
 		return sqlSession.selectOne("mybatis.showoffMapper.showoffBoardView", seq);
 	}
+	
+	//update : 조회수 증가시키기
+	public int showoffBoardHit(int board_num) {
+		return sqlSession.update("mybatis.showoffMapper.showoffBoardHit", board_num);
+	}
+	
+	//update : 추천수 증가시키기
+	public int showoffBoardRec(int board_num) {
+		return sqlSession.update("mybatis.showoffMapper.showoffBoardRec", board_num);
+	}
+	//update : 비추천수 증가시키기
+	public int showoffBoardNrec(int board_num) {
+		return sqlSession.update("mybatis.showoffMapper.showoffBoardNrec", board_num);
+	}
 }
