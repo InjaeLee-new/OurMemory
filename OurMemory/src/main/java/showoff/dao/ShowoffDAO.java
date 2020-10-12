@@ -8,25 +8,25 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import showoff.dto.showoffDTO;
+import showoff.dto.ShowoffDTO;
 
 @Repository
-public class showoffDAO {
+public class ShowoffDAO {
 	@Autowired
 	private SqlSessionTemplate sqlSession;
 	
 	//insert : 글저장
-	public int showoffBoardWrite(showoffDTO showoffDTO) {
+	public int showoffBoardWrite(ShowoffDTO showoffDTO) {
 		int result = sqlSession.insert("mybatis.showoffMapper.showoffBoardWrite", showoffDTO);
 		return result;
 	}
 	
 	//select : 목록 List 불러오기
-	public List<showoffDTO> showoffBoardList(int startNum, int endNum) {
+	public List<ShowoffDTO> showoffBoardList(int startNum, int endNum) {
 		Map<String, Integer> map = new HashMap<String, Integer>();
 		map.put("startNum", startNum);
 		map.put("endNum", endNum);
-		List<showoffDTO> list = 
+		List<ShowoffDTO> list = 
 						sqlSession.selectList("mybatis.showoffMapper.showoffBoardList" , map);
 		
 		
@@ -39,7 +39,7 @@ public class showoffDAO {
 	}
 	
 	//select : 글 하나 얻어오기
-	public showoffDTO showoffBoardView(int seq) {
+	public ShowoffDTO showoffBoardView(int seq) {
 		return sqlSession.selectOne("mybatis.showoffMapper.showoffBoardView", seq);
 	}
 	

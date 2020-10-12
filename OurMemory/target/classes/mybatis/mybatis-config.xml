@@ -5,8 +5,8 @@
 <configuration>
 	 <!-- 클래스에 별명 설정 -->
 	 <typeAliases>
-	 	<typeAlias type="memory.dto.memoryDTO" alias="memoryDTO"/>
-	 	<typeAlias type="showoff.dto.showoffDTO" alias="showoffDTO"/>
+	 	<typeAlias type="memory.dto.MemoryDTO" alias="memoryDTO"/>
+	 	<typeAlias type="showoff.dto.ShowoffDTO" alias="showoffDTO"/>
 	 </typeAliases>
 	 
 	 <!-- SQL Mapper 설정 -->

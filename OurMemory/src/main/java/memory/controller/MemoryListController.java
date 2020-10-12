@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import OurMemory.service.OurMemoryService;
-import memory.dto.memoryDTO;
+import memory.dto.MemoryDTO;
 
 @Controller
 public class MemoryListController {
@@ -43,7 +43,7 @@ public class MemoryListController {
 		if (endPage > maxPage)
 			endPage = maxPage;
 		
-		List<memoryDTO> list = ourMemoryService.memoryBoardList(startNum, endNum);
+		List<MemoryDTO> list = ourMemoryService.memoryBoardList(startNum, endNum);
 		
 		modelAndView.addObject("pg" , pg);
 		modelAndView.addObject("endPage" , endPage);

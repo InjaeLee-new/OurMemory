@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import OurMemory.service.OurMemoryService;
-import memory.dto.memoryDTO;
+import memory.dto.MemoryDTO;
 
 @Controller
 public class MemoryRecommandController {
@@ -29,7 +29,7 @@ public class MemoryRecommandController {
 		int memory_num = Integer.parseInt(request.getParameter("memory_num"));
 		int pg = Integer.parseInt(request.getParameter("pg"));
 		
-		memoryDTO dto = ourMemoryService.memoryBoardView(memory_num);
+		MemoryDTO dto = ourMemoryService.memoryBoardView(memory_num);
 		int result = ourMemoryService.memoryBoardRec(memory_num);
 		
 		if(result > 0) {
@@ -41,7 +41,6 @@ public class MemoryRecommandController {
 				out.println("</script");
 				out.flush();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			modelAndView.addObject("memory_num", memory_num);
@@ -59,7 +58,6 @@ public class MemoryRecommandController {
 				out.println("</script");
 				out.flush();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -75,7 +73,7 @@ public class MemoryRecommandController {
 		int memory_num = Integer.parseInt(request.getParameter("memory_num"));
 		int pg = Integer.parseInt(request.getParameter("pg"));
 		
-		memoryDTO dto = ourMemoryService.memoryBoardView(memory_num);
+		MemoryDTO dto = ourMemoryService.memoryBoardView(memory_num);
 		int result = ourMemoryService.memoryBoardNrec(memory_num);
 		
 		if(result > 0) {
@@ -87,7 +85,6 @@ public class MemoryRecommandController {
 				out.println("</script");
 				out.flush();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			
@@ -106,7 +103,6 @@ public class MemoryRecommandController {
 				out.println("</script");
 				out.flush();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}

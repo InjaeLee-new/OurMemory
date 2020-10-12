@@ -5,36 +5,36 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import memory.dao.memoryDAO;
-import memory.dto.memoryDTO;
-import showoff.dao.showoffDAO;
-import showoff.dto.showoffDTO;
+import memory.dao.MemoryDAO;
+import memory.dto.MemoryDTO;
+import showoff.dao.ShowoffDAO;
+import showoff.dto.ShowoffDTO;
 
 @Service
 public class OurMemoryServiceImpl implements OurMemoryService {
 	@Autowired // autowired는 setter를 통해서 bean 객체를 자동 주입할 수 있다.
-	private memoryDAO memoryDao;
+	private MemoryDAO memoryDao;
 	
 	@Autowired
-	private showoffDAO showoffDao;
+	private ShowoffDAO showoffDao;
 
 	@Override
-	public int memoryBoardWrite(memoryDTO memoryDTO) {
+	public int memoryBoardWrite(MemoryDTO memoryDTO) {
 		return memoryDao.memoryBoardWrite(memoryDTO);
 	}
 
 	@Override
-	public List<memoryDTO> memoryBoardList(int startNum, int endNum) {
+	public List<MemoryDTO> memoryBoardList(int startNum, int endNum) {
 		return memoryDao.memoryBoardList(startNum, endNum);
 	}
 
 	@Override
-	public int showoffBoardWrite(showoffDTO showoffDTO) {
+	public int showoffBoardWrite(ShowoffDTO showoffDTO) {
 		return showoffDao.showoffBoardWrite(showoffDTO);
 	}
 
 	@Override
-	public List<showoffDTO> showoffBoardList(int startNum, int endNum) {
+	public List<ShowoffDTO> showoffBoardList(int startNum, int endNum) {
 		return showoffDao.showoffBoardList(startNum, endNum);
 	}
 
@@ -49,12 +49,12 @@ public class OurMemoryServiceImpl implements OurMemoryService {
 	}
 
 	@Override
-	public memoryDTO memoryBoardView(int seq) {
+	public MemoryDTO memoryBoardView(int seq) {
 		return memoryDao.memoryBoardView(seq);
 	}
 
 	@Override
-	public showoffDTO showoffBoardView(int seq) {
+	public ShowoffDTO showoffBoardView(int seq) {
 		return showoffDao.showoffBoardView(seq);
 	}
 

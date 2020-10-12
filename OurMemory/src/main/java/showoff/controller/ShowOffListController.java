@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import OurMemory.service.OurMemoryService;
-import showoff.dto.showoffDTO;
+import showoff.dto.ShowoffDTO;
 
 @Controller
 public class ShowOffListController {
@@ -41,7 +41,7 @@ public class ShowOffListController {
 
 		if (endPage > maxPage) endPage = maxPage;
 		
-		List<showoffDTO> list = ourMemoryService.showoffBoardList(startNum, endNum);
+		List<ShowoffDTO> list = ourMemoryService.showoffBoardList(startNum, endNum);
 		
 		modelAndView.addObject("pg" , pg);
 		modelAndView.addObject("endPage" , endPage);

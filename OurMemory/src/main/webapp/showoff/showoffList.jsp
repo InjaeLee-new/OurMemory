@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Document</title>
-<link rel="stylesheet" type="text/css" href="./css/showoff.css?v=2">
+<link rel="stylesheet" type="text/css" href="./css/showoff.css?v=3">
 </head>
 <body>
 	<div class="wrap">

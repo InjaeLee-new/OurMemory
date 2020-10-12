@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import OurMemory.service.OurMemoryService;
-import showoff.dto.showoffDTO;
+import showoff.dto.ShowoffDTO;
 
 @Controller
 public class ShowOffViewController {
@@ -23,7 +23,7 @@ public class ShowOffViewController {
 		int pg = Integer.parseInt(request.getParameter("pg"));
 		ourMemoryService.showoffBoardHit(board_num);
 		
-		showoffDTO dto = ourMemoryService.showoffBoardView(board_num);
+		ShowoffDTO dto = ourMemoryService.showoffBoardView(board_num);
 		
 		modelAndView.addObject("dto", dto);
 		modelAndView.addObject("pg", pg);

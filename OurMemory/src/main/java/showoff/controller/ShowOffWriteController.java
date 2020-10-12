@@ -16,7 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import OurMemory.service.OurMemoryService;
-import showoff.dto.showoffDTO;
+import showoff.dto.ShowoffDTO;
 
 @Controller
 public class ShowOffWriteController {
@@ -45,7 +45,7 @@ public class ShowOffWriteController {
 		
 		ModelAndView modelAndView = new ModelAndView();
 		
-		showoffDTO showoffDto = new showoffDTO();
+		ShowoffDTO showoffDto = new ShowoffDTO();
 		showoffDto.setBoard_name(request.getParameter("board_name"));
 		showoffDto.setBoard_pass(request.getParameter("board_pass"));
 		showoffDto.setBoard_subject(request.getParameter("board_subject"));

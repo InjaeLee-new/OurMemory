@@ -16,7 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import OurMemory.service.OurMemoryService;
-import memory.dto.memoryDTO;
+import memory.dto.MemoryDTO;
 
 @Controller
 public class MemoryWriteController {
@@ -45,7 +45,7 @@ public class MemoryWriteController {
 		
 		ModelAndView modelAndView = new ModelAndView();
 		
-		memoryDTO memoryDto = new memoryDTO();
+		MemoryDTO memoryDto = new MemoryDTO();
 		memoryDto.setMemory_name(request.getParameter("memory_name"));
 		memoryDto.setMemory_pass(request.getParameter("memory_pass"));
 		memoryDto.setMemory_subject(request.getParameter("memory_subject"));

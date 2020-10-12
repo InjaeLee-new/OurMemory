@@ -1,7 +1,7 @@
 package showoff.dto;
 
 
-public class showoffDTO {
+public class ShowoffDTO {
 	private int board_num;
 	private String board_name;
 	private String board_pass;

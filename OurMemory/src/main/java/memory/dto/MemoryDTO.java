@@ -1,6 +1,6 @@
 package memory.dto;
 
-public class memoryDTO {
+public class MemoryDTO {
 	private int memory_num;
 	private String memory_name;
 	private String memory_pass;
