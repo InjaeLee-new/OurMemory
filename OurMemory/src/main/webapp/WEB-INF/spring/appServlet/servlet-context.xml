@@ -36,6 +36,7 @@
 	<context:component-scan base-package="src.main.java" />
 	
 	<context:component-scan base-package="memory" />
+	<context:component-scan base-package="member" />
 	<context:component-scan base-package="showoff" />
 	<context:component-scan base-package="OurMemory" />
 	

@@ -1,4 +1,4 @@
-package showoff.controller;
+package member.controller;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -9,22 +9,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import OurMemory.service.OurMemoryService;
-import showoff.dto.ShowoffDTO;
+import member.dto.MemberDTO;
 
-@Controller
-public class ShowOffWriteController {
+public class MemberJoinController {
 	@Autowired
 	OurMemoryService ourMemoryService;
 	
-	@RequestMapping(value = "/showoffWrite")
-	public ModelAndView showoffWrite(HttpServletRequest request, HttpServletResponse response, MultipartFile img) throws Exception {
+	@RequestMapping(value = "/memberJoin")
+	public ModelAndView memberJoin(HttpServletRequest request, HttpServletResponse response, MultipartFile img) throws Exception {
 		String filePath = "C:\\Users\\USER\\git\\repository\\OurMemory\\src\\main\\webapp\\img";
 		
 		String fileName = img.getOriginalFilename();
@@ -45,18 +43,26 @@ public class ShowOffWriteController {
 		
 		ModelAndView modelAndView = new ModelAndView();
 		
-		ShowoffDTO showoffDto = new ShowoffDTO();
-		showoffDto.setBoard_name(request.getParameter("board_name"));
-		showoffDto.setBoard_pass(request.getParameter("board_pass"));
-		showoffDto.setBoard_subject(request.getParameter("board_subject"));
-		showoffDto.setBoard_content(request.getParameter("board_content"));
-		showoffDto.setBoard_file(fileName);
+		MemberDTO memberDTO = new MemberDTO();
+		memberDTO.setName(request.getParameter("userName"));
+		memberDTO.setPw(request.getParameter("userId"));
+		memberDTO.setName(request.getParameter("userpPw"));
+		memberDTO.setNickname(request.getParameter("nickName"));
+		memberDTO.setEmail1(request.getParameter("email01"));
+		memberDTO.setEmail2(request.getParameter("email02"));
+		memberDTO.setCheck_email(Integer.parseInt(request.getParameter("emailYn")));
+		memberDTO.setCheck_sms(Integer.parseInt(request.getParameter("smsYn")));
+		memberDTO.setTel1(request.getParameter("mPhone1"));
+		memberDTO.setTel2(request.getParameter("mPhone2"));
+		memberDTO.setTel3(request.getParameter("mPhone3"));
+		memberDTO.setGender(request.getParameter("gender"));
+		memberDTO.setProfile_image(fileName);
 		
-		int result = ourMemoryService.showoffBoardWrite(showoffDto);
+		int result = ourMemoryService.memberJoin(memberDTO);
 		
 		modelAndView.addObject("result", result);
 		
-		modelAndView.setViewName("index.jsp?req=writeShowOffPro");
+		modelAndView.setViewName("index.jsp?req=joinPro");
 		
 		return modelAndView;
 	}

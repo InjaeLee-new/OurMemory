@@ -36,13 +36,13 @@
 				</li>
 				
 				<li id="login">
-					<a>
+					<a href="index.jsp?req=login">
 						로그인!
 					</a>
 				</li>
 				
 				<li id="join">
-					<a>
+					<a href="index.jsp?req=join">
 						회원가입!
 					</a>
 				</li>
@@ -55,6 +55,18 @@
    	
 		<c:if test="${param.req == null }">
 			<jsp:include page="./main/mainpage.jsp" />
+		</c:if>
+		<c:if test="${param.req == 'login' }">
+			<jsp:include page="./main/memberLoginForm.jsp" />
+		</c:if>
+		<c:if test="${param.req == 'loginPro' }">
+			<jsp:include page="./main/memberLogin.jsp" />
+		</c:if>
+		<c:if test="${param.req == 'join' }">
+			<jsp:include page="./main/memberJoinForm.jsp" />
+		</c:if>
+		<c:if test="${param.req == 'joinPro' }">
+			<jsp:include page="./main/memberJoin.jsp" />
 		</c:if>
 		<c:if test="${param.req == 'showoffList' }">
 			<jsp:include page="./showoff/showoffList.jsp" />

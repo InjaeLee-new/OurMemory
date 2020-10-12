@@ -3,6 +3,7 @@ package OurMemory.service;
 
 import java.util.List;
 
+import member.dto.MemberDTO;
 import memory.dto.MemoryDTO;
 import showoff.dto.ShowoffDTO;
 
@@ -23,8 +24,8 @@ public interface OurMemoryService {
 	//update : 조회수 증가시키기
 	public int memoryBoardHit(int memory_num);
 	
-	/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// 여기부턴 showoff 관련 DAO 모음
+	///// 여기부턴 showoff 관련 DAO 모음//////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
 	
 	//showoffBoardWrite : 반려동물 자랑하기 글 저장
 	public int showoffBoardWrite(ShowoffDTO showoffDTO);
@@ -53,4 +54,11 @@ public interface OurMemoryService {
 	//update : 비추천수 증가시키기
 	public int showoffBoardNrec(int board_num);
 	
+	///// 여기부턴 member 관련 DAO 모음//////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	//insert : 회원가입
+	public int memberJoin(MemberDTO memberDTO);
+	
+	//select : 로그인 할 때, 아이디 확인
+	public int memberLogin(String id);
 }

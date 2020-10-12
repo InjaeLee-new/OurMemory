@@ -5,6 +5,7 @@ public class MemberDTO {
 	private String name;
 	private String id;
 	private String pw;
+	private String nickname;
 	private String gender;
 	private String email1;
 	private String email2;
@@ -12,6 +13,9 @@ public class MemberDTO {
 	private String tel2;
 	private String tel3;
 	private String addr;
+	private int check_email;
+	private int check_sms;
+	private String profile_image;
 	private String logtime;
 	
 	
@@ -80,5 +84,29 @@ public class MemberDTO {
 	}
 	public void setLogtime(String logtime) {
 		this.logtime = logtime;
+	}
+	public String getNickname() {
+		return nickname;
+	}
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+	public int getCheck_email() {
+		return check_email;
+	}
+	public void setCheck_email(int check_email) {
+		this.check_email = check_email;
+	}
+	public int getCheck_sms() {
+		return check_sms;
+	}
+	public void setCheck_sms(int check_sms) {
+		this.check_sms = check_sms;
+	}
+	public String getProfile_image() {
+		return profile_image;
+	}
+	public void setProfile_image(String profile_image) {
+		this.profile_image = profile_image;
 	}
 }

@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import member.dao.MemberDAO;
+import member.dto.MemberDTO;
 import memory.dao.MemoryDAO;
 import memory.dto.MemoryDTO;
 import showoff.dao.ShowoffDAO;
@@ -17,6 +19,9 @@ public class OurMemoryServiceImpl implements OurMemoryService {
 	
 	@Autowired
 	private ShowoffDAO showoffDao;
+	
+	@Autowired
+	private MemberDAO memberDao;
 
 	@Override
 	public int memoryBoardWrite(MemoryDTO memoryDTO) {
@@ -86,6 +91,16 @@ public class OurMemoryServiceImpl implements OurMemoryService {
 	@Override
 	public int showoffBoardNrec(int board_num) {
 		return showoffDao.showoffBoardNrec(board_num);
+	}
+
+	@Override
+	public int memberJoin(MemberDTO memberDTO) {
+		return memberDao.memberJoin(memberDTO);
+	}
+
+	@Override
+	public int memberLogin(String id) {
+		return memberDao.memberLogin(id);
 	}
 
 	
