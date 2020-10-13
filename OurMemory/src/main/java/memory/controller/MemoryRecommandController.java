@@ -25,6 +25,7 @@ public class MemoryRecommandController {
 		ModelAndView modelAndView = new ModelAndView();
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
+		System.out.println("..");
 		
 		int memory_num = Integer.parseInt(request.getParameter("memory_num"));
 		int pg = Integer.parseInt(request.getParameter("pg"));
