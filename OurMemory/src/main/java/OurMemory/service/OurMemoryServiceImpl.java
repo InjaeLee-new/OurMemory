@@ -103,5 +103,15 @@ public class OurMemoryServiceImpl implements OurMemoryService {
 		return memberDao.memberLogin(id);
 	}
 
+	@Override
+	public List<MemoryDTO> memoryRankingTopThree() {
+		return null;
+	}
+
+	@Override
+	public List<ShowoffDTO> showoffRankingTopThree() {
+		return null;
+	}
+
 	
 }

@@ -38,6 +38,7 @@
 	<context:component-scan base-package="memory" />
 	<context:component-scan base-package="member" />
 	<context:component-scan base-package="showoff" />
+	<context:component-scan base-package="main" />
 	<context:component-scan base-package="OurMemory" />
 	
 	<!-- 우리가 사용할 리소스중 css 파일을 등록해준다. -->

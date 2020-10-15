@@ -20,6 +20,16 @@
 		]]>
 	</select>
 	
+	<!-- 추천수에 따라 TOP3 랭킹 내용 가져오기 -->
+	<select id="showoffRankingTopThree">
+		<![CDATA[
+			select * from
+			(select rownum rn, tt.* from 
+			(select * from showoffboard order by board_rec desc) tt)
+			where rn>=1 and rn<=3
+		]]>
+	</select>
+	
 	<!-- 전체 글 수 가져오기 -->
 	<select id="getTotalShowoff" resultType="int">
 			select count(*) as cnt from showoffboard

@@ -13,15 +13,15 @@
 		<h1 class="title">귀요미들 사진첩</h1>
 		<div class="itemlist">
 			<c:forEach var="showoffDTO" items="${list }">
-			<div class="items">
-				<a href="showoffView?board_num=${showoffDTO.board_num }&pg=1">
-				<img alt="추억6" src="img/${showoffDTO.board_file }">
-				</a>
-				<br> 제목 : ${showoffDTO.board_subject }
-				<p>${showoffDTO.board_date }</p>
-				<div><span class="good">추천 : ${showoffDTO.board_rec }</span><span class="bad">비추천 : ${showoffDTO.board_nrec }</span>조회수 : <span class="points">${showoffDTO.board_hit }</span></div>
-				<br> 작성자 : ${showoffDTO.board_name }
-			</div>
+				<div class="items">
+					<a href="showoffView?board_num=${showoffDTO.board_num }&pg=1">
+					<img alt="추억6" src="img/${showoffDTO.board_file }">
+					</a>
+					<br> 제목 : ${showoffDTO.board_subject }
+					<p>${showoffDTO.board_date }</p>
+					<div><span class="good">추천 : ${showoffDTO.board_rec }</span><span class="bad">비추천 : ${showoffDTO.board_nrec }</span>조회수 : <span class="points">${showoffDTO.board_hit }</span></div>
+					<br> 작성자 : ${showoffDTO.board_name }
+				</div>
 			</c:forEach>
     	</div>
     	

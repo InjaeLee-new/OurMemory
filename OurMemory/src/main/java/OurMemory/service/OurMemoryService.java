@@ -24,6 +24,9 @@ public interface OurMemoryService {
 	//update : 조회수 증가시키기
 	public int memoryBoardHit(int memory_num);
 	
+	//select : 최다 추천수 TOP 3 목록 출력
+	public List<MemoryDTO> memoryRankingTopThree();
+	
 	///// 여기부턴 showoff 관련 DAO 모음//////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	
@@ -53,6 +56,9 @@ public interface OurMemoryService {
 	
 	//update : 비추천수 증가시키기
 	public int showoffBoardNrec(int board_num);
+	
+	//select : 최다 추천수 TOP 3 목록 출력
+	public List<ShowoffDTO> showoffRankingTopThree();
 	
 	///// 여기부턴 member 관련 DAO 모음//////////////////////////////////////////////////////////////////////////////////////////////////////////
 	

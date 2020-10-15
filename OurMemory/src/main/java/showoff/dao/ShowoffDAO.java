@@ -56,4 +56,11 @@ public class ShowoffDAO {
 	public int showoffBoardNrec(int board_num) {
 		return sqlSession.update("mybatis.showoffMapper.showoffBoardNrec", board_num);
 	}
+	
+	//select : 최다 추천수 TOP 3 목록 출력
+	public List<ShowoffDTO> showoffRankingTopThree() {
+		List<ShowoffDTO> list = null;
+		list = sqlSession.selectList("mybatis.showoffMapper.showoffRankingTopThree");
+		return list;
+	}
 }

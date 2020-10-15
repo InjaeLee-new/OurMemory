@@ -57,4 +57,11 @@ public class MemoryDAO {
 	public int memoryBoardNrec(int memory_num) {
 		return sqlSession.update("mybatis.memoryMapper.memoryBoardNrec", memory_num);
 	}
+	
+	//select : 최다 추천수 TOP 3 목록 출력
+	public List<MemoryDTO> memoryRankingTopThree() {
+		List<MemoryDTO> list = null;
+		list = sqlSession.selectList("mybatis.memoryMapper.memoryRankingTopThree");
+		return list;
+	}
 }
