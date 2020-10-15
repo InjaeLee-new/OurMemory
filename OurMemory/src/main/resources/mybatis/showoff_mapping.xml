@@ -21,7 +21,7 @@
 	</select>
 	
 	<!-- 추천수에 따라 TOP3 랭킹 내용 가져오기 -->
-	<select id="showoffRankingTopThree">
+	<select id="showoffRankingTopThree" resultType="showoffDTO">
 		<![CDATA[
 			select * from
 			(select rownum rn, tt.* from 
