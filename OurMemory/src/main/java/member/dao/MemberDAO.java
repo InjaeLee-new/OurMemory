@@ -8,7 +8,7 @@ import member.dto.MemberDTO;
 
 @Repository
 public class MemberDAO {
-	
+	//
 	@Autowired
 	private SqlSessionTemplate sqlSession;
 	

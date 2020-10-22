@@ -23,15 +23,19 @@
 						</li>		
 					</ul>
 				<li id="introduce">
-					<a>여기도 꾸밀 수 있겠지</a>
+					<a>내가 올린 글만 보기</a>
 					<ul>
 						<li>
-							<a href="#">나중에 추가하면 돼</a>
+							<a href="#">내 동물자랑</a>
 						</li>
 						<li>
-							<a href="#">메뉴를 이걸로 수정해야겠다.</a>
+							<a href="#">내 추억자랑</a>
 						</li>
 					</ul>
+				</li>
+				
+				<li>
+					<a href="#">Contact Us</a>
 				</li>
 				
 				<li id="login">
