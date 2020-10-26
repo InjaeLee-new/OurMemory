@@ -35,7 +35,7 @@
 				</li>
 				
 				<li>
-					<a href="#">Contact Us</a>
+					<a href="contact">Contact Us</a>
 				</li>
 				
 				<li id="login">
@@ -94,7 +94,11 @@
 		</c:if>
 		<c:if test="${param.req == 'showoffView' }">
 			<jsp:include page="./showoff/showoffView.jsp" />
-		</c:if>		
+		</c:if>	
+		<c:if test="${param.req == 'contact' }">
+			<jsp:include page="./contact/contact.jsp" />
+		</c:if>	
+		
 	</div>
 	
 	<div id="footer" style="border-top: 1px solid; width: 1600px; margin: 0 auto;">

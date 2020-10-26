@@ -32,7 +32,7 @@ public class MemoryWriteController {
 		File file = new File(filePath, fileName);
 		
 		// 파일 복사
-		// getInputStream() : 업로드한 파일 데이터를 읽어오는 InputStream을 구한다.
+		// getInputStream() : 업로드한 파일 데이터를 읽어오는 InputStream을 구한다.gg
 		try {
 			FileCopyUtils.copy(img.getInputStream(), new FileOutputStream(file));
 		} catch (FileNotFoundException e) {
