@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,9 +20,21 @@
 	<div>
 		<div align="left">
 				반려동물 자랑하기 TOP 3 랭킹된 내용이 표시됨. 추천수에 따라 순위는 추후에 변동됨.
+				<c:forEach var="showoffDTO" items="${topshowList }">
+					<a>${i } = ${showoffDTO.board_name } </a>
+				</c:forEach>
+				<c:if test="${topshowList.size() == 0 }">
+					현재 넘어온 데이터가 없네여.
+				</c:if>
 		</div>
 		<div align="right">
 				추억 저장소 TOP 3 랭킹된 내용이 표시됨. 추천수에 따라 순위는 추후에 변동됨.
+				<c:forEach var="memoryDTO" items="${topmemoryList }">
+					<a>${i } = ${memoryDTO.memory_name } </a>
+				</c:forEach>
+				<c:if test="${topmemoryList.size() == 0 }">
+					현재 넘어온 데이터가 없네여.
+				</c:if>
 		</div>
 	</div>	
 </body>

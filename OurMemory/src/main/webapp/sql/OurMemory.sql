@@ -47,6 +47,12 @@ insert into showoffboard values
 select * from showoffboard;
 select * from showoffboard where board_num = 2;
 
+-- 게시판 내에 TOP 3 게시글만 노출시키기 위해서 해당 구문을 작성함.
+select * from
+(select rownum rn, tt.* from 
+(select * from showoffboard order by board_rec desc) tt)
+where rn>=1 and rn<=3;
+
 -- 데이터 수정
 update showoffboard set board_subject = '너도나와칸쵸' where board_num = 11;
 update showoffboard set board_subject = '햄찌' where board_num = 7;
@@ -124,6 +130,12 @@ insert into mymemoryalbum values
 select * from mymemoryalbum;
 select * from mymemoryalbum where memory_num = 1;
 
+-- 게시판 내에 TOP 3 게시글만 노출시키기 위해서 해당 구문을 작성함.
+select * from
+(select rownum rn, tt.* from 
+(select * from mymemoryalbum order by memory_rec desc) tt)
+where rn>=1 and rn<=3;
+
 -- 데이터 수정
 update mymemoryalbum set memory_name = '요기까지!' where memory_num = 6;
 
@@ -147,5 +159,69 @@ select * from mymemoryalbum where memory_num = 2;
 commit;
 
 select * from tab;
+-----------------------------------------------------------------------------
+-- 회원관리 테이블
+-- primary key = 기본키 , unique , not null
+create table memoryMember (
+    name varchar2(30) not null,
+    id varchar2(30) primary key,
+    pwd varchar2(30) not null,
+    nickname varchar2(30) not null,
+    gender varchar2(3),
+    email1 varchar2(30),
+    email2 varchar2(30),
+    tel1 varchar2(10),
+    tel2 varchar2(10),
+    tel3 varchar2(10),
+    addr varchar2(100),
+    check_email number not null,
+    check_sms number not null,
+    profile_image varchar2(30),
+    logtime date
+);
+
+--테이블 구조 확인
+desc memoryMember;
+--테이블 삭제
+drop table memoryMember purge;
+--테이블 목록
+select * from tab;
+
+-- 데이터 추가하기
+insert into memoryMember values('홍길동', 'hong01' , '1234' , '하츠바', '0', 'hong', 'naver.com', '010', '1234' , '5678', '경기도 수원시', 0, 0, 'image1.png', sysdate);
+insert into memoryMember values('홍길동', 'hong02' , '1234' , '하츠바', '0', 'hong', 'naver.com', '010', '1234' , '5678', '경기도 수원시', 0, 0, 'image1.png', sysdate);
+insert into memoryMember values('홍길동', 'hong03' , '1234' , '하츠바', '0', 'hong', 'naver.com', '010', '1234' , '5678', '경기도 수원시', 0, 0, 'image1.png', sysdate);
+insert into memoryMember values('홍길동', 'hong04' , '1234' , '하츠바', '0', 'hong', 'naver.com', '010', '1234' , '5678', '경기도 수원시', 0, 0, 'image1.png', sysdate);
+insert into memoryMember values('홍길동', 'hong05' , '1234' , '하츠바', '0', 'hong', 'naver.com', '010', '1234' , '5678', '경기도 수원시', 0, 0, 'image1.png', sysdate);
+insert into memoryMember values('홍길동', 'hong06' , '1234' , '하츠바', '0', 'hong', 'naver.com', '010', '1234' , '5678', '경기도 수원시', 0, 0, 'image1.png', sysdate);
+insert into memoryMember values('홍길동', 'hong07' , '1234' , '하츠바', '0', 'hong', 'naver.com', '010', '1234' , '5678', '경기도 수원시', 0, 0, 'image1.png', sysdate);
+insert into memoryMember values('홍길동', 'hong08' , '1234' , '하츠바', '0', 'hong', 'naver.com', '010', '1234' , '5678', '경기도 수원시', 0, 0, 'image1.png', sysdate);
+insert into memoryMember values('홍길동', 'hong09' , '1234' , '하츠바', '0', 'hong', 'naver.com', '010', '1234' , '5678', '경기도 수원시', 0, 0, 'image1.png', sysdate);
+insert into memoryMember values('홍길동', 'hong10' , '1234' , '하츠바', '0', 'hong', 'naver.com', '010', '1234' , '5678', '경기도 수원시', 0, 0, 'image1.png', sysdate);
+insert into memoryMember values('홍길동', 'hong11' , '1234' , '하츠바', '0', 'hong', 'naver.com', '010', '1234' , '5678', '경기도 수원시', 0, 0, 'image1.png', sysdate);
+
+-- 데이터 확인하기
+select * from memoryMember;
+select * from memoryMember where name = '홍길동';
+select * from memoryMember where id ='hong10';
+
+-- 회원정보 수정하기
+update memoryMember set pwd = 2345, tel1 = 010, tel2 = 3333, tel3 = 4444 where id = 'hong';
+
+update memoryMember set pwd = 2345, tel1 = 010, tel2 = 3333, tel3 = 4444, email1 = 'eij9404' , email2 = 'naver' , addr = 'ㅋㅋㅋㅋ' where id = 'eij9404';
+
+-- 필요한 회원정보만 추출하기
+select name, id, gender, nickname, email1, email2, tel1, tel2, tel3, addr, check_email, check_sms, profile_image, sysdate
+from (select rownum rn, tt. * from (select * from memoryMember order by id desc) tt)
+where rn>=1 and rn<=5;
+
+-- 테스트할 구문
+select name, id, gender, email1, email2, tel1, tel2, tel3, sysdate from (select rownum rn, tt. * from (select * from memoryMember order by id desc) tt) where rn>=1 and rn<=5;
+
+-- 성별 맞추기
+update memoryMember set gender = 'M' where gender = '0';
+
+commit;
 
 --------------------------
+-- 글 게시글 
