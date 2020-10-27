@@ -89,7 +89,7 @@ public class MemoryRecommandController {
 				e.printStackTrace();
 			}
 			
-			modelAndView.addObject("memory_num", memory_num);
+			modelAndView.addObject("dto", dto);
 			modelAndView.addObject("pg", pg);
 			modelAndView.setViewName("index.jsp?req=memoryView");
 		}
