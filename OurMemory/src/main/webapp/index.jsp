@@ -35,7 +35,7 @@
 				</li>
 				
 				<li>
-					<a href="contact">Contact Us</a>
+					<a href="index.jsp?req=contact">Contact Us</a>
 				</li>
 				
 				<li id="login">
