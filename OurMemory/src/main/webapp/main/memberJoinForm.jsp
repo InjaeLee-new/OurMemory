@@ -14,7 +14,7 @@
         	</label>
         </div>
         <div class="formfield">
-        	<input type="text" id="userId" name="userId" maxlength="20" value="">
+        	<input type="text" id="userId" name="userId" maxlength="20" value="" placeholder="아이디 입력" required>
         </div>
         <div class="fieldlabel">
         	<label for="userPw">
@@ -22,7 +22,7 @@
         	</label>
         </div>
         <div class="formfield">
-			<input type="password" id="userPw" name="userpPw" maxlength="20" autocomplete="off">
+			<input type="password" id="userPw" name="userpPw" maxlength="20" autocomplete="off" placeholder="패스워드 입력" required>
 		</div>
         <div class="fieldlabel">
         	<label for="userPwCheck">
@@ -30,7 +30,7 @@
         	</label>
         </div>
         <div class="formfield">
-			<input type="password" id="userPwCheck" name="userPwCheck" maxlength="20" autocomplete="off">
+			<input type="password" id="userPwCheck" name="userPwCheck" maxlength="20" autocomplete="off" placeholder="패스워드 확인" required>
 		</div>
         <div class="fieldlabel">
         	<label for="userName">
@@ -38,7 +38,7 @@
         	</label>
         </div>
         <div class="formfield">
-        	<input type="text" id="userName" name="userName" maxlength="20" value="">
+        	<input type="text" id="userName" name="userName" maxlength="20" value="" placeholder="이름 입력" required>
         </div>
         <div class="fieldlabel">
         	<label for="nickName">
@@ -46,7 +46,7 @@
         	</label>
         </div>
         <div class="formfield">
-        	<input type="text" id="nickName" name="nickName" maxlength="20" value="">
+        	<input type="text" id="nickName" name="nickName" maxlength="20" value=""placeholder="닉네임 입력" required>
         </div>
 
         <div class="fieldlabel">
@@ -56,7 +56,7 @@
         </div>
         <div class="formfield">
         	<input type="text" id="email01" name="email01" size="20" maxlength="20" 
-             value="" autocomplete="off">
+             value="" autocomplete="off" placeholder="이메일 입력" required>
              <span>@</span>
             <input id="email02" name="email02" list="domains" placeholder="도메인입력/선택">
             <datalist id="domains">
@@ -97,8 +97,8 @@
                 <option value="018">018</option>
                 <option value="019">019</option>
             </select>-
-            <input id="mPhone2" name="mPhone2" type="number" value="" size="4" maxlength="4" autocomplete="off">-
-            <input id="mPhone3" name="mPhone3" type="number" value="" size="4" maxlength="4" autocomplete="off">
+            <input id="mPhone2" name="mPhone2" type="number" value="" size="4" maxlength="4" autocomplete="off" placeholder="1234" required>-
+            <input id="mPhone3" name="mPhone3" type="number" value="" size="4" maxlength="4" autocomplete="off" placeholder="1234" required>
         </div>
         <div class="fieldlabel">
         	<label>
