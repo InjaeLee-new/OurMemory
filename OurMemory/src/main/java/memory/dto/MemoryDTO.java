@@ -3,6 +3,7 @@ package memory.dto;
 public class MemoryDTO {
 	private int memory_num;
 	private String memory_name;
+	private String memory_id;
 	private String memory_pass;
 	private String memory_subject;
 	private String memory_content;
@@ -36,6 +37,12 @@ public class MemoryDTO {
 	}
 	public void setMemory_name(String memory_name) {
 		this.memory_name = memory_name;
+	}
+	public String getMemory_id() {
+		return memory_id;
+	}
+	public void setMemory_id(String memory_id) {
+		this.memory_id = memory_id;
 	}
 	public String getMemory_pass() {
 		return memory_pass;
