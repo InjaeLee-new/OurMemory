@@ -4,6 +4,7 @@ package showoff.dto;
 public class ShowoffDTO {
 	private int board_num;
 	private String board_name;
+	private String board_id;
 	private String board_pass;
 	private String board_subject;
 	private String board_content;
@@ -43,6 +44,12 @@ public class ShowoffDTO {
 	}
 	public void setBoard_name(String board_name) {
 		this.board_name = board_name;
+	}
+	public String getBoard_id() {
+		return board_id;
+	}
+	public void setBoard_id(String board_id) {
+		this.board_id = board_id;
 	}
 	public String getBoard_pass() {
 		return board_pass;
