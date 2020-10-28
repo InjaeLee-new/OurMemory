@@ -7,7 +7,7 @@
 	public int writeContent(BoardDTO boardDTO);  -->
 	<insert id="showoffBoardWrite" parameterType="showoffDTO">
 		insert into showoffboard values
-		(sequence_num.nextval, #{board_name}, #{board_pass}, #{board_subject}, #{board_content}, 0, 0, 0, #{board_file}, sysdate)
+		(sequence_num.nextval, #{board_name},#{board_id}, #{board_pass}, #{board_subject}, #{board_content}, 0, 0, 0, #{board_file}, sysdate)
 	</insert>
 	
 	<!-- // select : List 불러오기 -->

@@ -7,7 +7,7 @@
 	public int writeContent(BoardDTO boardDTO);  -->
 	<insert id="memoryBoardWrite" parameterType="memoryDTO">
 		insert into mymemoryalbum values
-		(seq_memory_num.nextval, #{memory_name}, #{memory_pass}, #{memory_subject}, #{memory_content}, 0, 0, 0, #{memory_file}, sysdate)
+		(seq_memory_num.nextval, #{memory_name},#{memory_id}, #{memory_pass}, #{memory_subject}, #{memory_content}, 0, 0, 0, #{memory_file}, sysdate)
 	</insert>
 	
 	<!-- // select : List 불러오기 -->

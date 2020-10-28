@@ -38,7 +38,7 @@ public class ShowoffRecommandController {
 				PrintWriter out = response.getWriter();
 				out.println("<script language = 'javascript'>");
 				out.println("alert('추천을 누르셨습니다!');");
-				out.println("</script");
+				out.println("</script>");
 				out.flush();
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -55,7 +55,7 @@ public class ShowoffRecommandController {
 				out.println("<script language = 'javascript'>");
 				out.println("alert('오류 발생');");
 				out.println("history.back();");
-				out.println("</script");
+				out.println("</script>");
 				out.flush();
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -82,7 +82,7 @@ public class ShowoffRecommandController {
 				PrintWriter out = response.getWriter();
 				out.println("<script language = 'javascript'>");
 				out.println("alert('비추천을 누르셨습니다!');");
-				out.println("</script");
+				out.println("</script>");
 				out.flush();
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -99,7 +99,7 @@ public class ShowoffRecommandController {
 				out.println("<script language = 'javascript'>");
 				out.println("alert('오류 발생');");
 				out.println("history.back();");
-				out.println("</script");
+				out.println("</script>");
 				out.flush();
 			} catch (IOException e) {
 				e.printStackTrace();

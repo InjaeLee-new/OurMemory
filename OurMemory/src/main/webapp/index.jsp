@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="./css/index.css?v=2">
+<link rel="stylesheet" type="text/css" href="./css/index.css?v=3">
 </head>
 <body>
 	<div class="menubar" >
@@ -51,7 +51,9 @@
 				</li>
 
 		</ul>
-		<img alt="배너용 사진" src="img/banner.jpg" width="1600px" height="300px"><br>
+		
+			<img alt="배너용 사진" src="img/banner.jpg" width="1600px" height="300px"><br>
+	
 	</div>
 	<input type = "hidden" value = "값">
 	<div class="center" align="center">

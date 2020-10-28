@@ -26,6 +26,7 @@ public class MemoryWriteController {
 	@RequestMapping(value = "/memoryWrite")
 	public ModelAndView memoryWrite(HttpServletRequest request, HttpServletResponse response, MultipartFile img) throws Exception {
 		String filePath = "C:\\Users\\USER\\git\\repository\\OurMemory\\src\\main\\webapp\\img";
+		System.out.println(img);
 		
 		String fileName = img.getOriginalFilename();
 		

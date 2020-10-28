@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="./css/memory.css?v=3">
+<link rel="stylesheet" type="text/css" href="./css/memory.css?v=4">
 </head>
 <body>
 	<div id="wrap" class="wrap">
@@ -15,7 +15,7 @@
 			<c:forEach var="memoryDTO" items="${list }">
 				<div class="items">
 					<a href="memoryView?memory_num=${memoryDTO.memory_num }&pg=1">
-					<img alt="추억6" src="img/${memoryDTO.memory_file }">
+					<img alt="추억" src="img/${memoryDTO.memory_file }">
 					</a>
 					<br> 제목 : ${memoryDTO.memory_subject }
 					<p>${memoryDTO.memory_date }</p>

@@ -26,7 +26,8 @@ body {
 
 .menubar{
     width: 1600px;
-    height: 10%;
+    <!-- height가 10%속성이어서 추천이나 비추천하면 화면이 위로 쏠린다. 이걸 고정px값으로 주니까 문제 해결 -->
+    height: 400px;
     margin:0 auto;
     padding:1px;
     font: 67.5% "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
