@@ -28,7 +28,7 @@
 				</c:if>
 		</div>
 		<div align="right">
-				추억 저장소 TOP 3 랭킹된 내용이 표시됨. 추천수에 따라 순위는 추후에 변동됨.
+				추억 저장소 TOP 3 랭킹된 내용이 표시됨. 추천수에 따라 순위는 추후에 변동됨. 부계정 테스트
 				<c:forEach var="memoryDTO" items="${topmemoryList }">
 					<a>${i } = ${memoryDTO.memory_name } </a>
 				</c:forEach>
