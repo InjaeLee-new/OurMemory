@@ -106,7 +106,7 @@
 	<div id="footer" style="border-top: 1px solid; width: 1600px; margin: 0 auto;">
 		&copy;우리팀<br>
 		문의전화 : 010 - xxxx - xxxx<br>
-		주      소 : 서울특별시 강남구 이젠로 302-1 이젠it아카데미 힣
+		주      소 : 서울특별시 강남구 이젠로 302-1 이젠it아카데미 
 	</div>
 </body>
 </html>
