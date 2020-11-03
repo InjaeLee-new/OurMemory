@@ -67,4 +67,6 @@ public interface OurMemoryService {
 	
 	//select : 로그인 할 때, 아이디 확인
 	public int memberLogin(String id);
+	
+	public boolean isExistedId(String id);
 }

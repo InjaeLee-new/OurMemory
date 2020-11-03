@@ -113,5 +113,7 @@ public class OurMemoryServiceImpl implements OurMemoryService {
 		return null;
 	}
 
-	
+	public boolean isExistedId(String id) {
+		return memberDao.isExistedId(id);
+	}
 }

@@ -14,7 +14,7 @@ public class MemberDAO {
 	
 	public int memberJoin(MemberDTO memberDTO) {
 		int result = sqlSession.insert("mybatis.memberMapper.memberJoin", memberDTO);
-		return 0;
+		return result;
 	}
 	
 	public int memberLogin(String id) {
@@ -23,6 +23,13 @@ public class MemberDAO {
 		if(!memberDTO.getName().equals("")) {
 			result = 1;
 		}
+		
+		return result;
+	}
+	
+	public boolean isExistedId(String id) {
+		boolean result = true;
+		result = sqlSession.selectOne("mybatis.memberMapper.memberCheckId", id);
 		
 		return result;
 	}

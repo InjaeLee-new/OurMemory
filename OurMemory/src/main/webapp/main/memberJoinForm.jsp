@@ -5,6 +5,20 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript">
+function checkId() {
+	var sId = document.registerform.userId.value;
+	if(sId == "") {
+		alert("아이디를 먼저 입력하세요.")
+		
+	} else  {
+		// 브라우저창을 관리하는 내장객체   // 요청파일 이름 
+		window.open("main/memberCheckId.jsp?userId=" + sId, "",
+					// 모니터 크기, 위치 
+					"width=350 height=200 left=700 top=400")
+	} 
+}
+</script>
 </head>
 <body>
 	<form name="registerform" method="post" enctype="multipart/form-data" action="memberJoin">
@@ -15,6 +29,7 @@
         </div>
         <div class="formfield">
         	<input type="text" id="userId" name="userId" maxlength="20" value="" placeholder="아이디 입력" required>
+        	<input type="button" value="중복 체크" onclick="checkId()">
         </div>
         <div class="fieldlabel">
         	<label for="userPw">
@@ -22,7 +37,7 @@
         	</label>
         </div>
         <div class="formfield">
-			<input type="password" id="userPw" name="userpPw" maxlength="20" autocomplete="off" placeholder="패스워드 입력" required>
+			<input type="password" id="userPw" name="userPw" maxlength="20" autocomplete="off" placeholder="패스워드 입력" required>
 		</div>
         <div class="fieldlabel">
         	<label for="userPwCheck">
@@ -66,6 +81,16 @@
                 <option value="yahoo.co.kr">
             </datalist>
         </div>
+        
+        <div class="fieldlabel">
+        	<label for="addr">
+        		주소
+        	</label>
+        </div>
+        <div class="formfield">
+        	<input type="text" id="addr" name="addr" maxlength="20" value=""placeholder="예) 서울시 서초구" required>
+        </div>
+        
         <div class="fieldlabel">
         	<label>
         		이메일수신
