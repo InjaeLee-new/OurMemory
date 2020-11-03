@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +9,7 @@
 
 </head>
 <body>
-<form action="contact" name="contactform" method="post" enctype="multipart/form-data" >
+<form action="contactResult" name="contactform" method="post" enctype="multipart/form-data" >
 	
 		<h1 class="title">Contact Us</h1>
 			<table>
@@ -24,10 +24,6 @@
 				<tr> 
 					<td id="userName" align="center" width="100">이름</td>
 					<td><input type="text" id="userName" name ="userName" maxlength="20"></td>
-				</tr>
-				<tr> 
-					<td id="nickName" align="center" width="100">닉네임</td>
-					<td><input type="text" id="nickName" name ="nickName" maxlength="15"></td>
 				</tr>
 				
 				<tr> 
@@ -74,6 +70,16 @@
 				</tr>
 				
 				<tr> 
+					<td id="callBack" align="center" width="100">재연락경로</td>
+					<td>
+						<select id="callBack" name="callBack">
+               				<option value="이메일" selected>이메일로 답변주세요.</option>
+                			<option value="핸드폰">연락처로 답변주세요.</option>                			       
+            			</select>
+            		</td>
+				</tr>
+				
+				<tr> 
 					<td id="subject" align="center" width="100">글제목</td>
 					<td><input type="text" id="subject" name ="subject" maxlength="100"></td>
 				</tr>
@@ -85,6 +91,7 @@
 				<tr>
 					<td colspan="2" align="center">
 					<input type="submit" value="등록">
+					<input type="reset" value="다시 작성">
 				</tr>
 				
 			</table>

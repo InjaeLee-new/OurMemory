@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import contact.dao.ContactDAO;
+import contact.dto.ContactDTO;
 import member.dao.MemberDAO;
 import member.dto.MemberDTO;
 import memory.dao.MemoryDAO;
@@ -22,6 +24,9 @@ public class OurMemoryServiceImpl implements OurMemoryService {
 	
 	@Autowired
 	private MemberDAO memberDao;
+	
+	@Autowired
+	private ContactDAO contactDAO;
 
 	@Override
 	public int memoryBoardWrite(MemoryDTO memoryDTO) {
@@ -116,4 +121,32 @@ public class OurMemoryServiceImpl implements OurMemoryService {
 	public boolean isExistedId(String id) {
 		return memberDao.isExistedId(id);
 	}
+	
+
+	// contact 함수 
+	@Override
+	public int contactInsert(ContactDTO contactDTO) {
+		return contactDAO.contactInsert(contactDTO);
+	}
+
+	@Override
+	public List<ContactDTO> contactSelectAll(String contact_id) {
+		return contactDAO.contactSelectAll(contact_id);
+	}
+
+	@Override
+	public ContactDTO contactSelectOne(String contact_id, String contact_subject) {
+		return contactDAO.contactSelectOne(contact_id, contact_subject);
+	}
+
+	@Override
+	public int contactUpdate(String contact_id, String contact_subject) {
+		return contactDAO.contactUpdate(contact_id, contact_subject);
+	}
+
+	@Override
+	public int contactDelete(String contact_id, String contact_subject) {
+		return contactDAO.contactDelete(contact_id, contact_subject);
+	}
+
 }

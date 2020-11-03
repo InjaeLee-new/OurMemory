@@ -3,6 +3,7 @@ package OurMemory.service;
 
 import java.util.List;
 
+import contact.dto.ContactDTO;
 import member.dto.MemberDTO;
 import memory.dto.MemoryDTO;
 import showoff.dto.ShowoffDTO;
@@ -69,4 +70,22 @@ public interface OurMemoryService {
 	public int memberLogin(String id);
 	
 	public boolean isExistedId(String id);
+	
+	///// 여기부턴 contact 관련 DAO 모음//////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	//insert : 글저장
+	public int contactInsert(ContactDTO contactDTO) ;
+		
+	//select : 목록 List 불러오기
+	public List<ContactDTO> contactSelectAll(String contact_id);
+	
+
+	//select : 해당 글 불러오기 (선택한 1개만)
+	public ContactDTO contactSelectOne(String contact_id, String contact_subject);
+
+	// update : 내용 수정하기
+	public int contactUpdate(String contact_id, String contact_subject);
+	
+	// delete : 글 삭제하기
+	public int contactDelete(String contact_id, String contact_subject);
 }

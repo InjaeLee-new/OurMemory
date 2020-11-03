@@ -40,6 +40,7 @@
 	<context:component-scan base-package="showoff" />
 	<context:component-scan base-package="main" />
 	<context:component-scan base-package="OurMemory" />
+	<context:component-scan base-package="contact" />
 	
 	<!-- 우리가 사용할 리소스중 css 파일을 등록해준다. -->
 	<resources location="/css/" mapping="/css/**" />

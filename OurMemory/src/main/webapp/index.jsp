@@ -113,6 +113,9 @@
 		<c:if test="${param.req == 'contact' }">
 			<jsp:include page="./contact/contact.jsp" />
 		</c:if>	
+		<c:if test="${param.req == 'contactPro' }">
+			<jsp:include page="./contact/contactResult.jsp" />
+		</c:if>		
 		<c:if test="${param.req == 'myInform' }">
 			<jsp:include page="./main/memberInformation.jsp" />
 		</c:if>	

@@ -8,6 +8,7 @@
 	 	<typeAlias type="memory.dto.MemoryDTO" alias="memoryDTO"/>
 	 	<typeAlias type="showoff.dto.ShowoffDTO" alias="showoffDTO"/>
 	 	<typeAlias type="member.dto.MemberDTO" alias="memberDTO"/>
+	 	<typeAlias type="contact.dto.ContactDTO" alias="contactDTO"/>
 	 </typeAliases>
 	 
 	 <!-- SQL Mapper 설정 -->
@@ -15,5 +16,6 @@
 	 	<mapper resource="mybatis/memory_mapping.xml"/>
 	 	<mapper resource="mybatis/showoff_mapping.xml"/>
 	 	<mapper resource="mybatis/member_mapping.xml"/>
+	 	<mapper resource="mybatis/contact_mapping.xml"/>
 	 </mappers>
 </configuration>
