@@ -11,27 +11,19 @@ import org.springframework.web.servlet.ModelAndView;
 import OurMemory.service.OurMemoryService;
 
 @Controller
-public class MemberLoginController {
+public class MemberLogoutController {
 	@Autowired
 	OurMemoryService ourMemoryService;
 	
-	@RequestMapping(value = "/memberLogin")
+	@RequestMapping(value = "/memberLogout")
 	public ModelAndView memberLogin(HttpServletRequest request) {
 		ModelAndView modelAndView = new ModelAndView();
 		
-		int result = ourMemoryService.memberLogin(request.getParameter("id"));
-		
-		modelAndView.addObject("result", result);
-		
-		modelAndView.setViewName("index.jsp?req=loginPro");
+		modelAndView.setViewName("index.jsp");
 		
 		// servlet에서 session 관리를 위해 선언
 		HttpSession session = request.getSession();
-		if(result > 0) {
-			session.setAttribute("isLogin", "login!");
-		} else {
-			session.setAttribute("isLogin", null);
-		}
+		session.setAttribute("isLogin", null);
 		
 		return modelAndView;
 	}

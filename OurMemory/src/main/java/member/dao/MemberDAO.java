@@ -13,12 +13,12 @@ public class MemberDAO {
 	private SqlSessionTemplate sqlSession;
 	
 	public int memberJoin(MemberDTO memberDTO) {
-		int result = sqlSession.insert("mybatis.memoryMapper.memberJoin", memberDTO);
+		int result = sqlSession.insert("mybatis.memberMapper.memberJoin", memberDTO);
 		return 0;
 	}
 	
 	public int memberLogin(String id) {
-		MemberDTO memberDTO = sqlSession.selectOne("mybatis.memoryMapper.memberLogin", id);
+		MemberDTO memberDTO = sqlSession.selectOne("mybatis.memberMapper.memberLogin", id);
 		int result = 0;
 		if(!memberDTO.getName().equals("")) {
 			result = 1;

@@ -37,7 +37,19 @@
 				<li>
 					<a href="index.jsp?req=contact">Contact Us</a>
 				</li>
+				<% if(session.getAttribute("isLogin") != null) { %>
+				<li id="myInform">
+					<a href="#">
+						내정보 !
+					</a>
+				</li>
 				
+				<li id="memberLogout">
+					<a href="memberLogout">
+						로그아웃 !
+					</a>
+				</li>
+				<% } else { %>
 				<li id="login">
 					<a href="index.jsp?req=login">
 						로그인!
@@ -49,6 +61,7 @@
 						회원가입!
 					</a>
 				</li>
+				<% } %>
 
 		</ul>
 		
@@ -99,6 +112,9 @@
 		</c:if>	
 		<c:if test="${param.req == 'contact' }">
 			<jsp:include page="./contact/contact.jsp" />
+		</c:if>	
+		<c:if test="${param.req == 'myInform' }">
+			<jsp:include page="./main/memberInformation.jsp" />
 		</c:if>	
 		
 	</div>

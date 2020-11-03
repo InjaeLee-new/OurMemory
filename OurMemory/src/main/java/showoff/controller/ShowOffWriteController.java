@@ -48,6 +48,7 @@ public class ShowOffWriteController {
 		ShowoffDTO showoffDto = new ShowoffDTO();
 		showoffDto.setBoard_name(request.getParameter("board_name"));
 		showoffDto.setBoard_pass(request.getParameter("board_pass"));
+		showoffDto.setBoard_id("imsiId");
 		showoffDto.setBoard_subject(request.getParameter("board_subject"));
 		showoffDto.setBoard_content(request.getParameter("board_content"));
 		showoffDto.setBoard_file(fileName);

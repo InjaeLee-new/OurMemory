@@ -49,6 +49,7 @@ public class MemoryWriteController {
 		MemoryDTO memoryDto = new MemoryDTO();
 		memoryDto.setMemory_name(request.getParameter("memory_name"));
 		memoryDto.setMemory_pass(request.getParameter("memory_pass"));
+		memoryDto.setMemory_id("imsiId");
 		memoryDto.setMemory_subject(request.getParameter("memory_subject"));
 		memoryDto.setMemory_content(request.getParameter("memory_content"));
 		memoryDto.setMemory_file(fileName);
