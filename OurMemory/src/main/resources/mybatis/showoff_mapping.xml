@@ -20,6 +20,16 @@
 		]]>
 	</select>
 	
+	<!-- // select : List 불러오기 --><!-- 'id2' => 다음에 session Id 로 수정 -->
+	<select id="showoffBoardMyList" parameterType="java.util.Map" resultType="showoffDTO">
+		<![CDATA[
+		select * from
+		(select rownum rn, tt.* from 
+		(select * from showoffboard order by board_num desc) tt)
+		where rn>=#{startNum} and rn<=#{endNum} and board_id = 'id2'
+		]]>
+	</select>
+	
 	<!-- 추천수에 따라 TOP3 랭킹 내용 가져오기 -->
 	<select id="showoffRankingTopThree" resultType="showoffDTO">
 		<![CDATA[
@@ -33,6 +43,10 @@
 	<!-- 전체 글 수 가져오기 -->
 	<select id="getTotalShowoff" resultType="int">
 			select count(*) as cnt from showoffboard
+	</select>
+	<!-- 내가 쓴 글 수 가져오기 --><!-- 'id2' => 다음에 session Id 로 수정 -->
+	<select id="getMyTotalShowoff" resultType="int">
+			select count(*) as cnt from showoffboard where board_id = 'id2'
 	</select>
 	
 	<!-- 글 하나 불러오기 -->

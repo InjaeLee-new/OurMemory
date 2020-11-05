@@ -27,10 +27,10 @@
 						<a>내가 올린 글만 보기</a>
 						<ul>
 							<li>
-								<a href="#">내 동물자랑</a>
+								<a href="showoffMyList">내 동물자랑</a>
 							</li>
 							<li>
-								<a href="#">내 추억자랑</a>
+								<a href="memoryMyList">내 추억자랑</a>
 							</li>
 						</ul>
 					</li>
@@ -89,8 +89,14 @@
 		<c:if test="${param.req == 'showoffList' }">
 			<jsp:include page="./showoff/showoffList.jsp" />
 		</c:if>
+		<c:if test="${param.req == 'showoffMyList' }">
+			<jsp:include page="./showoff/showoffMyList.jsp" />
+		</c:if>
 		<c:if test="${param.req == 'memoryList' }">
 			<jsp:include page="./memory/memoryList.jsp" />
+		</c:if>
+		<c:if test="${param.req == 'memoryMyList' }">
+			<jsp:include page="./memory/memoryMyList.jsp" />
 		</c:if>
 		<c:if test="${param.req == 'writeMemory' }">
 			<jsp:include page="./memory/memoryWriteForm.jsp" />
@@ -107,8 +113,14 @@
 		<c:if test="${param.req == 'memoryView' }">
 			<jsp:include page="./memory/memoryView.jsp" />
 		</c:if>
+		<c:if test="${param.req == 'memoryMyView' }">
+			<jsp:include page="./memory/memoryMyView.jsp" />
+		</c:if>
 		<c:if test="${param.req == 'showoffView' }">
 			<jsp:include page="./showoff/showoffView.jsp" />
+		</c:if>	
+		<c:if test="${param.req == 'showoffMyView' }">
+			<jsp:include page="./showoff/showoffMyView.jsp" />
 		</c:if>	
 		<c:if test="${param.req == 'contact' }">
 			<jsp:include page="./contact/contact.jsp" />

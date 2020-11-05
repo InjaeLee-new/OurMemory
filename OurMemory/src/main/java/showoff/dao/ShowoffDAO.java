@@ -33,9 +33,25 @@ public class ShowoffDAO {
 		return list;
 	}
 	
+	//select : 내가 쓴 글 목록 List 불러오기
+	public List<ShowoffDTO> showoffBoardMyList(int startNum, int endNum) {
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		map.put("startNum", startNum);
+		map.put("endNum", endNum);
+		List<ShowoffDTO> list = 
+						sqlSession.selectList("mybatis.showoffMapper.showoffBoardMyList" , map);
+		
+		return list;
+	}
+	
 	//select : 총 글수 얻기
 	public int getTotalShowoff() {
 		return sqlSession.selectOne("mybatis.showoffMapper.getTotalShowoff");
+	}
+	
+	//select : 총 내 글수 얻기
+	public int getMyTotalShowoff() {
+		return sqlSession.selectOne("mybatis.showoffMapper.getMyTotalShowoff");
 	}
 	
 	//select : 글 하나 얻어오기

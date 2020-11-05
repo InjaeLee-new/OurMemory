@@ -20,6 +20,16 @@
 		]]>
 	</select>
 	
+	<!-- // select : MyList 불러오기 --><!-- 'id2' => 나중에  session Id로 수정 -->
+	<select id="memoryBoardMyList" parameterType="java.util.Map" resultType="memoryDTO">
+		<![CDATA[
+		select * from
+		(select rownum rn, tt.* from 
+		(select * from mymemoryalbum order by memory_num desc) tt)
+		where rn>=#{startNum} and rn<=#{endNum} and memory_id = 'id2'
+		]]>
+	</select>
+	
 	<!-- 추천수에 따라 TOP3 랭킹 내용 가져오기 -->
 	<select id="memoryRankingTopThree" resultType="memoryDTO">
 		<![CDATA[
@@ -38,6 +48,11 @@
 	<!-- 글 하나 불러오기 -->
 	<select id="memoryBoardView" parameterType="int" resultType="memoryDTO">
 		select * from mymemoryalbum where memory_num = #{memory_num}
+	</select>
+	
+	<!-- 내가 쓴 글 수 가져오기 --><!-- 'id2' => 나중에  session Id로 수정 -->
+	<select id="getMyTotalMemory" resultType="int">
+			select count(*) as cnt from mymemoryalbum where memory_id = 'id2'
 	</select>
 	
 	<!-- 조회수 증가 -->
