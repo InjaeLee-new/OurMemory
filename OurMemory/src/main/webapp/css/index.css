@@ -7,7 +7,7 @@ body {
 #title {
 	width : 200px; 
 	color :#FFFFFF;
-	font-size: 30px; 
+	font-size: 20px; 
 	font-weight:bold; 
 	line-height:50px; 
 	margin:0px; 
@@ -31,7 +31,7 @@ body {
     margin:0 auto;
     padding:1px;
     font: 67.5% "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
-    font-size:18px;
+    font-size:14px;
     font-weight:bold;
 }
    
@@ -141,7 +141,7 @@ body {
    background: rgb(140,140,100);
    display:block;
    height:50px;
-   font-size:12px;
+   font-size:14px;
    font-style:normal;
    margin:0px;
    padding:0px;
