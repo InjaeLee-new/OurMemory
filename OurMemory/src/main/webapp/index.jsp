@@ -9,10 +9,8 @@
 <link rel="stylesheet" type="text/css" href="./css/index.css?v=4">
 </head>
 <body>
-	<c:if test="${isLogin != null }">
-		
-		<div class="menubar" >
-		
+	<div class="menubar" >
+		<c:if test="${isLogin != null }">
 			<ul>
 				<li id="title"><a href="index.jsp" style="text-align: center">Our Gallery</a></li>
 					<li id="storyboard">
@@ -68,22 +66,9 @@
 					</c:if>
 					
 			</ul>
-			<img alt="배너용 사진" src="img/mainresmall.png" width="1600px" height="400px"><br>
-	</c:if>
-	<c:if test="${isLogin == null }">
-		<div id="mainLeft">
-			<img style="align-content: center;" alt="메인 사진" src="img/main1.png" width="1200px" height="600px"><br>
-		</div>
-		
-		<div id="mainRight">
-			<jsp:include page="./main/memberLoginForm.jsp" />
-			<a href="index.jsp?req=join">
-				회원가입!
-			</a>
-		</div>
-	</c:if>
-	</div>
-	<input type = "hidden" value = "값">
+			<img alt="배너용 사진" src="img/mainreresmall.png" width="1600px" height="400px"><br>
+			
+			<input type = "hidden" value = "값">
 	<div class="center" align="center">
    	
 		<c:if test="${param.req == null }">
@@ -135,6 +120,20 @@
 			<jsp:include page="./main/memberInformation.jsp" />
 		</c:if>	
 		
+	</div>
+	</c:if>
+	<c:if test="${isLogin == null }">
+		<div id="mainLeft">
+			<img style="align-content: center;" alt="메인 사진" src="img/main1.png" width="1200px" height="600px"><br>
+		</div>
+		
+		<div id="mainRight">
+			<jsp:include page="./main/memberLoginForm.jsp" />
+			<a href="index.jsp?req=join">
+				회원가입!
+			</a>
+		</div>
+	</c:if>
 	</div>
 	
 	<div id="footer" style="border-top: 1px solid; width: 1600px; margin: 0 auto;">
