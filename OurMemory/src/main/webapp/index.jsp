@@ -6,73 +6,88 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="./css/index.css?v=3">
+<link rel="stylesheet" type="text/css" href="./css/index.css?v=4">
 </head>
 <body>
-	<div class="menubar" >
-		<ul>
-			<li id="title"><a href="index.jsp" style="text-align: center">Our Gallery</a></li>
-				<li id="storyboard">
-					<a>게시판</a>
-					<ul>
-						<li>
-							<a href="showoffList">귀요미들 사진첩</a>
-						</li>
-						<li>
-							<a href="memoryList">추억 저장소?</a>
-						</li>		
-					</ul>
-				<li id="introduce">
-					<a>내가 올린 글만 보기</a>
-					<ul>
-						<li>
-							<a href="#">내 동물자랑</a>
-						</li>
-						<li>
-							<a href="#">내 추억자랑</a>
-						</li>
-					</ul>
-				</li>
-				
-				<li>
-					<a href="index.jsp?req=contact">Contact Us</a>
-				</li>
-				<% if(session.getAttribute("isLogin") != null) { %>
-				<li id="myInform">
-					<a href="#">
-						내정보 !
-					</a>
-				</li>
-				
-				<li id="memberLogout">
-					<a href="memberLogout">
-						로그아웃 !
-					</a>
-				</li>
-				<% } else { %>
-				<li id="login">
-					<a href="index.jsp?req=login">
-						로그인!
-					</a>
-				</li>
-				
-				<li id="join">
-					<a href="index.jsp?req=join">
-						회원가입!
-					</a>
-				</li>
-				<% } %>
-
-		</ul>
+	<c:if test="${isLogin != null }">
 		
-			<img alt="배너용 사진" src="img/banner.jpg" width="1600px" height="300px"><br>
-	
+		<div class="menubar" >
+		
+			<ul>
+				<li id="title"><a href="index.jsp" style="text-align: center">Our Gallery</a></li>
+					<li id="storyboard">
+						<a>게시판</a>
+						<ul>
+							<li>
+								<a href="showoffList">귀요미들 사진첩</a>
+							</li>
+							<li>
+								<a href="memoryList">추억 저장소?</a>
+							</li>		
+						</ul>
+					<li id="introduce">
+						<a>내가 올린 글만 보기</a>
+						<ul>
+							<li>
+								<a href="#">내 동물자랑</a>
+							</li>
+							<li>
+								<a href="#">내 추억자랑</a>
+							</li>
+						</ul>
+					</li>
+					
+					<li>
+						<a href="index.jsp?req=contact">Contact Us</a>
+					</li>
+					<c:if test="${isLogin != null }">
+					<li id="myInform">
+						<a href="#">
+							내정보 !
+						</a>
+					</li>
+					
+					<li id="memberLogout">
+						<a href="memberLogout">
+							로그아웃 !
+						</a>
+					</li>
+					</c:if>
+					<c:if test="${isLogin == null }">
+					<li id="login">
+						<a href="index.jsp?req=login">
+							로그인!
+						</a>
+					</li>
+					
+					<li id="join">
+						<a href="index.jsp?req=join">
+							회원가입!
+						</a>
+					</li>
+					</c:if>
+					
+			</ul>
+			<img alt="배너용 사진" src="img/mainresmall.png" width="1600px" height="400px"><br>
+	</c:if>
+	<c:if test="${isLogin == null }">
+		<div id="mainLeft">
+			<img style="align-content: center;" alt="메인 사진" src="img/main1.png" width="1200px" height="600px"><br>
+		</div>
+		
+		<div id="mainRight">
+			<jsp:include page="./main/memberLoginForm.jsp" />
+			<a href="index.jsp?req=join">
+				회원가입!
+			</a>
+		</div>
+	</c:if>
 	</div>
 	<input type = "hidden" value = "값">
 	<div class="center" align="center">
    	
 		<c:if test="${param.req == null }">
-			<jsp:include page="./main/mainpage.jsp" />
+			<!--<jsp:include page="./main/mainpage.jsp" /> -->
 		</c:if>
 		<c:if test="${param.req == 'login' }">
 			<jsp:include page="./main/memberLoginForm.jsp" />

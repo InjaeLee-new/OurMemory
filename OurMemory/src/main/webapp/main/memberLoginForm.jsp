@@ -7,8 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<br><br><br><br><br><br><br><br>
 	<form action="memberLogin" name="id" method="post">
-		<table border="1">
+		<table border="1" style="width: 500px; height: 200px; border-color: #f4f4f4">
 			<tr>
 				<th>아이디</th>
 				<td><input type="text" name="id" required="required"></td>
