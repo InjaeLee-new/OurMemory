@@ -16,8 +16,14 @@ public interface OurMemoryService {
 	//memoryBoardList : N개씩 목록 끊어오는 함수 (우리가 startNum,endNum을 설정할 때마다 바뀐다.)
 	public List<MemoryDTO> memoryBoardList(int startNum, int endNum);
 	
+	//memoryBoardMyList : 내가 올린 게시글 N개씩 목록 끊어오는 함수 (우리가 startNum,endNum을 설정할 때마다 바뀐다.)
+	public List<MemoryDTO> memoryBoardMyList(int startNum, int endNum);
+	
 	//memory의 총 글 수 가져오기
 	public int getTotalMemory();
+	
+	//memory의 나의 총 글 수 가져오기
+	public int getMyTotalMemory();
 	
 	//select : 글 하나 얻어오기
 	public MemoryDTO memoryBoardView(int seq);
@@ -36,9 +42,15 @@ public interface OurMemoryService {
 	
 	//showoffBoardList : N개씩 목록을 끊어오는 함수 (우리가 startNum,endNum을 설정할 때마다 바뀐다.)
 	public List<ShowoffDTO> showoffBoardList(int startNum, int endNum);
+
+	//showoffBoardMyList : 내가 올린 게시글 N개씩 목록을 끊어오는 함수 (우리가 startNum,endNum을 설정할 때마다 바뀐다.)
+	public List<ShowoffDTO> showoffBoardMyList(int startNum, int endNum);
 	
 	//showoff의 총 글 수 가져오기
 	public int getTotalShowoff();
+
+	//showoff의 내가 쓴 글 수 가져오기
+	public int getMyTotalShowoff();
 	
 	//select : 글 하나 얻어오기
 	public ShowoffDTO showoffBoardView(int seq);

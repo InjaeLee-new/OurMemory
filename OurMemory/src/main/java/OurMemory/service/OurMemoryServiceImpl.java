@@ -39,6 +39,11 @@ public class OurMemoryServiceImpl implements OurMemoryService {
 	}
 
 	@Override
+	public List<MemoryDTO> memoryBoardMyList(int startNum, int endNum) {
+		return memoryDao.memoryBoardMyList(startNum, endNum);
+	}
+	
+	@Override
 	public int showoffBoardWrite(ShowoffDTO showoffDTO) {
 		return showoffDao.showoffBoardWrite(showoffDTO);
 	}
@@ -49,8 +54,18 @@ public class OurMemoryServiceImpl implements OurMemoryService {
 	}
 
 	@Override
+	public List<ShowoffDTO> showoffBoardMyList(int startNum, int endNum) {
+		return showoffDao.showoffBoardMyList(startNum, endNum);
+	}
+	
+	@Override
 	public int getTotalMemory() {
 		return memoryDao.getTotalMemory();
+	}
+	
+	@Override
+	public int getMyTotalMemory() {
+		return memoryDao.getMyTotalMemory();
 	}
 	
 	@Override
@@ -58,6 +73,11 @@ public class OurMemoryServiceImpl implements OurMemoryService {
 		return showoffDao.getTotalShowoff();
 	}
 
+	@Override
+	public int getMyTotalShowoff() {
+		return showoffDao.getMyTotalShowoff();
+	}
+	
 	@Override
 	public MemoryDTO memoryBoardView(int seq) {
 		return memoryDao.memoryBoardView(seq);
