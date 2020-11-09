@@ -8,9 +8,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<c:if test="${result > 0 }">
+<c:if test="${result > 0 }">
 		<script type="text/javascript">
-			alert('등록 성공!');
+			alert('수정 성공!');
 			location.href='contact';
 		</script>
 	</c:if>

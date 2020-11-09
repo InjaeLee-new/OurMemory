@@ -144,29 +144,33 @@ public class OurMemoryServiceImpl implements OurMemoryService {
 	
 
 	// contact 함수 
-	@Override
-	public int contactInsert(ContactDTO contactDTO) {
-		return contactDAO.contactInsert(contactDTO);
-	}
+	   @Override
+	   public int contactInsert(ContactDTO contactDTO) {
+	      return contactDAO.contactInsert(contactDTO);
+	   }
 
-	@Override
-	public List<ContactDTO> contactSelectAll(String contact_id) {
-		return contactDAO.contactSelectAll(contact_id);
-	}
+	   @Override
+	   public List<ContactDTO> contactSelectAll(String contact_id) {
+	      return contactDAO.contactSelectAll(contact_id);
+	   }
 
-	@Override
-	public ContactDTO contactSelectOne(String contact_id, String contact_subject) {
-		return contactDAO.contactSelectOne(contact_id, contact_subject);
-	}
+	   @Override
+	   public ContactDTO contactSelectOne(int contact_num) {
+	      return contactDAO.contactSelectOne(contact_num);
+	   }
 
-	@Override
-	public int contactUpdate(String contact_id, String contact_subject) {
-		return contactDAO.contactUpdate(contact_id, contact_subject);
-	}
+	   @Override
+	   public int contactUpdate(ContactDTO contactDTO) {
+	      return contactDAO.contactUpdate(contactDTO);
+	   }
 
-	@Override
-	public int contactDelete(String contact_id, String contact_subject) {
-		return contactDAO.contactDelete(contact_id, contact_subject);
-	}
-
+	   @Override
+	   public int contactDelete(int contact_num) {
+	      return contactDAO.contactDelete(contact_num);
+	   }
+	      // 총 글 수 얻기 (추가)
+	   @Override
+	   public int getTotalContact(String contact_id) {
+	      return contactDAO.getTotalContact(contact_id);
+	   }
 }

@@ -33,28 +33,24 @@ public class ContactDAO {
 
 
 	//select : 해당 글 불러오기 (선택한 1개만)
-	public ContactDTO contactSelectOne(String contact_id, String contact_subject) {
-		Map<String, String> map = new HashMap<String, String>();
-		map.put("contact_id", contact_id);
-		map.put("contact_subject", contact_subject);
-		return	sqlSession.selectOne("mybatis.contactMapper.contactSelectOne" , map);
+	public ContactDTO contactSelectOne(int contact_num) {
+		return	sqlSession.selectOne("mybatis.contactMapper.contactSelectOne" , contact_num);
 	}
 
 	// update : 내용 수정하기
-	public int contactUpdate(String contact_id, String contact_subject) {
-		Map<String, String> map = new HashMap<String, String>();
-		map.put("contact_id", contact_id);
-		map.put("contact_subject", contact_subject);
-		return	sqlSession.update("mybatis.contactMapper.contactUpdate" , map);
+	public int contactUpdate(ContactDTO contactDTO) {
+		return	sqlSession.update("mybatis.contactMapper.contactUpdate" , contactDTO);
 	}
 	
 	// delete : 글 삭제하기
-		public int contactDelete(String contact_id, String contact_subject) {
-			Map<String, String> map = new HashMap<String, String>();
-			map.put("contact_id", contact_id);
-			map.put("contact_subject", contact_subject);
-			return	sqlSession.update("mybatis.contactMapper.contactDelete" , map);
+		public int contactDelete(int contact_num) {
+			return	sqlSession.update("mybatis.contactMapper.contactDelete" , contact_num);
 		}
+		
+		//총 글수 얻기
+		      public int getTotalContact(String contact_id) {
+		         return sqlSession.selectOne("mybatis.contactMapper.getTotalContact");
+		      }
 		
 }
 

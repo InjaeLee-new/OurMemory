@@ -6,48 +6,48 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="./css/index.css?v=5">
+<link rel="stylesheet" type="text/css" href="./css/index2.css?v=5">
 </head>
 <body>
 	<div class="menubar" >
 		<c:if test="${isLogin != null }">
 			<ul>
-				<li id="title"><a href="index.jsp" style="text-align: center">Our Gallery</a></li>
+				<li id="title"><a href="index.jsp" style="text-align: center"><img alt="배너용 사진" src="img/main1.png" width="110px"></a></li>
 					<li id="storyboard">
-						<a>게시판</a>
+						<a>우리들의 추억 👪</a>
 						<ul>
 							<li>
-								<a href="showoffList">귀요미들 사진첩</a>
+								<a href="showoffList">우리 함께 🐶</a>
 							</li>
 							<li>
-								<a href="memoryList">추억 저장소?</a>
+								<a href="memoryList">어디든 📍</a>
 							</li>		
 						</ul>
 					<li id="introduce">
-						<a>내가 올린 글만 보기</a>
+						<a>나의 추억 🙋‍♀</a>
 						<ul>
 							<li>
-								<a href="showoffMyList">내 동물자랑</a>
+								<a href="showoffMyList">너와 🐶</a>
 							</li>
 							<li>
-								<a href="memoryMyList">내 추억자랑</a>
+								<a href="memoryMyList">여기 📍 </a>
 							</li>
 						</ul>
 					</li>
 					
 					<li>
-						<a href="index.jsp?req=contact">Contact Us</a>
+						<a href="contact">우추소에 질문 💌</a>
 					</li>
 					<c:if test="${isLogin != null }">
 					<li id="myInform">
 						<a href="#">
-							내정보 !
+							마이페이지 💭
 						</a>
 					</li>
 					
 					<li id="memberLogout">
 						<a href="memberLogout">
-							로그아웃 !
+							로그아웃 👋
 						</a>
 					</li>
 					</c:if>
@@ -131,6 +131,27 @@
 		<c:if test="${param.req == 'myInform' }">
 			<jsp:include page="./main/memberInformation.jsp" />
 		</c:if>	
+		 
+      <c:if test="${param.req == 'contactForm' }">
+         <jsp:include page="./contact/contactForm.jsp" />
+      </c:if>  
+      <c:if test="${param.req == 'contactListCheck' }">
+         <jsp:include page="./contact/contactListCheck.jsp" />
+      </c:if>  
+      <c:if test="${param.req == 'contactList' }">
+         <jsp:include page="./contact/contactList.jsp" />
+      </c:if> 
+      
+      <c:if test="${param.req == 'contactView' }">
+         <jsp:include page="./contact/contactView.jsp" />
+      </c:if> 
+      <c:if test="${param.req == 'contactUpdate' }">
+         <jsp:include page="./contact/contactUpdate.jsp" />
+      </c:if> 
+      
+      <c:if test="${param.req == 'contactDelete' }">
+         <jsp:include page="./contact/contactDelete.jsp" />
+      </c:if>
 		
 	</div>
 	</c:if>
@@ -149,9 +170,9 @@
 	</div>
 	
 	<div id="footer" style="border-top: 1px solid; width: 1600px; margin: 0 auto;">
-		&copy;우리팀<br>
-		문의전화 : 010 - xxxx - xxxx<br>
-		주      소 : 서울특별시 강남구 이젠로 302-1 이젠it아카데미 
+		<br>&copy;우리들의 추억 저장소<br>
+		문의전화 : 1644-0685<br>
+		주      소 : 서울특별시 강남구 이젠로 302-1 이젠IT아카데미 
 	</div>
 </body>
 </html>

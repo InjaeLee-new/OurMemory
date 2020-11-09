@@ -1,6 +1,7 @@
 package contact.dto;
 
 public class ContactDTO {
+	private int contact_num;
 	private String contact_name;
 	private String contact_id; 
 	private String contact_pwd; 
@@ -15,6 +16,14 @@ public class ContactDTO {
 	private String contact_content; 
 	private String contact_logtime;
 	
+	
+	
+	public int getContact_num() {
+		return contact_num;
+	}
+	public void setContact_num(int contact_num) {
+		this.contact_num = contact_num;
+	}
 	public String getContact_name() {
 		return contact_name;
 	}

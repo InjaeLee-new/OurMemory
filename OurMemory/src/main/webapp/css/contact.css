@@ -1,0 +1,109 @@
+@charset "UTF-8";
+
+
+.button_contact {
+	 font-size: 18px;
+	 border-radius:10px 0 10px 0; 
+	 color: #575C86;
+}
+.button_contact:hover {
+	background: #CFBACB;
+}
+.button_contact a:hover {
+	color: white;
+	
+}
+
+.Form_title {
+	color: #575C86;
+}
+.Form_tr {
+	color: #575C86;
+}
+
+.button_Form {
+	font-size: 13px;
+	 border-radius:10px 0 10px 0; 
+	 color: #575C86;
+}
+
+.button_Form:hover {
+	color: white;
+	background: #CFBACB;
+}
+
+.Check_title {
+	color: #575C86;
+}
+
+.Check_tr {
+	color: #575C86;
+}
+
+.button_Check {
+	font-size: 13px;
+	 border-radius:10px 0 10px 0; 
+	 color: #575C86;
+}
+
+.button_Check:hover {
+	color: white;
+	background: #CFBACB;
+}
+
+
+.List_title {
+	color: #575C86;
+}
+
+.List_tr a {
+	color: black;
+	text-decoration: none;
+}
+
+.List_tr a:hover {
+	color: #575C86;
+	text-decoration: none;
+	font-size: 1.2em;
+}
+
+
+.List_table {color: #575C86;}
+
+.button_List {
+	font-size: 13px;
+	 border-radius:10px 0 10px 0; 
+	 color: #575C86;
+}
+
+.button_List:hover {
+	color: white;
+	background: #CFBACB;
+}
+
+
+.View_title {
+	color: #575C86;
+}
+.View_tr {
+	color: #575C86;
+}
+
+.button_View {
+	font-size: 13px;
+	 border-radius:10px 0 10px 0; 
+	 color: #575C86;
+}
+
+.button_View:hover {
+	color: white;
+	background: #CFBACB;
+}
+
+
+
+
+
+
+
+

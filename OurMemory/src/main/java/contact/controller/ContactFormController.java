@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class ContactController {
-	@RequestMapping(value = "/contact")
+public class ContactFormController {
+	@RequestMapping(value = "/contactForm")
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ModelAndView modelAndView = new ModelAndView();
 		
-		modelAndView.setViewName("index.jsp?req=contact");
+		modelAndView.setViewName("index.jsp?req=contactForm");
 		
 		return modelAndView;
 	}
