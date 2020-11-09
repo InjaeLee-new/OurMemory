@@ -62,7 +62,6 @@ public class ListJson {
 		        select.put("memory_rec", list.get(i).getMemory_rec());
 		        select.put("memory_nrec", list.get(i).getMemory_nrec());
 		        select.put("memory_name", list.get(i).getMemory_name());
-//		        json.put("memorylist", select);
 		        
 		        memoryList.add(select);
 		   }
