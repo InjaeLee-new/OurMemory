@@ -5,8 +5,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="./css/index2.css?v=5">
+<title>우리들의 추억 저장소</title>
+<link rel="stylesheet" type="text/css" href="./css/index2.css?v=7">
 </head>
 <body>
 	<div class="menubar" >
@@ -38,9 +38,8 @@
 					<li>
 						<a href="contact">우추소에 질문 💌</a>
 					</li>
-					<c:if test="${isLogin != null }">
 					<li id="myInform">
-						<a href="#">
+						<a href="myInform">
 							마이페이지 💭
 						</a>
 					</li>
@@ -50,20 +49,11 @@
 							로그아웃 👋
 						</a>
 					</li>
-					</c:if>
-					<c:if test="${isLogin == null }">
-					<li id="login">
-						<a href="index.jsp?req=login">
-							로그인!
-						</a>
+					<li>
+						<p style="">
+							${dto.user_name }님 안녕하세요!
+						</p>
 					</li>
-					
-					<li id="join">
-						<a href="index.jsp?req=join">
-							회원가입!
-						</a>
-					</li>
-					</c:if>
 					
 			</ul>
 			<img alt="배너용 사진" src="img/mainreresmall.png" width="1600px" height="400px"><br>
@@ -154,6 +144,11 @@
       </c:if>
 		
 	</div>
+	<div id="footer" style="border-top: 1px solid; width: 1600px; margin: 0 auto;">
+		<br>&copy;우리들의 추억 저장소<br>
+		문의전화 : 1644-0685<br>
+		주      소 : 서울특별시 강남구 이젠로 302-1 이젠IT아카데미 
+	</div>
 	</c:if>
 	<c:if test="${isLogin == null }">
 		<div id="mainLeft">
@@ -169,10 +164,6 @@
 	</c:if>
 	</div>
 	
-	<div id="footer" style="border-top: 1px solid; width: 1600px; margin: 0 auto;">
-		<br>&copy;우리들의 추억 저장소<br>
-		문의전화 : 1644-0685<br>
-		주      소 : 서울특별시 강남구 이젠로 302-1 이젠IT아카데미 
-	</div>
+	
 </body>
 </html>

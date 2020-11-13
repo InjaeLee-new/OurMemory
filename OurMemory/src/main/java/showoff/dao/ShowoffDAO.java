@@ -23,7 +23,7 @@ public class ShowoffDAO {
 	
 	//select : 목록 List 불러오기
 	public List<ShowoffDTO> showoffBoardList(int startNum, int endNum) {
-		Map<String, Integer> map = new HashMap<String, Integer>();
+		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("startNum", startNum);
 		map.put("endNum", endNum);
 		List<ShowoffDTO> list = 
@@ -34,10 +34,11 @@ public class ShowoffDAO {
 	}
 	
 	//select : 내가 쓴 글 목록 List 불러오기
-	public List<ShowoffDTO> showoffBoardMyList(int startNum, int endNum) {
-		Map<String, Integer> map = new HashMap<String, Integer>();
+	public List<ShowoffDTO> showoffBoardMyList(int startNum, int endNum, String id) {
+		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("startNum", startNum);
 		map.put("endNum", endNum);
+		map.put("id", id);
 		List<ShowoffDTO> list = 
 						sqlSession.selectList("mybatis.showoffMapper.showoffBoardMyList" , map);
 		
@@ -50,8 +51,8 @@ public class ShowoffDAO {
 	}
 	
 	//select : 총 내 글수 얻기
-	public int getMyTotalShowoff() {
-		return sqlSession.selectOne("mybatis.showoffMapper.getMyTotalShowoff");
+	public int getMyTotalShowoff(String id) {
+		return sqlSession.selectOne("mybatis.showoffMapper.getMyTotalShowoff", id);
 	}
 	
 	//select : 글 하나 얻어오기

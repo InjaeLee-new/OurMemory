@@ -2,9 +2,9 @@ package member.dto;
 
 public class MemberDTO {
 	
-	private String name;
-	private String id;
-	private String pw;
+	private String user_name;
+	private String user_id;
+	private String pwd;
 	private String nickname;
 	private String gender;
 	private String email1;
@@ -17,25 +17,29 @@ public class MemberDTO {
 	private int check_sms;
 	private String profile_image;
 	private String logtime;
-	
-	
-	public String getName() {
-		return name;
+	public String getUser_name() {
+		return user_name;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setUser_name(String user_name) {
+		this.user_name = user_name;
 	}
-	public String getId() {
-		return id;
+	public String getUser_id() {
+		return user_id;
 	}
-	public void setId(String id) {
-		this.id = id;
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
 	}
-	public String getPw() {
-		return pw;
+	public String getPwd() {
+		return pwd;
 	}
-	public void setPw(String pw) {
-		this.pw = pw;
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
+	}
+	public String getNickname() {
+		return nickname;
+	}
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
 	}
 	public String getGender() {
 		return gender;
@@ -79,18 +83,6 @@ public class MemberDTO {
 	public void setAddr(String addr) {
 		this.addr = addr;
 	}
-	public String getLogtime() {
-		return logtime;
-	}
-	public void setLogtime(String logtime) {
-		this.logtime = logtime;
-	}
-	public String getNickname() {
-		return nickname;
-	}
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
-	}
 	public int getCheck_email() {
 		return check_email;
 	}
@@ -109,4 +101,12 @@ public class MemberDTO {
 	public void setProfile_image(String profile_image) {
 		this.profile_image = profile_image;
 	}
+	public String getLogtime() {
+		return logtime;
+	}
+	public void setLogtime(String logtime) {
+		this.logtime = logtime;
+	}
+	
+
 }

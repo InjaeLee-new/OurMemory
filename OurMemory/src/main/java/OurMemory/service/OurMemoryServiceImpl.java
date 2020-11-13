@@ -39,8 +39,8 @@ public class OurMemoryServiceImpl implements OurMemoryService {
 	}
 
 	@Override
-	public List<MemoryDTO> memoryBoardMyList(int startNum, int endNum) {
-		return memoryDao.memoryBoardMyList(startNum, endNum);
+	public List<MemoryDTO> memoryBoardMyList(int startNum, int endNum, String id) {
+		return memoryDao.memoryBoardMyList(startNum, endNum, id);
 	}
 	
 	@Override
@@ -54,8 +54,8 @@ public class OurMemoryServiceImpl implements OurMemoryService {
 	}
 
 	@Override
-	public List<ShowoffDTO> showoffBoardMyList(int startNum, int endNum) {
-		return showoffDao.showoffBoardMyList(startNum, endNum);
+	public List<ShowoffDTO> showoffBoardMyList(int startNum, int endNum, String id) {
+		return showoffDao.showoffBoardMyList(startNum, endNum, id);
 	}
 	
 	@Override
@@ -64,8 +64,8 @@ public class OurMemoryServiceImpl implements OurMemoryService {
 	}
 	
 	@Override
-	public int getMyTotalMemory() {
-		return memoryDao.getMyTotalMemory();
+	public int getMyTotalMemory(String id) {
+		return memoryDao.getMyTotalMemory(id);
 	}
 	
 	@Override
@@ -74,8 +74,8 @@ public class OurMemoryServiceImpl implements OurMemoryService {
 	}
 
 	@Override
-	public int getMyTotalShowoff() {
-		return showoffDao.getMyTotalShowoff();
+	public int getMyTotalShowoff(String id) {
+		return showoffDao.getMyTotalShowoff(id);
 	}
 	
 	@Override
@@ -124,8 +124,8 @@ public class OurMemoryServiceImpl implements OurMemoryService {
 	}
 
 	@Override
-	public int memberLogin(String id) {
-		return memberDao.memberLogin(id);
+	public int memberLogin(String user_id, String pw) {
+		return memberDao.memberLogin(user_id, pw);
 	}
 
 	@Override
@@ -140,6 +140,10 @@ public class OurMemoryServiceImpl implements OurMemoryService {
 
 	public boolean isExistedId(String id) {
 		return memberDao.isExistedId(id);
+	}
+	
+	public MemberDTO memberInformation(String id) {
+		return memberDao.memberInformation(id);
 	}
 	
 

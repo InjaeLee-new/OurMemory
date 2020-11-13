@@ -3,6 +3,7 @@ package showoff.controller;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,6 +21,7 @@ public class ShowOffMyListController {
 	@RequestMapping(value = "/showoffMyList")
 	public ModelAndView showoffList(HttpServletRequest request) {
 		ModelAndView modelAndView = new ModelAndView();
+		HttpSession session = request.getSession();
 		
 		int pg = 1;
 		if(request.getParameter("pg") != null) {
@@ -31,7 +33,7 @@ public class ShowOffMyListController {
 		int endNum = pg * 8 ;
 		
 		int startNum = endNum -7 ;
-		int totalNum = ourMemoryService.getMyTotalShowoff();
+		int totalNum = ourMemoryService.getMyTotalShowoff((String)session.getAttribute("id"));
 
 		int startPage = (pg - 1) / 5 * 5 + 1;
 
@@ -41,7 +43,7 @@ public class ShowOffMyListController {
 
 		if (endPage > maxPage) endPage = maxPage;
 		
-		List<ShowoffDTO> list = ourMemoryService.showoffBoardMyList(startNum, endNum);
+		List<ShowoffDTO> list = ourMemoryService.showoffBoardMyList(startNum, endNum, (String)session.getAttribute("id"));
 		
 		modelAndView.addObject("pg" , pg);
 		modelAndView.addObject("endPage" , endPage);

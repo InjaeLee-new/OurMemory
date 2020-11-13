@@ -15,7 +15,7 @@
 			<table>
 				<tr class="Form_tr"> 
 					<td id="userId" align="center" width="120">아이디</td>
-					<td><input type="text" id="userId" name ="userId" maxlength="20" required="required"></td>
+					<td><input type="text" id="userId" name ="userId" maxlength="20" required="required" value="${id }"></td>
 				</tr>
 				<tr class="Form_tr"> 
 					<td id="userPw" align="center" width="100">패스워드</td>
@@ -23,7 +23,7 @@
 				</tr>
 				<tr class="Form_tr"> 
 					<td id="userName" align="center" width="100">이름</td>
-					<td><input type="text" id="userName" name ="userName" maxlength="20" required="required"></td>
+					<td><input type="text" id="userName" name ="userName" maxlength="20" required="required" value="${name }"></td>
 				</tr>
 				
 				<tr class="Form_tr"> 

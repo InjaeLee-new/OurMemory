@@ -17,13 +17,13 @@ public interface OurMemoryService {
 	public List<MemoryDTO> memoryBoardList(int startNum, int endNum);
 	
 	//memoryBoardMyList : 내가 올린 게시글 N개씩 목록 끊어오는 함수 (우리가 startNum,endNum을 설정할 때마다 바뀐다.)
-	public List<MemoryDTO> memoryBoardMyList(int startNum, int endNum);
+	public List<MemoryDTO> memoryBoardMyList(int startNum, int endNum, String id);
 	
 	//memory의 총 글 수 가져오기
 	public int getTotalMemory();
 	
 	//memory의 나의 총 글 수 가져오기
-	public int getMyTotalMemory();
+	public int getMyTotalMemory(String id);
 	
 	//select : 글 하나 얻어오기
 	public MemoryDTO memoryBoardView(int seq);
@@ -44,13 +44,13 @@ public interface OurMemoryService {
 	public List<ShowoffDTO> showoffBoardList(int startNum, int endNum);
 
 	//showoffBoardMyList : 내가 올린 게시글 N개씩 목록을 끊어오는 함수 (우리가 startNum,endNum을 설정할 때마다 바뀐다.)
-	public List<ShowoffDTO> showoffBoardMyList(int startNum, int endNum);
+	public List<ShowoffDTO> showoffBoardMyList(int startNum, int endNum, String id);
 	
 	//showoff의 총 글 수 가져오기
 	public int getTotalShowoff();
 
 	//showoff의 내가 쓴 글 수 가져오기
-	public int getMyTotalShowoff();
+	public int getMyTotalShowoff(String id);
 	
 	//select : 글 하나 얻어오기
 	public ShowoffDTO showoffBoardView(int seq);
@@ -79,9 +79,12 @@ public interface OurMemoryService {
 	public int memberJoin(MemberDTO memberDTO);
 	
 	//select : 로그인 할 때, 아이디 확인
-	public int memberLogin(String id);
+	public int memberLogin(String user_id, String pw);
 	
 	public boolean isExistedId(String id);
+	
+	// 닉네임과 이름 가져오기 함수 ( 로그인 성공시 )
+	public MemberDTO memberInformation(String id);
 	
 	///// 여기부턴 contact 관련 DAO 모음//////////////////////////////////////////////////////////////////////////////////////////////////////////
 	

@@ -46,9 +46,9 @@ public class MemberJoinController {
 		ModelAndView modelAndView = new ModelAndView();
 		
 		MemberDTO memberDTO = new MemberDTO();
-		memberDTO.setName(request.getParameter("userName"));
-		memberDTO.setId(request.getParameter("userId"));
-		memberDTO.setPw(request.getParameter("userPw"));
+		memberDTO.setUser_name(request.getParameter("userName"));
+		memberDTO.setUser_id(request.getParameter("userId"));
+		memberDTO.setPwd(request.getParameter("userPw"));
 		memberDTO.setNickname(request.getParameter("nickName"));
 		memberDTO.setGender(request.getParameter("gender"));
 		memberDTO.setEmail1(request.getParameter("email01"));

@@ -3,6 +3,7 @@ package memory.controller;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,6 +21,7 @@ public class MemoryMyListController {
 	@RequestMapping(value = "/memoryMyList")
 	public ModelAndView memoryList(HttpServletRequest request) {
 		ModelAndView modelAndView = new ModelAndView();
+		HttpSession session = request.getSession();
 		
 		int pg = 1;
 		if(request.getParameter("pg") != null) {
@@ -32,7 +34,7 @@ public class MemoryMyListController {
 		
 		int startNum = endNum - 7 ;
 		
-		int totalNum = ourMemoryService.getMyTotalMemory();
+		int totalNum = ourMemoryService.getMyTotalMemory((String)session.getAttribute("id"));
 
 		int startPage = (pg - 1) / 5 * 5 + 1;
 
@@ -43,7 +45,7 @@ public class MemoryMyListController {
 		if (endPage > maxPage)
 			endPage = maxPage;
 		
-		List<MemoryDTO> list = ourMemoryService.memoryBoardMyList(startNum, endNum);
+		List<MemoryDTO> list = ourMemoryService.memoryBoardMyList(startNum, endNum, (String)session.getAttribute("id"));
 		
 		modelAndView.addObject("pg" , pg);
 		modelAndView.addObject("endPage" , endPage);

@@ -35,10 +35,11 @@ public class MemoryDAO {
 	}
 	
 	//select : 내가 올린 글 목록 List 불러오기
-	public List<MemoryDTO> memoryBoardMyList(int startNum, int endNum) {
-		Map<String, Integer> map = new HashMap<String, Integer>();
+	public List<MemoryDTO> memoryBoardMyList(int startNum, int endNum, String id) {
+		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("startNum", startNum);
 		map.put("endNum", endNum);
+		map.put("id", id);
 		List<MemoryDTO> list = 
 						sqlSession.selectList("mybatis.memoryMapper.memoryBoardMyList" , map);
 		
@@ -51,8 +52,8 @@ public class MemoryDAO {
 	}
 
 	//내가 쓴 글수 얻기
-	public int getMyTotalMemory() {
-		return sqlSession.selectOne("mybatis.memoryMapper.getMyTotalMemory");
+	public int getMyTotalMemory(String id) {
+		return sqlSession.selectOne("mybatis.memoryMapper.getMyTotalMemory", id);
 	}
 	
 	//select : 글 하나 얻어오기

@@ -91,6 +91,22 @@ body {
    text-decoration:none;
    
 }
+
+.menubar  ul  li  p{
+   background: #CFBACB;
+   color: #4B5074;
+   display:block;
+   width:200px;
+   font-weight:bold;
+   font-size:18px;
+   line-height:50px;
+   margin:0px;
+   padding:0px;
+   padding-top:15px;
+   text-align:center;
+   text-decoration:none;
+   
+}
    
 .menubar li a:hover, .menubar ul li:hover a{
    background: #575C86;
@@ -173,11 +189,12 @@ body {
 }
 
 #mainLeft {
+	width: 40%;
 	float:left;
 }
 
 #mainRight {
-	float:left;
+	float:right;
 }
 
 .center {
