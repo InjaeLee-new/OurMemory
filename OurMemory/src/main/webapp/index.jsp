@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>우리들의 추억 저장소</title>
-<link rel="stylesheet" type="text/css" href="./css/index2.css?v=7">
+<link rel="stylesheet" type="text/css" href="./css/index2.css?v=8">
 </head>
 <body>
 	<div class="menubar" >
@@ -51,7 +51,7 @@
 					</li>
 					<li>
 						<p style="">
-							${dto.user_name }님 안녕하세요!
+							${name }()님 안녕하세요!
 						</p>
 					</li>
 					

@@ -58,8 +58,10 @@ public class ListJson {
 		        select.put("memory_num", list.get(i).getMemory_num());
 		        select.put("memory_file", list.get(i).getMemory_file());
 		        select.put("memory_subject", list.get(i).getMemory_subject());
+		        select.put("memory_content", list.get(i).getMemory_content());
 		        select.put("memory_date", list.get(i).getMemory_date());
 		        select.put("memory_rec", list.get(i).getMemory_rec());
+		        select.put("memory_hit", list.get(i).getMemory_hit());
 		        select.put("memory_nrec", list.get(i).getMemory_nrec());
 		        select.put("memory_name", list.get(i).getMemory_name());
 		        
