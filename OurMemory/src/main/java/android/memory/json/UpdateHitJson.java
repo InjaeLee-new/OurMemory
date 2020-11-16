@@ -36,6 +36,7 @@ public class UpdateHitJson {
 			json.put("rt", rt);
 			
 			// git cli테스트용 저장
+			// 이거 적용 안되려나?
 			
 			PrintWriter out;
 			try {
