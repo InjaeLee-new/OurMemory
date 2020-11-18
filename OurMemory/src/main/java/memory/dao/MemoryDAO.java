@@ -81,4 +81,8 @@ public class MemoryDAO {
 		list = sqlSession.selectList("mybatis.memoryMapper.memoryRankingTopThree");
 		return list;
 	}
+	//카테고리 총글수 얻기
+	public List<MemoryDTO> getcategoryMemory(String memory_category) {
+		return sqlSession.selectList("mybatis.memoryMapper.getcategoryMemory", memory_category);
+	}
 }
