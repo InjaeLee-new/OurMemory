@@ -105,4 +105,7 @@ public interface OurMemoryService {
 	   
 	   //내가 남긴 글의 총 글 수 가져오기
 	   public int getTotalContact(String contact_id);
+	
+	   // 카테고리별 전체글 불러오기
+	   public List<MemoryDTO> membercategory(String memory_category);
 }
