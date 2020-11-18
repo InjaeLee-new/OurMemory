@@ -10,6 +10,7 @@ public class MemoryDTO {
 	private int memory_rec;
 	private int memory_nrec;
 	private int memory_hit;
+	private String memory_category;
 	private String memory_file;
 	private String memory_date;
 	
@@ -80,6 +81,11 @@ public class MemoryDTO {
 	public void setMemory_hit(int memory_hit) {
 		this.memory_hit = memory_hit;
 	}
-	
+	public String getMemory_category() {
+		return memory_category;
+	}
+	public void setMemory_category(String memory_category) {
+		this.memory_category = memory_category;
+	}
 	
 }
