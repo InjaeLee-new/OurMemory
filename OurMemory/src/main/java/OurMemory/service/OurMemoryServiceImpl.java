@@ -177,4 +177,9 @@ public class OurMemoryServiceImpl implements OurMemoryService {
 	   public int getTotalContact(String contact_id) {
 	      return contactDAO.getTotalContact(contact_id);
 	   }
+		// 카테고리별 전체글 불러오기
+	   @Override
+	   public List<MemoryDTO> membercategory(String memory_category) {
+		return memoryDao.getcategoryMemory(memory_category);
+	   }
 }
