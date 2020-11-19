@@ -75,7 +75,12 @@
 	</select>
 	
 	<!-- 해당 글번호로부터 댓글을 출력한다. -->
-	<select id="commentViewJson">
-		select * from memoryComment where memory_seq = #{memory_seq}
+	<select id="commentViewJson" parameterType="int" resultType="MemoryCommentDTO">
+		select * from memoryComment where memory_seq = #{memory_seq} order by reg_date desc
 	</select>
+	
+	<!-- 댓글을 작성하면 데이터베이스에 업로드한다. -->
+	<insert id="commentWriteJson" parameterType="java.util.Map">
+		insert into memoryComment values ( #{memory_seq}, #{memory_comment_name}, #{memory_comment_content}, sysdate )
+	</insert>
 </mapper>

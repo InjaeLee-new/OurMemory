@@ -14,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import OurMemory.service.OurMemoryService;
+import memory.dto.MemoryCommentDTO;
 import memory.dto.MemoryDTO;
 
 @Controller
@@ -22,26 +23,12 @@ public class ViewCommentViewJson {
 	OurMemoryService ourMemoryService;
 	
 	@SuppressWarnings("unchecked")
-	@RequestMapping(value = "/viewCommentViewJson")
+	@RequestMapping(value = "/commentViewJson")
 	public void listJson(HttpServletRequest request, HttpServletResponse response) {
-		int pg = 1;
 		
-		int endNum = pg * 8 ;
+		int seq = Integer.parseInt(request.getParameter("seq"));
 		
-		int startNum = endNum - 7 ;
-		
-		int totalNum = ourMemoryService.getTotalMemory();
-
-		int startPage = (pg - 1) / 5 * 5 + 1;
-
-		int endPage = startPage + 4;
-
-		int maxPage = (totalNum - 4) / 5;
-
-		if (endPage > maxPage)
-			endPage = maxPage;
-		
-		List<MemoryDTO> list = ourMemoryService.memoryBoardList(startNum, endNum);
+		List<MemoryCommentDTO> list = ourMemoryService.commentViewJson(seq);
 		
 		String rt = null;
 		if(list != null) {
@@ -51,24 +38,19 @@ public class ViewCommentViewJson {
 		   json.put("rt", rt);
 		   json.put("total", list.size());
 		   
-		   JSONArray memoryList = new JSONArray();
+		   JSONArray memoryCommentList = new JSONArray();
 		   
 		   for(int i = 0 ; i < list.size() ; i++) {
 			    JSONObject select = new JSONObject();
-		        select.put("memory_num", list.get(i).getMemory_num());
-		        select.put("memory_file", list.get(i).getMemory_file());
-		        select.put("memory_subject", list.get(i).getMemory_subject());
-		        select.put("memory_content", list.get(i).getMemory_content());
-		        select.put("memory_date", list.get(i).getMemory_date());
-		        select.put("memory_rec", list.get(i).getMemory_rec());
-		        select.put("memory_hit", list.get(i).getMemory_hit());
-		        select.put("memory_nrec", list.get(i).getMemory_nrec());
-		        select.put("memory_name", list.get(i).getMemory_name());
+		        select.put("memory_seq", list.get(i).getMemory_seq());
+		        select.put("memory_comment_name", list.get(i).getMemory_comment_name());
+		        select.put("memory_comment_content", list.get(i).getMemory_comment_content());
+		        select.put("reg_date", list.get(i).getReg_date());
 		        
-		        memoryList.add(select);
+		        memoryCommentList.add(select);
 		   }
 		   
-		   json.put("memoryList", memoryList);
+		   json.put("memoryCommentList", memoryCommentList);
 		   
 		try {
 			response.setCharacterEncoding("UTF-8");

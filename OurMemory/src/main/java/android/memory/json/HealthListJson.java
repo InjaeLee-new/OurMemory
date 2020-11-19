@@ -7,8 +7,8 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,12 +17,12 @@ import OurMemory.service.OurMemoryService;
 import memory.dto.MemoryDTO;
 
 @Controller
-public class ListJson {
+public class HealthListJson {
 	@Autowired
 	OurMemoryService ourMemoryService;
 	
 	@SuppressWarnings("unchecked")
-	@RequestMapping(value = "/listJson")
+	@RequestMapping(value = "/healthListJson")
 	public void listJson(HttpServletRequest request, HttpServletResponse response) {
 		int pg = 1;
 		
@@ -65,7 +65,7 @@ public class ListJson {
 		        select.put("memory_nrec", list.get(i).getMemory_nrec());
 		        select.put("memory_name", list.get(i).getMemory_name());
 		        
-		        memoryList.put(select);
+		        memoryList.add(select);
 		   }
 		   
 		   json.put("memoryList", memoryList);

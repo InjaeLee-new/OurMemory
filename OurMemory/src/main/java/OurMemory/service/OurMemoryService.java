@@ -5,6 +5,7 @@ import java.util.List;
 
 import contact.dto.ContactDTO;
 import member.dto.MemberDTO;
+import memory.dto.MemoryCommentDTO;
 import memory.dto.MemoryDTO;
 import showoff.dto.ShowoffDTO;
 
@@ -33,6 +34,12 @@ public interface OurMemoryService {
 	
 	//select : 최다 추천수 TOP 3 목록 출력
 	public List<MemoryDTO> memoryRankingTopThree();
+	
+	//select : 해당 글번호를 받아와서 댓글을 출력한다.
+	public List<MemoryCommentDTO> commentViewJson(int seq);
+	
+	//insert : 작성된 댓글을 database에 저장한다.
+	public int commentWriteJson(int memory_seq, String memory_comment_name, String memory_comment_content);
 	
 	///// 여기부턴 showoff 관련 DAO 모음//////////////////////////////////////////////////////////////////////////////////////////////////////////
 	

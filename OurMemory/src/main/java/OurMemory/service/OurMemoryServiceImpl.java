@@ -10,6 +10,7 @@ import contact.dto.ContactDTO;
 import member.dao.MemberDAO;
 import member.dto.MemberDTO;
 import memory.dao.MemoryDAO;
+import memory.dto.MemoryCommentDTO;
 import memory.dto.MemoryDTO;
 import showoff.dao.ShowoffDAO;
 import showoff.dto.ShowoffDTO;
@@ -182,4 +183,17 @@ public class OurMemoryServiceImpl implements OurMemoryService {
 	   public List<MemoryDTO> membercategory(String memory_category) {
 		return memoryDao.getcategoryMemory(memory_category);
 	   }
+
+	@Override
+	public List<MemoryCommentDTO> commentViewJson(int seq) {
+		// TODO Auto-generated method stub
+		return memoryDao.commentViewJson(seq);
+	}
+	
+	@Override
+	public int commentWriteJson(int memory_seq, String memory_comment_name, String memory_comment_content) {
+		return memoryDao.commentWriteJson(memory_seq, memory_comment_name, memory_comment_content);
+	}
+	   
+	   
 }

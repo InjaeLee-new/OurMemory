@@ -6,6 +6,7 @@
 	 <!-- 클래스에 별명 설정 -->
 	 <typeAliases>
 	 	<typeAlias type="memory.dto.MemoryDTO" alias="memoryDTO"/>
+	 	<typeAlias type="memory.dto.MemoryCommentDTO" alias="MemoryCommentDTO"/>
 	 	<typeAlias type="showoff.dto.ShowoffDTO" alias="showoffDTO"/>
 	 	<typeAlias type="member.dto.MemberDTO" alias="memberDTO"/>
 	 	<typeAlias type="contact.dto.ContactDTO" alias="contactDTO"/>

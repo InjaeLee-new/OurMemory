@@ -8,6 +8,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import memory.dto.MemoryCommentDTO;
 import memory.dto.MemoryDTO;
 
 @Repository
@@ -75,6 +76,7 @@ public class MemoryDAO {
 		return sqlSession.update("mybatis.memoryMapper.memoryBoardNrec", memory_num);
 	}
 	
+	
 	//select : 최다 추천수 TOP 3 목록 출력
 	public List<MemoryDTO> memoryRankingTopThree() {
 		List<MemoryDTO> list = null;
@@ -84,5 +86,19 @@ public class MemoryDAO {
 	//카테고리 총글수 얻기
 	public List<MemoryDTO> getcategoryMemory(String memory_category) {
 		return sqlSession.selectList("mybatis.memoryMapper.getcategoryMemory", memory_category);
+	}
+	
+	// 여기부턴 댓글에 관한 내용을 담는 곳입니다. 필요한 내용을 추가해주세요.
+	public List<MemoryCommentDTO> commentViewJson(int seq) {
+		return sqlSession.selectList("mybatis.memoryMapper.commentViewJson", seq);
+	}
+	
+	// 댓글작성 후 database에 저장한다
+	public int commentWriteJson(int memory_seq, String memory_comment_name, String memory_comment_content) {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("memory_seq", memory_seq);
+		map.put("memory_comment_name", memory_comment_name);
+		map.put("memory_comment_content", memory_comment_content);
+		return sqlSession.insert("mybatis.memoryMapper.commentWriteJson", map);
 	}
 }
