@@ -69,5 +69,13 @@
 	<update id="memoryBoardNrec" parameterType="int">
 		update mymemoryalbum set memory_nrec = memory_nrec + 1 where memory_num = #{memory_num}
 	</update>
+	<!-- 카테고리별 전체글 가져오기 -->
+	<select id="getcategoryMemory" parameterType="String" resultType="memoryDTO">
+			select * from mymemoryalbum where memory_category = #{memory_category}
+	</select>
 	
+	<!-- 해당 글번호로부터 댓글을 출력한다. -->
+	<select id="commentViewJson">
+		select * from memoryComment where memory_seq = #{memory_seq}
+	</select>
 </mapper>

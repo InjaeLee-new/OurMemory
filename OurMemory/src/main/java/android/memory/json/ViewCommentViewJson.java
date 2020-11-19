@@ -2,7 +2,6 @@ package android.memory.json;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,28 +14,34 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import OurMemory.service.OurMemoryService;
-import member.dao.MemberDAO;
 import memory.dto.MemoryDTO;
 
 @Controller
-public class ListITJson {
-	
+public class ViewCommentViewJson {
 	@Autowired
 	OurMemoryService ourMemoryService;
 	
 	@SuppressWarnings("unchecked")
-	@RequestMapping(value = "/listITJson")
-	public void listITJson(HttpServletRequest request, HttpServletResponse response) {
+	@RequestMapping(value = "/viewCommentViewJson")
+	public void listJson(HttpServletRequest request, HttpServletResponse response) {
+		int pg = 1;
 		
-		try {
-			request.setCharacterEncoding("UTF-8");
-		} catch (UnsupportedEncodingException e1) {
-			e1.printStackTrace();
-		}
+		int endNum = pg * 8 ;
 		
-		String memory_category = request.getParameter("memory_category");
+		int startNum = endNum - 7 ;
 		
-		List<MemoryDTO> list = ourMemoryService.membercategory(memory_category);
+		int totalNum = ourMemoryService.getTotalMemory();
+
+		int startPage = (pg - 1) / 5 * 5 + 1;
+
+		int endPage = startPage + 4;
+
+		int maxPage = (totalNum - 4) / 5;
+
+		if (endPage > maxPage)
+			endPage = maxPage;
+		
+		List<MemoryDTO> list = ourMemoryService.memoryBoardList(startNum, endNum);
 		
 		String rt = null;
 		if(list != null) {
@@ -57,7 +62,6 @@ public class ListITJson {
 		        select.put("memory_date", list.get(i).getMemory_date());
 		        select.put("memory_rec", list.get(i).getMemory_rec());
 		        select.put("memory_hit", list.get(i).getMemory_hit());
-		        select.put("memory_category", list.get(i).getMemory_category());
 		        select.put("memory_nrec", list.get(i).getMemory_nrec());
 		        select.put("memory_name", list.get(i).getMemory_name());
 		        
@@ -68,15 +72,13 @@ public class ListITJson {
 		   
 		try {
 			response.setCharacterEncoding("UTF-8");
-			response.setContentType("text/json;charset=UTF-8");
+			response.setContentType("text/html;charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			out.println(json);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 			
-		  
 		}
-		
 	}
 }

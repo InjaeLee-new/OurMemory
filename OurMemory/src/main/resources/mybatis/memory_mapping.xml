@@ -73,4 +73,9 @@
 	<select id="getcategoryMemory" parameterType="String" resultType="memoryDTO">
 			select * from mymemoryalbum where memory_category = #{memory_category}
 	</select>
+	
+	<!-- 해당 글번호로부터 댓글을 출력한다. -->
+	<select id="commentViewJson">
+		select * from memoryComment where memory_seq = #{memory_seq}
+	</select>
 </mapper>
