@@ -194,6 +194,13 @@ public class OurMemoryServiceImpl implements OurMemoryService {
 	public int commentWriteJson(int memory_seq, String memory_comment_name, String memory_comment_content) {
 		return memoryDao.commentWriteJson(memory_seq, memory_comment_name, memory_comment_content);
 	}
+	
+	 ///////// 앱 회원가입 (추가) 
+	   @Override
+		public int appMemberJoin(AppMemberDTO appMemberDTO) {
+			// TODO Auto-generated method stub
+			return memberDao.appMemberJoin(appMemberDTO);
+		}
 	   
 	   
 }
