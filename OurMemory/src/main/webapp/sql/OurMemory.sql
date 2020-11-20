@@ -1,3 +1,112 @@
+----------- final project (OurMemory) -----------------------------------------------------
+
+-- contactUs 테이블 
+create table contact (
+    contact_num number primary key,
+    contact_name varchar2(30) not null,
+    contact_id varchar2(30) not null,
+    contact_pwd varchar2(30) not null,
+    contact_email1 varchar2(30),
+    contact_email2 varchar2(30),
+    contact_tel1 varchar2(10),
+    contact_tel2 varchar2(10),
+    contact_tel3 varchar2(10),
+    contact_reason varchar2(30),
+    contact_callback varchar2(30),
+    contact_subject varchar2(50) not null,   -- 글제목
+    contact_content varchar2(2000) not null, -- 글내용
+    contact_logtime date
+);
+
+--테이블 구조 확인
+desc contact;
+--테이블 삭제
+drop table contact purge;
+--테이블 목록
+select * from tab;
+
+-- 시퀀스 만들기
+create sequence seq_contact nocycle nocache;
+
+-- 시퀀스 삭제
+drop sequence seq_contact;
+
+-- 데이터 추가하기
+insert into contact values(seq_contact.nextval,'홍길동', 'hong01' , '1234' , 'hong', 'naver.com', '010', '1234' , '5678', '계정', '이메일로 답변주세요.', '자동로그인 유지가 안되네요ㅠ_ㅠ', '잘 쓰고 있었는데 실망입니다. 자동로그인이 계속 풀려서 자꾸 다시 로그인해야해서 불편합니다. 빠른 시일내에 해결해주세요!!!', sysdate);
+insert into contact values(seq_contact.nextval,'김철수', 'kim01' , '1234' , 'hong', 'naver.com', '010', '1234' , '5678', '계정', '이메일로 답변주세요.', '자동로그인 유지가 안되네요ㅠ_ㅠ', '잘 쓰고 있었는데 실망입니다. 자동로그인이 계속 풀려서 자꾸 다시 로그인해야해서 불편합니다. 빠른 시일내에 해결해주세요!!!', sysdate);
+insert into contact values(seq_contact.nextval,'이영희', 'lee01' , '1234' , 'hong', 'naver.com', '010', '1234' , '5678', '계정', '이메일로 답변주세요.', '자동로그인 유지가 안되네요ㅠ_ㅠ', '잘 쓰고 있었는데 실망입니다. 자동로그인이 계속 풀려서 자꾸 다시 로그인해야해서 불편합니다. 빠른 시일내에 해결해주세요!!!', sysdate);
+insert into contact values(seq_contact.nextval,'홍길동', 'hong01' , '1234' , 'hong', 'naver.com', '010', '1234' , '5678', '계정', '이메일로 답변주세요.', '자동로그인 유지가 안되네요ㅠ_ㅠ', '잘 쓰고 있었는데 실망입니다. 자동로그인이 계속 풀려서 자꾸 다시 로그인해야해서 불편합니다. 빠른 시일내에 해결해주세요!!!', sysdate);
+insert into contact values(seq_contact.nextval,'홍길동', 'hong01' , '1234' , 'hong', 'naver.com', '010', '1234' , '5678', '계정', '이메일로 답변주세요.', '삭제테스트', '잘 쓰고 있었는데 실망입니다. 자동로그인이 계속 풀려서 자꾸 다시 로그인해야해서 불편합니다. 빠른 시일내에 해결해주세요!!!', sysdate);
+
+insert into contact values(seq_contact.nextval,'홍길동', 'hong01' , '1234' , 'hong', 'naver.com', '010', '1234' , '5678', '보안', '연락처로 답변주세요.', '자동로그인 유지가 안되네요ㅠ_ㅠ', '잘 쓰고 있었는데 실망입니다. 자동로그인이 계속 풀려서 자꾸 다시 로그인해야해서 불편합니다. 빠른 시일내에 해결해주세요!!!', sysdate);
+
+
+-- 데이터 확인하기
+select * from contact;
+select * from contact where contact_name = '홍길동';
+select * from contact where contact_id ='hong01';
+select * from contact where contact_subject ='자동로그인 유지가 안되네요ㅠ_ㅠ';
+select * from contact where contact_id ='hong01' and contact_subject ='자동로그인 유지가 안되네요ㅠ_ㅠ';
+
+--수정하기
+update contact set contact_email1='kim', contact_email2='gmail.com', contact_tel1='010' , contact_tel2='2345', contact_tel3='6789',
+contact_reason='보안', contact_callback= '연락처로 답변주세요.', contact_subject='보안',contact_content='보안'
+where contact_num=5;
+
+update contact set contact_email1='kimSujung', contact_email2='naver.com', contact_tel1='011' , 
+   contact_tel2='1234', contact_tel3='5678', contact_reason='FAQ', 
+   contact_callback= '연락처로 답변주세요.', contact_subject='수정제발 ㅠ',contact_content='수정되라'
+    where contact_num =5;
+
+
+-- 데이터 삭제
+delete contact where contact_id='hong01' and contact_subject ='삭제테스트';
+
+
+commit;
+
+
+-----------------------------------------------------------------------------
+-- 앱 회원관리 테이블 (category 추가)
+
+create table appMember (
+    id varchar2(30) primary key,
+    cate1 varchar2(30), 
+    cate2 varchar2(30),
+    cate3 varchar2(30),
+    google_Id varchar2(30),
+    kakao_Id varchar2(30)
+);
+
+--테이블 구조 확인
+desc appMember;
+--테이블 삭제
+drop table appMember purge;
+--테이블 목록
+select * from tab;
+
+
+-- 데이터 추가하기
+insert into appMember values('kim01', 'food', 'health', 'art', '1234567', '09876543');
+insert into appMember values('kim02', 'memory', 'health', 'pet', '1234567', '09876543');
+insert into appMember values('kim03', 'game', 'health', 'it', '1234567', '09876543');
+insert into appMember values('kim04', 'food', 'it', 'pet', '1234567', '09876543');
+insert into appMember values('kim05', 'music', 'health', 'pet', '1234567', '09876543');
+
+
+-- 데이터 확인하기
+select * from appMember;
+select * from appMember where id = 'kim01';
+
+
+-- 회원정보 수정하기
+update appMember set cate1 = 'memory', cate2 = 'game', cate3 = 'pet' where id = 'kim01';
+
+
+commit;
+----------------------------------------------------------------------------------------------------
+
+
 --반려동물 자랑하기 !
 create table showoffboard (
   board_num number,                      -- 글번호
