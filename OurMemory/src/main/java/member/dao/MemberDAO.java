@@ -50,4 +50,10 @@ public class MemberDAO {
 		
 		return memberDTO;
 	}
+	
+	///////// 앱 회원가입 (추가) 
+	public int appMemberJoin(AppMemberDTO appMemberDTO) {
+		int result = sqlSession.insert("mybatis.memberMapper.appMemberJoin", appMemberDTO);
+		return	result;
+	}
 }
