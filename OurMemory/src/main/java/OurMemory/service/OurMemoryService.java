@@ -93,6 +93,9 @@ public interface OurMemoryService {
 	// 닉네임과 이름 가져오기 함수 ( 로그인 성공시 )
 	public MemberDTO memberInformation(String id);
 	
+	///////////////////insert : 앱 회원가입
+	public int appMemberJoin (AppMemberDTO appMemberDTO);
+	
 	///// 여기부턴 contact 관련 DAO 모음//////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	//insert : 글저장
