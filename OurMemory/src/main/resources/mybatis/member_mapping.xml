@@ -26,4 +26,10 @@
 	<update id="memberModify" parameterType="String">
 		회원정보 수정 칸이 만들어지면 작업할 예정
 	</update>
+	
+	<!-- 앱 회원가입 - 카테고리 추가 -->
+	<insert id="appMemberJoin" parameterType="appMemberDTO">
+		insert into appMember values
+		(#{id}, #{cate1}, #{cate2}, #{cate3}, #{google_Id}, #{kakao_Id})
+	</insert>
 </mapper>
