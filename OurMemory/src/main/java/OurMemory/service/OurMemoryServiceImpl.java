@@ -46,6 +46,18 @@ public class OurMemoryServiceImpl implements OurMemoryService {
 	}
 	
 	@Override
+	public List<MemoryDTO> memoryBoardHealthList(int startNum, int endNum) {
+		return memoryDao.memoryBoardHealthList(startNum, endNum);
+	}
+	
+	@Override
+	public List<MemoryDTO> totalList(int startNum, int endNum, 
+						String cate1, String cate2, String cate3) {
+
+		return memoryDao.totalList(startNum, endNum,cate1,cate2,cate3);
+	}
+	
+	@Override
 	public int showoffBoardWrite(ShowoffDTO showoffDTO) {
 		return showoffDao.showoffBoardWrite(showoffDTO);
 	}
