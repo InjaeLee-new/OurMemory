@@ -9,7 +9,7 @@ import java.io.PrintWriter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.json.JSONObject;
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
@@ -64,9 +64,9 @@ public class JoinJson {
 		//String profile_image = request.getParameter("profile_image");
 		
 		MemberDTO memberDTO = new MemberDTO();
-		memberDTO.setName(name);
-		memberDTO.setId(id);
-		memberDTO.setPw(pw);
+		memberDTO.setUser_name(name);
+		memberDTO.setUser_id(id);
+		memberDTO.setPwd(pw);
 		memberDTO.setNickname(nickname);
 		memberDTO.setGender(gender);
 		memberDTO.setEmail1(email1);

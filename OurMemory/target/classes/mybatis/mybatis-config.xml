@@ -10,6 +10,7 @@
 	 	<typeAlias type="showoff.dto.ShowoffDTO" alias="showoffDTO"/>
 	 	<typeAlias type="member.dto.MemberDTO" alias="memberDTO"/>
 	 	<typeAlias type="contact.dto.ContactDTO" alias="contactDTO"/>
+		 <typeAlias type="appmember.dto.AppMemberDTO" alias="appMemberDTO"/>
 	 </typeAliases>
 	 
 	 <!-- SQL Mapper 설정 -->

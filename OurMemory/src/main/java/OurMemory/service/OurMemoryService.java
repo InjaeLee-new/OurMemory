@@ -3,6 +3,7 @@ package OurMemory.service;
 
 import java.util.List;
 
+import appmember.dto.AppMemberDTO;
 import contact.dto.ContactDTO;
 import member.dto.MemberDTO;
 import memory.dto.MemoryCommentDTO;
