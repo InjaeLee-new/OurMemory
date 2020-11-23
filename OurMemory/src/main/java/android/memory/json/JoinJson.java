@@ -30,7 +30,7 @@ public class JoinJson {
 	public void joinJson(HttpServletRequest request, HttpServletResponse response, MultipartFile profile) throws Exception{
 		request.setCharacterEncoding("UTF-8");
 		
-		String filePath = "C:\\Users\\USER\\git\\repository\\OurMemory\\src\\main\\webapp\\img";
+		String filePath = "C:\\Users\\USER\\git\\ourMemoryWeb\\OurMemory\\src\\main\\webapp\\img";
 		
 		String fileName = profile.getOriginalFilename();
 		
@@ -78,12 +78,14 @@ public class JoinJson {
 		memberDTO.setProfile_image(fileName);
 		
 		int result1 = ourMemoryService.memberJoin(memberDTO);
+		System.out.println("result1 = " + result1);
 		
 		String cate1 = request.getParameter("cate1");
 		String cate2 = request.getParameter("cate2");
 		String cate3 = request.getParameter("cate3");
 		String google_Id = request.getParameter("google_Id");
 		String kakao_Id = request.getParameter("kakao_Id");
+		
 		
 		AppMemberDTO appMemberDTO = new AppMemberDTO();
 		appMemberDTO.setId(id);
@@ -94,7 +96,7 @@ public class JoinJson {
 		appMemberDTO.setKakao_Id(kakao_Id);
 		
 		int result2 = ourMemoryService.appMemberJoin(appMemberDTO);
-		
+		System.out.println("result2 = " + result2);
 		// json 문서 만들기
 		String rt = null;
 		if(result1 > 0 && result2 >0) {

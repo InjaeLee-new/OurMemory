@@ -13,14 +13,8 @@ public class MemoryDTO {
 	private String memory_category;
 	private String memory_file;
 	private String memory_date;
-	private String memory_category;
 	
-	public String getMemory_category() {
-		return memory_category;
-	}
-	public void setMemory_category(String memory_category) {
-		this.memory_category = memory_category;
-	}
+	
 	public int getMemory_rec() {
 		return memory_rec;
 	}

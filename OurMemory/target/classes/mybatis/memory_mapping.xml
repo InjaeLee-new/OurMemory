@@ -30,6 +30,28 @@
 		]]>
 	</select>
 	
+	<!-- // select : Health 불러오기 -->
+	<select id="memoryBoardHealthList" parameterType="java.util.Map" resultType="memoryDTO">
+		<![CDATA[
+		select * from
+		(select rownum rn, tt.* from 
+		(select * from mymemoryalbum order by memory_num desc) tt)
+		where rn>=#{startNum} and rn<=#{endNum} and memory_category = 'health'
+		]]>
+	</select>
+	
+	<!-- // select : category 선택한 것들 불러오기 -->
+	<select id="totalList" parameterType="java.util.Map" resultType="memoryDTO">
+		<![CDATA[
+		select * from
+		(select rownum rn, tt.* from 
+		(select * from mymemoryalbum order by memory_date desc) tt)
+		where rn>=#{startNum} and rn<=#{endNum} 
+		and memory_category = #{cate1} or memory_category = #{cate2} or 
+		memory_category = #{cate3}
+		]]>
+	</select>
+	
 	<!-- 추천수에 따라 TOP3 랭킹 내용 가져오기 -->
 	<select id="memoryRankingTopThree" resultType="memoryDTO">
 		<![CDATA[
@@ -53,6 +75,11 @@
 	<!-- 내가 쓴 글 수 가져오기 --><!-- 'id2' => 나중에  session Id로 수정 -->
 	<select id="getMyTotalMemory" parameterType="String" resultType="int">
 			select count(*) as cnt from mymemoryalbum where memory_id = #{id}
+	</select>
+	
+	<!-- Health 글 수 가져오기 -->
+	<select id="getHealthTotalMemory" resultType="int">
+			select count(*) as cnt from mymemoryalbum where memory_category = 'health'
 	</select>
 	
 	<!-- 조회수 증가 -->
