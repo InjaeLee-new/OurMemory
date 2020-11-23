@@ -39,6 +39,13 @@ public interface OurMemoryService {
 	//select : 해당 글번호를 받아와서 댓글을 출력한다.
 	public List<MemoryCommentDTO> commentViewJson(int seq);
 	
+	//memoryBoardHealthList : N개씩 목록 끊어오는 함수 (우리가 startNum,endNum을 설정할 때마다 바뀐다.)
+	public List<MemoryDTO> memoryBoardHealthList(int startNum, int endNum);	
+	
+	//totalList : 선택한 카테고리 별로 가져옴 (우리가 startNum,endNum을 설정할 때마다 바뀐다.)
+	public List<MemoryDTO> totalList(int startNum, int endNum, 
+							String cate1, String cate2, String cate3);	
+	
 	//insert : 작성된 댓글을 database에 저장한다.
 	public int commentWriteJson(int memory_seq, String memory_comment_name, String memory_comment_content);
 	
