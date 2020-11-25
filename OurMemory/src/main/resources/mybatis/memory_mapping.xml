@@ -10,6 +10,12 @@
 		(seq_memory_num.nextval, #{memory_name},#{memory_id}, #{memory_pass}, #{memory_subject}, #{memory_content}, 0, 0, 0, 'memory' , #{memory_file}, sysdate)
 	</insert>
 	
+	<!-- // insert : android에서 글 쓰기 -->
+	<insert id="writeAndroid" parameterType="memoryDTO">
+		insert into mymemoryalbum values
+		(seq_memory_num.nextval, #{memory_name},#{memory_id}, #{memory_pass}, #{memory_subject}, #{memory_content}, 0, 0, 0, #{memory_category}, #{memory_file}, sysdate)
+	</insert>
+	
 	<!-- // select : List 불러오기 -->
 	<select id="memoryBoardList" parameterType="java.util.Map" resultType="memoryDTO">
 		<![CDATA[
@@ -37,6 +43,16 @@
 		(select rownum rn, tt.* from 
 		(select * from mymemoryalbum order by memory_num desc) tt)
 		where rn>=#{startNum} and rn<=#{endNum} and memory_category = 'health'
+		]]>
+	</select>
+	
+	<!-- // select : art 불러오기 -->
+	<select id="memoryBoardArtList" parameterType="java.util.Map" resultType="memoryDTO">
+		<![CDATA[
+		select * from
+		(select rownum rn, tt.* from 
+		(select * from mymemoryalbum order by memory_num desc) tt)
+		where rn>=#{startNum} and rn<=#{endNum} and memory_category = 'art'
 		]]>
 	</select>
 	
@@ -110,4 +126,17 @@
 	<insert id="commentWriteJson" parameterType="java.util.Map">
 		insert into memoryComment values ( #{memory_seq}, #{memory_comment_name}, #{memory_comment_content}, sysdate )
 	</insert>
+	
+	<!-- // insert : android에서 글 추천 / 비추천  -->
+	<insert id="recommandInsert" parameterType="recommandDTO">
+		insert into recommand values
+		(#{recommand_id}, #{recommand_seq})
+	</insert>
+	
+	<!-- // select : android에서 글 추천 유무 확인  -->
+	<select id="recommandCheck" parameterType="java.util.Map" resultType="int">
+			select count(*) as cnt from	recommand 
+			where recommand_id = #{recommand_id} 
+			and recommand_seq = #{recommand_seq}
+	</select>
 </mapper>
