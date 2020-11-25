@@ -36,6 +36,11 @@ public class OurMemoryServiceImpl implements OurMemoryService {
 	}
 
 	@Override
+	public int writeAndroid(MemoryDTO memoryDTO) {
+		return memoryDao.writeAndroid(memoryDTO);
+	}
+	
+	@Override
 	public List<MemoryDTO> memoryBoardList(int startNum, int endNum) {
 		return memoryDao.memoryBoardList(startNum, endNum);
 	}
@@ -48,6 +53,11 @@ public class OurMemoryServiceImpl implements OurMemoryService {
 	@Override
 	public List<MemoryDTO> memoryBoardHealthList(int startNum, int endNum) {
 		return memoryDao.memoryBoardHealthList(startNum, endNum);
+	}
+	
+	@Override
+	public List<MemoryDTO> memoryBoardArtList(int startNum, int endNum) {
+		return memoryDao.memoryBoardArtList(startNum, endNum);
 	}
 	
 	@Override
@@ -80,6 +90,11 @@ public class OurMemoryServiceImpl implements OurMemoryService {
 	@Override
 	public int getMyTotalMemory(String id) {
 		return memoryDao.getMyTotalMemory(id);
+	}
+	
+	@Override
+	public int getHealthTotalMemory() {
+		return memoryDao.getHealthTotalMemory();
 	}
 	
 	@Override
@@ -132,6 +147,16 @@ public class OurMemoryServiceImpl implements OurMemoryService {
 		return showoffDao.showoffBoardNrec(board_num);
 	}
 
+	@Override
+	public int recommandInsert(RecommandDTO recommandDTO) {
+		return memoryDao.recommandInsert(recommandDTO);
+	}
+	@Override
+	public int recommandCheck(int recommand_seq, String recommand_id) {
+		return memoryDao.recommandCheck(recommand_seq, recommand_id);
+	}
+
+	
 	@Override
 	public int memberJoin(MemberDTO memberDTO) {
 		return memberDao.memberJoin(memberDTO);
