@@ -23,6 +23,12 @@ public class MemoryDAO {
 		return result;
 	}
 	
+	//insert : 안드로이드에서 글저장
+	public int writeAndroid(MemoryDTO memoryDTO) {
+		int result = sqlSession.insert("mybatis.memoryMapper.writeAndroid", memoryDTO);
+		return result;
+	}
+	
 	//select : 목록 List 불러오기
 	public List<MemoryDTO> memoryBoardList(int startNum, int endNum) {
 		Map<String, Integer> map = new HashMap<String, Integer>();
@@ -75,37 +81,62 @@ public class MemoryDAO {
 	public int memoryBoardNrec(int memory_num) {
 		return sqlSession.update("mybatis.memoryMapper.memoryBoardNrec", memory_num);
 	}
+	
+	//insert : 추천 / 비추천 안 했을 시 넣는다.
+	public int recommandInsert(RecommandDTO dto) {
+		int result = sqlSession.insert("mybatis.memoryMapper.recommandInsert", dto);
+		return result;
+	}
+	
+	//select : 추천 유무
+	public int recommandCheck(int recommand_seq, String recommand_id) {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("recommand_seq", recommand_seq);
+		map.put("recommand_id", recommand_id);
+		return sqlSession.selectOne("mybatis.memoryMapper.recommandCheck", map);
+	}
+	
 	//select : 내가 올린 글 목록 List 불러오기
-	   public List<MemoryDTO> memoryBoardHealthList(int startNum, int endNum) {
-	      Map<String, Integer> map = new HashMap<String, Integer>();
-	      map.put("startNum", startNum);
-	      map.put("endNum", endNum);
-	      List<MemoryDTO> list = 
-	                  sqlSession.selectList("mybatis.memoryMapper.memoryBoardHealthList" , map);
-	      
-	      return list;
-	   }
+	public List<MemoryDTO> memoryBoardHealthList(int startNum, int endNum) {
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		map.put("startNum", startNum);
+		map.put("endNum", endNum);
+		List<MemoryDTO> list = 
+			  sqlSession.selectList("mybatis.memoryMapper.memoryBoardHealthList" , map);
+
+		return list;
+	}
+	
+	//select : 내가 올린 글 목록 List 불러오기
+	public List<MemoryDTO> memoryBoardArtList(int startNum, int endNum) {
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		map.put("startNum", startNum);
+		map.put("endNum", endNum);
+		List<MemoryDTO> list = sqlSession.selectList("mybatis.memoryMapper.memoryBoardArtList" , map);
+		
+		return list;
+	}
 	   
-	   //select : category 선택 글 목록 List 불러오기
-	   public List<MemoryDTO> totalList(int startNum, int endNum, 
-	                  String cate1, String cate2, String cate3) {
-	      Map<String, Object> map = new HashMap<String, Object>();
-	      map.put("startNum", startNum);
-	      map.put("endNum", endNum);
-	      map.put("cate1", cate1);
-	      map.put("cate2", cate2);
-	      map.put("cate3", cate3);
-	      
-	      List<MemoryDTO> list = 
-	                  sqlSession.selectList("mybatis.memoryMapper.totalList" , map);
-	      
-	      return list;
-	   }
+	//select : category 선택 글 목록 List 불러오기
+	public List<MemoryDTO> totalList(int startNum, int endNum, 
+		  String cate1, String cate2, String cate3) {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("startNum", startNum);
+		map.put("endNum", endNum);
+		map.put("cate1", cate1);
+		map.put("cate2", cate2);
+		map.put("cate3", cate3);
+
+		List<MemoryDTO> list = 
+			  sqlSession.selectList("mybatis.memoryMapper.totalList" , map);
+
+		return list;
+	}
 	   
 	 //health 글수 얻기
-	   public int getHealthTotalMemory() {
-	      return sqlSession.selectOne("mybatis.memoryMapper.getHealthTotalMemory");
-	   }
+	public int getHealthTotalMemory() {
+	     	return sqlSession.selectOne("mybatis.memoryMapper.getHealthTotalMemory");
+	}
 	
 	
 	//select : 최다 추천수 TOP 3 목록 출력
