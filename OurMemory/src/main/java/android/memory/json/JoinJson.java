@@ -32,20 +32,23 @@ public class JoinJson {
 		
 		String filePath = "C:\\Users\\USER\\git\\ourMemoryWeb\\OurMemory\\src\\main\\webapp\\img";
 		
-		String fileName = profile.getOriginalFilename();
+		String fileName = "memory1";
 		
-		File file = new File(filePath, fileName);
-		
-		// 파일 복사
-		// getInputStream() : 업로드한 파일 데이터를 읽어오는 InputStream을 구한다.
-		try {
-			FileCopyUtils.copy(profile.getInputStream(), new FileOutputStream(file));
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		if(profile != null) {
+			fileName = profile.getOriginalFilename();
+			File file = new File(filePath, fileName);
+			
+			// 파일 복사
+			// getInputStream() : 업로드한 파일 데이터를 읽어오는 InputStream을 구한다.
+			try {
+				FileCopyUtils.copy(profile.getInputStream(), new FileOutputStream(file));
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		
 		
@@ -99,11 +102,22 @@ public class JoinJson {
 		System.out.println("result2 = " + result2);
 		// json 문서 만들기
 		String rt = null;
-		if(result1 > 0 && result2 >0) {
-			rt = "OK";
-		} else {
-			rt = "FAIL";
+		if(result1 != 0) {
+			if(result2 >0) {
+				rt = "OK";
+			} else {
+				rt = "FAIL";
+			}
 		}
+		else {
+			if(result2 > 0 ) {
+				rt = "이미 회원가입이 되어있는 계정입니다. 카테고리만 추가로 등록합니다.";
+			} else {
+				rt = "FAIL";
+			}
+			
+		}
+		
 		
 		JSONObject json = new JSONObject();
 		json.put("rt", rt);
