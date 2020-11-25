@@ -15,17 +15,33 @@ public interface OurMemoryService {
 	//memoryBoardWrite : 추억 저장소 글 저장
 	public int memoryBoardWrite(MemoryDTO memoryDTO);
 	
+	//writeAndroid : 안드로이드에서 글 저장
+	public int writeAndroid(MemoryDTO memoryDTO);
+	
 	//memoryBoardList : N개씩 목록 끊어오는 함수 (우리가 startNum,endNum을 설정할 때마다 바뀐다.)
 	public List<MemoryDTO> memoryBoardList(int startNum, int endNum);
 	
 	//memoryBoardMyList : 내가 올린 게시글 N개씩 목록 끊어오는 함수 (우리가 startNum,endNum을 설정할 때마다 바뀐다.)
 	public List<MemoryDTO> memoryBoardMyList(int startNum, int endNum, String id);
 	
+	//memoryBoardHealthList : N개씩 목록 끊어오는 함수 (우리가 startNum,endNum을 설정할 때마다 바뀐다.)
+	public List<MemoryDTO> memoryBoardHealthList(int startNum, int endNum);	
+
+	//memoryBoardArtList : N개씩 목록 끊어오는 함수 (우리가 startNum,endNum을 설정할 때마다 바뀐다.)
+	public List<MemoryDTO> memoryBoardArtList(int startNum, int endNum);
+	
+	//totalList : 선택한 카테고리 별로 가져옴 (우리가 startNum,endNum을 설정할 때마다 바뀐다.)
+	public List<MemoryDTO> totalList(int startNum, int endNum, 
+							String cate1, String cate2, String cate3);	
+	
 	//memory의 총 글 수 가져오기
 	public int getTotalMemory();
 	
 	//memory의 나의 총 글 수 가져오기
 	public int getMyTotalMemory(String id);
+	
+	//memory의 Health 총 글 수 가져오기
+	public int getHealthTotalMemory();	
 	
 	//select : 글 하나 얻어오기
 	public MemoryDTO memoryBoardView(int seq);
@@ -84,6 +100,12 @@ public interface OurMemoryService {
 	
 	//update : 비추천수 증가시키기
 	public int showoffBoardNrec(int board_num);
+	
+	//insert : 추천 유무 확인
+	public int recommandInsert(RecommandDTO recommandDTO);
+	
+	//select : 추천 유무 확인
+	public int recommandCheck(int recommand_seq, String recommand_id);
 	
 	//select : 최다 추천수 TOP 3 목록 출력
 	public List<ShowoffDTO> showoffRankingTopThree();
