@@ -11,6 +11,7 @@
 	 	<typeAlias type="member.dto.MemberDTO" alias="memberDTO"/>
 	 	<typeAlias type="contact.dto.ContactDTO" alias="contactDTO"/>
 		 <typeAlias type="appmember.dto.AppMemberDTO" alias="appMemberDTO"/>
+		 <typeAlias type="recommand.dto.RecommandDTO" alias="recommandDTO"/>
 	 </typeAliases>
 	 
 	 <!-- SQL Mapper 설정 -->
