@@ -176,13 +176,20 @@ public class OurMemoryServiceImpl implements OurMemoryService {
 	public List<ShowoffDTO> showoffRankingTopThree() {
 		return null;
 	}
-
+	
+	@Override
 	public boolean isExistedId(String id) {
 		return memberDao.isExistedId(id);
 	}
 	
+	@Override
 	public MemberDTO memberInformation(String id) {
 		return memberDao.memberInformation(id);
+	}
+	
+	@Override
+	public List<AppMemberDTO> appMemberSelect(String id) {
+		return memberDao.appMemberSelect(id);
 	}
 	
 
