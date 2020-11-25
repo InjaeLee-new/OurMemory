@@ -23,16 +23,9 @@ public interface OurMemoryService {
 	
 	//memoryBoardMyList : 내가 올린 게시글 N개씩 목록 끊어오는 함수 (우리가 startNum,endNum을 설정할 때마다 바뀐다.)
 	public List<MemoryDTO> memoryBoardMyList(int startNum, int endNum, String id);
-	
-	//memoryBoardHealthList : N개씩 목록 끊어오는 함수 (우리가 startNum,endNum을 설정할 때마다 바뀐다.)
-	public List<MemoryDTO> memoryBoardHealthList(int startNum, int endNum);	
 
 	//memoryBoardArtList : N개씩 목록 끊어오는 함수 (우리가 startNum,endNum을 설정할 때마다 바뀐다.)
 	public List<MemoryDTO> memoryBoardArtList(int startNum, int endNum);
-	
-	//totalList : 선택한 카테고리 별로 가져옴 (우리가 startNum,endNum을 설정할 때마다 바뀐다.)
-	public List<MemoryDTO> totalList(int startNum, int endNum, 
-							String cate1, String cate2, String cate3);	
 	
 	//memory의 총 글 수 가져오기
 	public int getTotalMemory();
