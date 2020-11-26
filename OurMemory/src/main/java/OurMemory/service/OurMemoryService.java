@@ -120,6 +120,9 @@ public interface OurMemoryService {
 	///////////////////insert : 앱 회원가입
 	public int appMemberJoin (AppMemberDTO appMemberDTO);
 	
+	//select : AppMemberDTO 가져오기
+	public List<AppMemberDTO> appMemberSelect(String id);
+	
 	///// 여기부턴 contact 관련 DAO 모음//////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	//insert : 글저장

@@ -31,4 +31,9 @@
 	<insert id="appMemberJoin" parameterType="appMemberDTO">
 		insert into appMember values(#{id}, #{cate1}, #{cate2}, #{cate3}, #{google_Id}, #{kakao_Id})
 	</insert>
+	
+	<!-- cate DB에서 하나 불러오기 -->
+	<select id="appMemberSelect" parameterType="String" resultType="appMemberDTO">
+		select * from appMember where id=#{user_id}
+	</select>
 </mapper>
