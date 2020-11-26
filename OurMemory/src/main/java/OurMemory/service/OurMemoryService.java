@@ -8,6 +8,7 @@ import contact.dto.ContactDTO;
 import member.dto.MemberDTO;
 import memory.dto.MemoryCommentDTO;
 import memory.dto.MemoryDTO;
+import recommand.dto.RecommandDTO;
 import showoff.dto.ShowoffDTO;
 
 public interface OurMemoryService {

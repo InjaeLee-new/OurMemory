@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import memory.dto.MemoryCommentDTO;
 import memory.dto.MemoryDTO;
+import recommand.dto.RecommandDTO;
 
 @Repository
 public class MemoryDAO {
