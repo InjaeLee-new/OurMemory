@@ -33,7 +33,7 @@ public class Write {
 		String dir = "D:\\android_Kim_Seungwon\\spring\\workspace\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\OurMemory1107\\storage\\";
 
 		String filePath = "C:\\Users\\USER\\git\\repository\\OurMemory\\src\\main\\webapp\\img";
-		// 파일 여러개 올리게 리스트 형식으로 작성				files 's' 확인
+		// 파일 여러개 올리게 리스트 형식으로 생성 
 		List<MultipartFile> imgList = request.getFiles("memory_file");
 		System.out.println("img : "+imgList);
 //		
@@ -42,7 +42,7 @@ public class Write {
 //		File file = new File(dir, fileName);
 		String arrayFileName="";
 		
-		for (int i = 0; i< imgList.size(); i++) {
+		for (int i = 0; i < imgList.size(); i++) {
 			MultipartFile mf = imgList.get(i);
 			String originname = mf.getOriginalFilename();
 //			일단 주석처리 한 곳은 파일 이름 동일시 안되게 하려고 한것임
@@ -56,18 +56,25 @@ public class Write {
 			}else {
 				arrayFileName += originname+", ";				
 			}
+			System.out.println("arraystatus : "+arrayFileName);
 		}
 		
 		
 		MemoryDTO memoryDto = new MemoryDTO();
-		
+		memoryDto.setMemory_name(request.getParameter("memory_name"));
 		System.out.println("memory_name : "+request.getParameter("memory_name"));
+		memoryDto.setMemory_pass(request.getParameter("memory_pass"));
 		System.out.println("memory_pass : "+request.getParameter("memory_pass"));
+		memoryDto.setMemory_id(request.getParameter("memory_id"));
 		System.out.println("memory_id : "+request.getParameter("memory_id"));
+		memoryDto.setMemory_subject(request.getParameter("memory_subject"));
 		System.out.println("memory_subject : "+request.getParameter("memory_subject"));
+		memoryDto.setMemory_content(request.getParameter("memory_content"));
 		System.out.println("memory_content : "+request.getParameter("memory_content"));
+		memoryDto.setMemory_category(request.getParameter("memory_category"));
 		System.out.println("memory_category : "+request.getParameter("memory_category"));
-		System.out.println("originname : "+arrayFileName);
+		memoryDto.setMemory_file(arrayFileName);
+		System.out.println("arrayFileName : "+arrayFileName);
 		
 		int result = ourMemoryService.writeAndroid(memoryDto);
 		String rt = "Fail";
