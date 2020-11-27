@@ -189,7 +189,7 @@ public class OurMemoryServiceImpl implements OurMemoryService {
 	}
 	
 	@Override
-	public List<AppMemberDTO> appMemberSelect(String id) {
+	public AppMemberDTO appMemberSelect(String id) {
 		return memberDao.appMemberSelect(id);
 	}
 	

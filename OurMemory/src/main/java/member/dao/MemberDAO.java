@@ -57,4 +57,8 @@ public class MemberDAO {
 		int result = sqlSession.insert("mybatis.memberMapper.appMemberJoin", appMemberDTO);
 		return	result;
 	}
+	
+	public AppMemberDTO appMemberSelect(String id) {
+		return sqlSession.selectOne("mybatis.memberMapper.appMemberSelect", id);
+	}
 }
