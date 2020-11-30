@@ -145,4 +145,8 @@ public interface OurMemoryService {
 	
 	   // 카테고리별 전체글 불러오기
 	   public List<MemoryDTO> membercategory(String memory_category);
+	
+	   public int memoryModify(MemoryDTO memoryDTO);
+	   
+	   public int memoryDelete(int memory_num);
 }
