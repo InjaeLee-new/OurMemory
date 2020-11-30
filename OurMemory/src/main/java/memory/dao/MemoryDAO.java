@@ -164,4 +164,10 @@ public class MemoryDAO {
 		map.put("memory_comment_content", memory_comment_content);
 		return sqlSession.insert("mybatis.memoryMapper.commentWriteJson", map);
 	}
+	public int memoryModify(MemoryDTO memoryDTO) {
+		return sqlSession.update("mybatis.memoryMapper.memoryModify", memoryDTO);
+	}
+	public int memoryDelete(int memory_num) {
+		return sqlSession.update("mybatis.memoryMapper.memoryDelete", memory_num);
+	}
 }
