@@ -32,7 +32,7 @@ public class Write {
 		// 승원 집 컴퓨터 경로
 		String dir = "D:\\android_Kim_Seungwon\\spring\\workspace\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\OurMemory1107\\storage\\";
 
-		String filePath = "C:\\Users\\USER\\git\\repository\\OurMemory\\src\\main\\webapp\\img";
+		String filePath = "C:\\Users\\USER\\git\\repository\\OurMemory\\src\\main\\webapp\\img\\";
 		// 파일 여러개 올리게 리스트 형식으로 생성 
 		MultipartFile img1 = request.getFile("memory_file1");
 		MultipartFile img2 = request.getFile("memory_file2");
@@ -45,22 +45,22 @@ public class Write {
 		String originname1 = "";
 		if (img1 != null) {
 			originname1 = img1.getOriginalFilename();
-			img1.transferTo(new File(dir+originname1)); //파일로 저장하기	
+			img1.transferTo(new File(filePath+originname1)); //파일로 저장하기	
 			if (img2 != null) {
 				String originname2 = img2.getOriginalFilename();
-				img2.transferTo(new File(dir+originname2)); //파일로 저장하기
+				img2.transferTo(new File(filePath+originname2)); //파일로 저장하기
 				arrayFileName += ", "+originname2;
 				if (img3 != null) {
 					String originname3 = img3.getOriginalFilename();
-					img3.transferTo(new File(dir+originname3)); //파일로 저장하기
+					img3.transferTo(new File(filePath+originname3)); //파일로 저장하기
 					arrayFileName += ", "+originname3;
 					if (img4 != null) {
 						String originname4 = img4.getOriginalFilename();
-						img4.transferTo(new File(dir+originname4)); //파일로 저장하기
+						img4.transferTo(new File(filePath+originname4)); //파일로 저장하기
 						arrayFileName += ", "+originname4;
 						if (img2 != null) {
 							String originname5 = img5.getOriginalFilename();
-							img5.transferTo(new File(dir+originname5)); //파일로 저장하기	
+							img5.transferTo(new File(filePath+originname5)); //파일로 저장하기	
 							arrayFileName += ", "+originname5;
 						}
 					}

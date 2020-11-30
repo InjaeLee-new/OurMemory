@@ -48,7 +48,7 @@ public class ModifyJson {
 		dto.setMemory_category(memory_category);
 		
 		result = ourMemoryService.memoryModify(dto);
-		
+		System.out.println("수정 한 후의 result = " + result);
 		if(result > 0) {
 			rt = "성공!";
 			JSONObject json = new JSONObject();
