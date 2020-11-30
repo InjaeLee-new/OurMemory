@@ -34,31 +34,39 @@ public class Write {
 
 		String filePath = "C:\\Users\\USER\\git\\repository\\OurMemory\\src\\main\\webapp\\img";
 		// 파일 여러개 올리게 리스트 형식으로 생성 
-		List<MultipartFile> imgList = request.getFiles("memory_file");
-		System.out.println("img : "+imgList);
-//		
-//		String fileName = img.getOriginalFilename();
-//		
-//		File file = new File(dir, fileName);
-		String arrayFileName="";
+		MultipartFile img1 = request.getFile("memory_file1");
+		MultipartFile img2 = request.getFile("memory_file2");
+		MultipartFile img3 = request.getFile("memory_file3");
+		MultipartFile img4 = request.getFile("memory_file4");
+		MultipartFile img5 = request.getFile("memory_file5");
+		System.out.println("img : "+img1);
 		
-		for (int i = 0; i < imgList.size(); i++) {
-			MultipartFile mf = imgList.get(i);
-			String originname = mf.getOriginalFilename();
-//			일단 주석처리 한 곳은 파일 이름 동일시 안되게 하려고 한것임
-//			UUID uuid = UUID.randomUUID(); // 랜덤 글 생성  
-//			String filename = uuid+originname; //파일이름 중복방지
-			int lastIndex = originname.lastIndexOf("."); // 온전히 파일 이름만 저장
-			String filetype = originname.substring(lastIndex +1); // 파일타입 구분 (jpg, png, gif)
-			mf.transferTo(new File(dir+originname)); //파일로 저장하기
-			if (i==imgList.size()-1) {
-				arrayFileName += originname;
-			}else {
-				arrayFileName += originname+", ";				
+		String arrayFileName = "";
+		String originname1 = "";
+		if (img1 != null) {
+			originname1 = img1.getOriginalFilename();
+			img1.transferTo(new File(dir+originname1)); //파일로 저장하기	
+			if (img2 != null) {
+				String originname2 = img2.getOriginalFilename();
+				img2.transferTo(new File(dir+originname2)); //파일로 저장하기
+				arrayFileName += ", "+originname2;
+				if (img3 != null) {
+					String originname3 = img3.getOriginalFilename();
+					img3.transferTo(new File(dir+originname3)); //파일로 저장하기
+					arrayFileName += ", "+originname3;
+					if (img4 != null) {
+						String originname4 = img4.getOriginalFilename();
+						img4.transferTo(new File(dir+originname4)); //파일로 저장하기
+						arrayFileName += ", "+originname4;
+						if (img2 != null) {
+							String originname5 = img5.getOriginalFilename();
+							img5.transferTo(new File(dir+originname5)); //파일로 저장하기	
+							arrayFileName += ", "+originname5;
+						}
+					}
+				}
 			}
-			System.out.println("arraystatus : "+arrayFileName);
 		}
-		
 		
 		MemoryDTO memoryDto = new MemoryDTO();
 		memoryDto.setMemory_name(request.getParameter("memory_name"));
@@ -73,8 +81,8 @@ public class Write {
 		System.out.println("memory_content : "+request.getParameter("memory_content"));
 		memoryDto.setMemory_category(request.getParameter("memory_category"));
 		System.out.println("memory_category : "+request.getParameter("memory_category"));
-		memoryDto.setMemory_file(arrayFileName);
-		System.out.println("arrayFileName : "+arrayFileName);
+		memoryDto.setMemory_file(originname1 + arrayFileName);
+		System.out.println("arrayFileName : "+ originname1+ arrayFileName);
 		
 		int result = ourMemoryService.writeAndroid(memoryDto);
 		String rt = "Fail";
