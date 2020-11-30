@@ -139,4 +139,12 @@
 			where recommand_id = #{recommand_id} 
 			and recommand_seq = #{recommand_seq}
 	</select>
+	<!-- // modify : 글 수정-->
+	<update id="memoryModify" parameterType="memoryDTO">
+		update mymemoryalbum set memory_subject = #{memory_subject},memory_content = #{memory_content}, memory_category = #{memory_category}  where memory_num = #{memory_num}
+	</update>
+	<!-- // delete : 글 삭제  -->
+	<delete id="memoryDelete" parameterType="int">
+		delete mymemoryalbum where memory_num = #{memory_num}
+	</delete>
 </mapper>

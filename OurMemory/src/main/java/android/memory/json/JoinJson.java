@@ -33,6 +33,7 @@ public class JoinJson {
 		String filePath = "C:\\Users\\USER\\git\\ourMemoryWeb\\OurMemory\\src\\main\\webapp\\img";
 		
 		String fileName = "memory1";
+		System.out.println("profile = " + profile);
 		
 		if(profile != null) {
 			fileName = profile.getOriginalFilename();
