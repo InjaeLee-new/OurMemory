@@ -247,6 +247,15 @@ public class OurMemoryServiceImpl implements OurMemoryService {
 			// TODO Auto-generated method stub
 			return memberDao.appMemberJoin(appMemberDTO);
 		}
+	@Override
+	public int memoryModify(MemoryDTO memoryDTO) {
+		return memoryDao.memoryModify(memoryDTO);
+	}
+
+	@Override
+	public int memoryDelete(int memory_num) {
+		return memoryDao.memoryDelete(memory_num);
+	}
 	   
 	   
 }
