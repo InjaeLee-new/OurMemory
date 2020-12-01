@@ -1,5 +1,5 @@
 package android.memory.json;
 
-public class appJoinJson {
+public class AppJoinJson {
 
 }
