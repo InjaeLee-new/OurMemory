@@ -43,14 +43,20 @@ public class ContactDAO {
 	}
 	
 	// delete : 글 삭제하기
-		public int contactDelete(int contact_num) {
-			return	sqlSession.update("mybatis.contactMapper.contactDelete" , contact_num);
-		}
+	public int contactDelete(int contact_num) {
+		return	sqlSession.update("mybatis.contactMapper.contactDelete" , contact_num);
+	}
 		
-		//총 글수 얻기
-		      public int getTotalContact(String contact_id) {
-		         return sqlSession.selectOne("mybatis.contactMapper.getTotalContact");
-		      }
+	//총 글수 얻기
+	public int getTotalContact(String contact_id) {
+		return sqlSession.selectOne("mybatis.contactMapper.getTotalContact");
+	}
+	
+	//insert : 글저장
+	public int appContactInsert(AppContactDTO appContactDTO) {
+	   int result = sqlSession.insert("mybatis.contactMapper.appContactInsert", appContactDTO);
+	   return result;
+	}
 		
 }
 
