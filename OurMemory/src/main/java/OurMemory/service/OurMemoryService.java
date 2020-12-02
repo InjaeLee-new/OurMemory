@@ -143,10 +143,14 @@ public interface OurMemoryService {
 	   //내가 남긴 글의 총 글 수 가져오기
 	   public int getTotalContact(String contact_id);
 	
+	   //insert : app 1:1 문의 글 저장
+   	   public int appContactInsert(AppContactDTO appContactDTO);
+	
 	   // 카테고리별 전체글 불러오기
 	   public List<MemoryDTO> membercategory(String memory_category);
 	
 	   public int memoryModify(MemoryDTO memoryDTO);
 	   
 	   public int memoryDelete(int memory_num);
+	
 }
