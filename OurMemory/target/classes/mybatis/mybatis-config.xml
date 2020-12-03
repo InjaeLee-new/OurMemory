@@ -10,9 +10,11 @@
 	 	<typeAlias type="showoff.dto.ShowoffDTO" alias="showoffDTO"/>
 	 	<typeAlias type="member.dto.MemberDTO" alias="memberDTO"/>
 	 	<typeAlias type="contact.dto.ContactDTO" alias="contactDTO"/>
-		 <typeAlias type="appmember.dto.AppMemberDTO" alias="appMemberDTO"/>
-		 <typeAlias type="recommand.dto.RecommandDTO" alias="recommandDTO"/>
-		 <typeAlias type="contact.dto.AppContactDTO" alias="appContactDTO"/>
+		<typeAlias type="appmember.dto.AppMemberDTO" alias="appMemberDTO"/>
+		<typeAlias type="recommand.dto.RecommandDTO" alias="recommandDTO"/>
+		<typeAlias type="contact.dto.AppContactDTO" alias="appContactDTO"/>
+	 	<typeAlias type="contact.dto.NoticeDTO" alias="noticeDTO"/>
+	 	<typeAlias type="contact.dto.QuestionDTO" alias="questionDTO"/>
 	 </typeAliases>
 	 
 	 <!-- SQL Mapper 설정 -->
