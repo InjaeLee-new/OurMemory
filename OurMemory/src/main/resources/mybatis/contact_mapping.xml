@@ -39,5 +39,11 @@
 	</select>
 	-->
 	
+	<!--  //insert : app 내에서 글저장 -->
+	<insert id="appContactInsert" parameterType="appContactDTO">
+	   insert into appContact values
+	   (seq_contact.nextval, #{contact_name}, #{contact_id}, #{contact_email}, #{contact_tel},
+	    #{contact_callback}, #{contact_subject}, #{contact_content}, #{contact_file}, sysdate)
+	</insert>
 	
 </mapper>
