@@ -57,6 +57,14 @@ public class ContactDAO {
 	   int result = sqlSession.insert("mybatis.contactMapper.appContactInsert", appContactDTO);
 	   return result;
 	}
+	
+	public List<NoticeDTO> noticeList(){
+		return sqlSession.selectList("mybatis.contactMapper.noticeList");
+	}
+	   
+	public List<QuestionDTO> questionList(){
+	   return sqlSession.selectList("mybatis.contactMapper.questionList");
+	}
 		
 }
 
