@@ -146,6 +146,12 @@ public interface OurMemoryService {
 	   //insert : app 1:1 문의 글 저장
    	   public int appContactInsert(AppContactDTO appContactDTO);
 	
+	   //noticeList : 
+	   public List<NoticeDTO> noticeList();
+
+	   //questionList : 
+	   public List<QuestionDTO> questionList();
+	
 	   // 카테고리별 전체글 불러오기
 	   public List<MemoryDTO> membercategory(String memory_category);
 	
