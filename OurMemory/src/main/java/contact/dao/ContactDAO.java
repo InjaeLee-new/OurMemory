@@ -8,7 +8,10 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import contact.dto.AppContactDTO;
 import contact.dto.ContactDTO;
+import contact.dto.NoticeDTO;
+import contact.dto.QuestionDTO;
 
 
 @Repository

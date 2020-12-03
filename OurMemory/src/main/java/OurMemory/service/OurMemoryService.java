@@ -4,7 +4,10 @@ package OurMemory.service;
 import java.util.List;
 
 import appmember.dto.AppMemberDTO;
+import contact.dto.AppContactDTO;
 import contact.dto.ContactDTO;
+import contact.dto.NoticeDTO;
+import contact.dto.QuestionDTO;
 import member.dto.MemberDTO;
 import memory.dto.MemoryCommentDTO;
 import memory.dto.MemoryDTO;

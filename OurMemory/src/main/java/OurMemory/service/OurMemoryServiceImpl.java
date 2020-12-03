@@ -7,7 +7,10 @@ import org.springframework.stereotype.Service;
 
 import appmember.dto.AppMemberDTO;
 import contact.dao.ContactDAO;
+import contact.dto.AppContactDTO;
 import contact.dto.ContactDTO;
+import contact.dto.NoticeDTO;
+import contact.dto.QuestionDTO;
 import member.dao.MemberDAO;
 import member.dto.MemberDTO;
 import memory.dao.MemoryDAO;
