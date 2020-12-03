@@ -230,6 +230,16 @@ public class OurMemoryServiceImpl implements OurMemoryService {
 		  return contactDAO.appContactInsert(appContactDTO);
 	   }
 	
+	   @Override
+	   public List<NoticeDTO> noticeList(){
+		   return contactDAO.noticeList();
+	   }
+	   
+	   @Override
+	   public List<QuestionDTO> questionList(){
+		   return contactDAO.questionList();
+	   }
+	
 		// 카테고리별 전체글 불러오기
 	   @Override
 	   public List<MemoryDTO> membercategory(String memory_category) {
