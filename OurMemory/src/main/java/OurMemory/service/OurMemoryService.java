@@ -165,4 +165,9 @@ public interface OurMemoryService {
 	// 추천/비추천 글 리스트 가져오기
 	   public List<RecommandDTO> getRecList(String id);
 	
+	//////////// map DAO 모음 /////////////////////
+	   public int mapInsert(MapDTO mapDTO);
+	   
+	   public List<MapDTO>mapList(MapDTO mapDTO);
+	
 }
