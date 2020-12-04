@@ -26,6 +26,9 @@ public interface OurMemoryService {
 	//memoryBoardList : N개씩 목록 끊어오는 함수 (우리가 startNum,endNum을 설정할 때마다 바뀐다.)
 	public List<MemoryDTO> memoryBoardList(int startNum, int endNum);
 	
+	//boardList : app에서 N개씩 목록 끊어오는 함수 (우리가 startNum,endNum을 설정할 때마다 바뀐다.)
+	public List<MemoryDTO> boardList(String category);
+	
 	//memoryBoardMyList : 내가 올린 게시글 N개씩 목록 끊어오는 함수 (우리가 startNum,endNum을 설정할 때마다 바뀐다.)
 	public List<MemoryDTO> memoryBoardMyList(int startNum, int endNum, String id);
 
