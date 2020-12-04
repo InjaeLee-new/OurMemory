@@ -5,6 +5,7 @@ public class QuestionDTO {
 	private String question_subject;
 	private String question_content;
 	private String question_logtime;
+	
 	public int getQuestion_num() {
 		return question_num;
 	}
