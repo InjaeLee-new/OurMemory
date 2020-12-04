@@ -282,11 +282,12 @@ public class OurMemoryServiceImpl implements OurMemoryService {
 		public List<RecommandDTO> getRecList(String id) {
 			return memoryDao.getRecList(id);
 		} 
+	// insert
 	@Override
 	public int mapInsert(MapDTO mapDTO) {
 		return mapDAO.mapInsert(mapDTO);
 	}
-
+	// List
 	@Override
 	public List<MapDTO> mapList(MapDTO mapDTO) {
 		return mapDAO.mapList(mapDTO);
