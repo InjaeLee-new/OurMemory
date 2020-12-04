@@ -28,9 +28,7 @@ public class ListGameJson {
 	@RequestMapping(value = "/listGameJson")
 	public void listGameJson(HttpServletRequest request, HttpServletResponse response) {
 		
-		String memory_category = request.getParameter("memory_category");
-		
-		List<MemoryDTO> list = ourMemoryService.membercategory(memory_category);
+		List<MemoryDTO> list = ourMemoryService.boardList("game");
 		
 		String rt = null;
 		if(list != null) {
