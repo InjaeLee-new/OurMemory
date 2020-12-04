@@ -1,6 +1,7 @@
 package android.memory.json;
 
 import java.io.IOException;
+
 import java.io.PrintWriter;
 import java.util.List;
 
@@ -10,11 +11,13 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import OurMemory.service.OurMemoryService;
 import memory.dto.MemoryDTO;
 
+@Controller
 public class PetListJson {
 	@Autowired
 	OurMemoryService ourMemoryService;
@@ -22,24 +25,8 @@ public class PetListJson {
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/petListJson")
 	public void listJson(HttpServletRequest request, HttpServletResponse response) {
-		int pg = 1;
 		
-		int endNum = pg * 8 ;
-		
-		int startNum = endNum - 7 ;
-		
-		int totalNum = ourMemoryService.getTotalMemory();
-
-		int startPage = (pg - 1) / 5 * 5 + 1;
-
-		int endPage = startPage + 4;
-
-		int maxPage = (totalNum - 4) / 5;
-
-		if (endPage > maxPage)
-			endPage = maxPage;
-		
-		List<MemoryDTO> list = ourMemoryService.memoryBoardList(startNum, endNum);
+		List<MemoryDTO> list = ourMemoryService.boardList("pet");
 		
 		String rt = null;
 		if(list != null) {
