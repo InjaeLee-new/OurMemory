@@ -170,4 +170,9 @@ public class MemoryDAO {
 	public int memoryDelete(int memory_num) {
 		return sqlSession.update("mybatis.memoryMapper.memoryDelete", memory_num);
 	}
+	//select : 내가 추/비추 목록 List 불러오기
+	public List<RecommandDTO> getRecList(String id) {
+		List<RecommandDTO> list = sqlSession.selectList("mybatis.memoryMapper.getRecList", id);
+		return list;
+	}
 }
