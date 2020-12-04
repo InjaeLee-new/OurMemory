@@ -24,5 +24,6 @@
 	 	<mapper resource="mybatis/showoff_mapping.xml"/>
 	 	<mapper resource="mybatis/member_mapping.xml"/>
 	 	<mapper resource="mybatis/contact_mapping.xml"/>
+		 <mapper resource="mybatis/map_mapping.xml"/>
 	 </mappers>
 </configuration>

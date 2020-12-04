@@ -8,6 +8,7 @@ import contact.dto.AppContactDTO;
 import contact.dto.ContactDTO;
 import contact.dto.NoticeDTO;
 import contact.dto.QuestionDTO;
+import map.dto.MapDTO;
 import member.dto.MemberDTO;
 import memory.dto.MemoryCommentDTO;
 import memory.dto.MemoryDTO;
@@ -164,5 +165,10 @@ public interface OurMemoryService {
 	
 	// 추천/비추천 글 리스트 가져오기
 	   public List<RecommandDTO> getRecList(String id);
+	
+	//////////// map DAO 모음 /////////////////////
+	   public int mapInsert(MapDTO mapDTO);
+	   
+	   public List<MapDTO>mapList(MapDTO mapDTO);
 	
 }

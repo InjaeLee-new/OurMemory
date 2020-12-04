@@ -11,6 +11,7 @@ import contact.dto.AppContactDTO;
 import contact.dto.ContactDTO;
 import contact.dto.NoticeDTO;
 import contact.dto.QuestionDTO;
+import map.dto.MapDTO;
 import member.dao.MemberDAO;
 import member.dto.MemberDTO;
 import memory.dao.MemoryDAO;
@@ -281,5 +282,15 @@ public class OurMemoryServiceImpl implements OurMemoryService {
 		public List<RecommandDTO> getRecList(String id) {
 			return memoryDao.getRecList(id);
 		} 
+	@Override
+	public int mapInsert(MapDTO mapDTO) {
+		return mapDAO.mapInsert(mapDTO);
+	}
+
+	@Override
+	public List<MapDTO> mapList(MapDTO mapDTO) {
+		return mapDAO.mapList(mapDTO);
+	}
+	   
 	   
 }
