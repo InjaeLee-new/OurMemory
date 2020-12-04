@@ -28,15 +28,7 @@ public class ListITJson {
 	@RequestMapping(value = "/listITJson")
 	public void listITJson(HttpServletRequest request, HttpServletResponse response) {
 		
-		try {
-			request.setCharacterEncoding("UTF-8");
-		} catch (UnsupportedEncodingException e1) {
-			e1.printStackTrace();
-		}
-		
-		String memory_category = request.getParameter("memory_category");
-		
-		List<MemoryDTO> list = ourMemoryService.membercategory(memory_category);
+		List<MemoryDTO> list = ourMemoryService.boardList("it");
 		
 		String rt = null;
 		if(list != null) {
