@@ -49,6 +49,11 @@ public class OurMemoryServiceImpl implements OurMemoryService {
 	public List<MemoryDTO> memoryBoardList(int startNum, int endNum) {
 		return memoryDao.memoryBoardList(startNum, endNum);
 	}
+	
+	@Override
+	public List<MemoryDTO> boardList(String category){
+		return memoryDao.boardList(category);
+	}
 
 	@Override
 	public List<MemoryDTO> memoryBoardMyList(int startNum, int endNum, String id) {
