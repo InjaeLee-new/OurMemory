@@ -167,8 +167,9 @@ public interface OurMemoryService {
 	   public List<RecommandDTO> getRecList(String id);
 	
 	//////////// map DAO 모음 /////////////////////
+	   // insert
 	   public int mapInsert(MapDTO mapDTO);
-	   
+	   // List
 	   public List<MapDTO>mapList(MapDTO mapDTO);
 	
 }
