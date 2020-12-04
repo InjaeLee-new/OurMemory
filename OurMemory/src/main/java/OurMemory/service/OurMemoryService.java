@@ -162,4 +162,7 @@ public interface OurMemoryService {
 	   
 	   public int memoryDelete(int memory_num);
 	
+	// 추천/비추천 글 리스트 가져오기
+	   public List<RecommandDTO> getRecList(String id);
+	
 }
