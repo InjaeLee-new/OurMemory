@@ -24,24 +24,8 @@ public class ListJson {
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/listJson")
 	public void listJson(HttpServletRequest request, HttpServletResponse response) {
-		int pg = 1;
 		
-		int endNum = pg * 8 ;
-		
-		int startNum = endNum - 7 ;
-		
-		int totalNum = ourMemoryService.getTotalMemory();
-
-		int startPage = (pg - 1) / 5 * 5 + 1;
-
-		int endPage = startPage + 4;
-
-		int maxPage = (totalNum - 4) / 5;
-
-		if (endPage > maxPage)
-			endPage = maxPage;
-		
-		List<MemoryDTO> list = ourMemoryService.memoryBoardList(startNum, endNum);
+		List<MemoryDTO> list = ourMemoryService.boardList("memory");
 		
 		String rt = null;
 		if(list != null) {
