@@ -26,6 +26,16 @@
 		]]>
 	</select>
 	
+	<!-- // select : List 불러오기 -->
+	<select id="boardList" parameterType="String" resultType="memoryDTO">
+		<![CDATA[
+		select * from
+		(select rownum rn, tt.* from 
+		(select * from mymemoryalbum order by memory_num desc) tt)
+		where memory_category = #{category}
+		]]>
+	</select>
+	
 	<!-- // select : MyList 불러오기 --><!-- 'id2' => 나중에  session Id로 수정 -->
 	<select id="memoryBoardMyList" parameterType="java.util.Map" resultType="memoryDTO">
 		<![CDATA[
