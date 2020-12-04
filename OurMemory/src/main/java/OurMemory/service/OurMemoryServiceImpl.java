@@ -275,6 +275,11 @@ public class OurMemoryServiceImpl implements OurMemoryService {
 	public int memoryDelete(int memory_num) {
 		return memoryDao.memoryDelete(memory_num);
 	}
-	   
+	
+	///////// getRecList 함수 추가 
+	@Override
+		public List<RecommandDTO> getRecList(String id) {
+			return memoryDao.getRecList(id);
+		} 
 	   
 }
