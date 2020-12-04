@@ -42,6 +42,14 @@ public class MemoryDAO {
 		return list;
 	}
 	
+	//select : 목록 List 불러오기
+	public List<MemoryDTO> boardList(String category) {
+		List<MemoryDTO> list = 
+						sqlSession.selectList("mybatis.memoryMapper.boardList" , category);
+		
+		return list;
+	}
+	
 	//select : 내가 올린 글 목록 List 불러오기
 	public List<MemoryDTO> memoryBoardMyList(int startNum, int endNum, String id) {
 		Map<String, Object> map = new HashMap<String, Object>();
