@@ -1,15 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+	.comment_content {
+		width: 800px;
+		height: 50px;
+	}
+	
+	body {
+	align-content: left;
+}
+</style>
 </head>
 <body>
-	
-	<table style="align-content: left;">
-		<tr>
+	<table>
+		<tr class="imageView">
 			<td rowspan="3">
 				<img width="400" height="400" alt="" src="./img/${dto.memory_file }">
 			</td>
@@ -35,5 +45,17 @@
 			</td>
 		</tr>
 	</table>
+	<div align="left" style="margin-left: 100px">
+		<h2>댓글 창</h2>
+		<pre>
+	이름 입력 : <input type="text" placeholder="이름 입력"><br>
+	내용 입력 : <input class="comment_content" type="text" placeholder="댓글 내용 입력"><br>
+	<input type="button" value="댓글 작성"> <input type="button" value="다시 쓰기">
+		</pre>
+	</div>
+	<c:forEach var="recommandDTO" items="${list }">
+		<p align="left" style="margin-left: 100px">${recommandDTO.memory_comment_name } : ${recommandDTO.memory_comment_content } ${recommandDTO.reg_date }</p>
+		<hr style="margin-left: 100px">
+	</c:forEach>
 </body>
 </html>

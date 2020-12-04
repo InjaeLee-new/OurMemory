@@ -51,7 +51,7 @@
 					</li>
 					<li>
 						<p style="">
-							${name }()님 안녕하세요!
+							${name }(${nickname })님 안녕하세요!
 						</p>
 					</li>
 					

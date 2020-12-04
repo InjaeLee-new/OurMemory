@@ -31,6 +31,8 @@ public class MemoryRecommandController {
 		int pg = Integer.parseInt(request.getParameter("pg"));
 		
 		MemoryDTO dto = ourMemoryService.memoryBoardView(memory_num);
+		String[] splitFileName = dto.getMemory_file().split(", ");
+		dto.setMemory_file(splitFileName[0]);
 		int result = ourMemoryService.memoryBoardRec(memory_num);
 		
 		if(result > 0) {
@@ -44,6 +46,8 @@ public class MemoryRecommandController {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+			
+			dto.setMemory_file(splitFileName[0]);
 			modelAndView.addObject("dto", dto);
 			modelAndView.addObject("pg", pg);
 			modelAndView.setViewName("index.jsp?req=memoryView");
@@ -75,6 +79,8 @@ public class MemoryRecommandController {
 		int pg = Integer.parseInt(request.getParameter("pg"));
 		
 		MemoryDTO dto = ourMemoryService.memoryBoardView(memory_num);
+		String[] splitFileName = dto.getMemory_file().split(", ");
+		dto.setMemory_file(splitFileName[0]);
 		int result = ourMemoryService.memoryBoardNrec(memory_num);
 		
 		if(result > 0) {
@@ -88,6 +94,8 @@ public class MemoryRecommandController {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+			
+			dto.setMemory_file(splitFileName[0]);
 			
 			modelAndView.addObject("dto", dto);
 			modelAndView.addObject("pg", pg);

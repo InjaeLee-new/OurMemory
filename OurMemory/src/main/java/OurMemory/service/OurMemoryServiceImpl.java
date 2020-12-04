@@ -11,6 +11,7 @@ import contact.dto.AppContactDTO;
 import contact.dto.ContactDTO;
 import contact.dto.NoticeDTO;
 import contact.dto.QuestionDTO;
+import map.dao.MapDAO;
 import map.dto.MapDTO;
 import member.dao.MemberDAO;
 import member.dto.MemberDTO;
@@ -34,6 +35,9 @@ public class OurMemoryServiceImpl implements OurMemoryService {
 	
 	@Autowired
 	private ContactDAO contactDAO;
+	
+	@Autowired
+	private MapDAO mapDAO;
 
 	@Override
 	public int memoryBoardWrite(MemoryDTO memoryDTO) {
