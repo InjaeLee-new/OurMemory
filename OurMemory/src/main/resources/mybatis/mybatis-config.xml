@@ -15,6 +15,7 @@
 		<typeAlias type="contact.dto.AppContactDTO" alias="appContactDTO"/>
 	 	<typeAlias type="contact.dto.NoticeDTO" alias="noticeDTO"/>
 	 	<typeAlias type="contact.dto.QuestionDTO" alias="questionDTO"/>
+		 <typeAlias type="map.dto.MapDTO" alias="mapDTO"/>
 	 </typeAliases>
 	 
 	 <!-- SQL Mapper 설정 -->
@@ -23,5 +24,6 @@
 	 	<mapper resource="mybatis/showoff_mapping.xml"/>
 	 	<mapper resource="mybatis/member_mapping.xml"/>
 	 	<mapper resource="mybatis/contact_mapping.xml"/>
+		 <mapper resource="mybatis/map_mapping.xml"/>
 	 </mappers>
 </configuration>
