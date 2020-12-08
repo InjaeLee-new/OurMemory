@@ -62,14 +62,13 @@ public class ContactDAO {
 	}
 	
 	public List<NoticeDTO> noticeList(){
-		List<NoticeDTO> list = sqlSession.selectList("mybatis.contactMapper.noticeList");
-		return list;
-	}
-	   
+	      return sqlSession.selectList("mybatis.contactMapper.noticeList");
+	   }
+	      
 	public List<QuestionDTO> questionList(){
-		List<QuestionDTO> list = sqlSession.selectList("mybatis.contactMapper.questionList");
-	   return list;
-	}
+	      return sqlSession.selectList("mybatis.contactMapper.questionList");
+	   }
+
 		
 }
 

@@ -21,7 +21,6 @@ public class FavoriteJson {
   @Autowired
 	OurMemoryService ourMemoryService;
 	
-	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/favoriteJson")
 	public void myListJson(HttpServletRequest request, HttpServletResponse response) {
 		String id = request.getParameter("id");

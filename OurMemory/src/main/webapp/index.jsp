@@ -70,12 +70,7 @@
 		<c:if test="${param.req == 'loginPro' }">
 			<jsp:include page="./main/memberLogin.jsp" />
 		</c:if>
-		<c:if test="${param.req == 'join' }">
-			<jsp:include page="./main/memberJoinForm.jsp" />
-		</c:if>
-		<c:if test="${param.req == 'joinPro' }">
-			<jsp:include page="./main/memberJoin.jsp" />
-		</c:if>
+		
 		<c:if test="${param.req == 'showoffList' }">
 			<jsp:include page="./showoff/showoffList.jsp" />
 		</c:if>
@@ -123,7 +118,7 @@
 		</c:if>	
 		 
       <c:if test="${param.req == 'contactForm' }">
-         <jsp:include page="./contact/contactForm.jsp" />
+         <jsp:include page="./contact/contactForm.jsp" /> 
       </c:if>  
       <c:if test="${param.req == 'contactListCheck' }">
          <jsp:include page="./contact/contactListCheck.jsp" />
@@ -151,16 +146,22 @@
 	</div>
 	</c:if>
 	<c:if test="${isLogin == null }">
-		<div id="mainLeft">
-			<img style="align-content: center;" alt="메인 사진" src="img/main1.png" width="1200px" height="600px"><br>
-		</div>
+		<c:if test="${param.req == null }">
+			<div id="mainLeft">
+				<img style="align-content: center;" alt="메인 사진" src="img/main1.png" width="1200px" height="600px"><br>
+			</div>
 		
-		<div id="mainRight">
-			<jsp:include page="./main/memberLoginForm.jsp" />
-			<a href="index.jsp?req=join">
-				회원가입!
-			</a>
-		</div>
+			<div id="mainRight">
+				<jsp:include page="./main/memberLoginForm.jsp" />
+			</div>
+		</c:if>
+		
+		<c:if test="${param.req == 'join' }">
+			<jsp:include page="./main/memberJoinForm.jsp" />
+		</c:if>
+		<c:if test="${param.req == 'joinPro' }">
+			<jsp:include page="./main/memberJoin.jsp" />
+		</c:if>
 	</c:if>
 	</div>
 	

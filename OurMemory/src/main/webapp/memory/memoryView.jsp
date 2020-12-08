@@ -47,11 +47,15 @@
 	</table>
 	<div align="left" style="margin-left: 100px">
 		<h2>댓글 창</h2>
+		<form action="MemoryCommentWrite">
 		<pre>
-	이름 입력 : <input type="text" placeholder="이름 입력"><br>
-	내용 입력 : <input class="comment_content" type="text" placeholder="댓글 내용 입력"><br>
-	<input type="button" value="댓글 작성"> <input type="button" value="다시 쓰기">
+	이름 입력 : <input type="text" name="memory_comment_name" placeholder="이름 입력"><br>
+	내용 입력 : <input class="comment_content" name="memory_comment_content" type="text" placeholder="댓글 내용 입력"><br>
+	<input type="hidden" name="memory_seq" value="${dto.memory_num }">
+	<input type="hidden" name="pg" value="${pg }">
+	<input type="submit" value="댓글 작성"> <input type="reset" value="다시 쓰기">
 		</pre>
+		</form>
 	</div>
 	<c:forEach var="recommandDTO" items="${list }">
 		<p align="left" style="margin-left: 100px">${recommandDTO.memory_comment_name } : ${recommandDTO.memory_comment_content } ${recommandDTO.reg_date }</p>

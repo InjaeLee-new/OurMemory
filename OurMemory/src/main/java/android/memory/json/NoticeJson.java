@@ -22,7 +22,6 @@ public class NoticeJson {
    @Autowired
    OurMemoryService ourMemoryService;
    
-   @SuppressWarnings("unchecked")
    @RequestMapping(value = "/questionJson")
    public void questionJson(HttpServletRequest request, HttpServletResponse response) {
       
@@ -40,7 +39,7 @@ public class NoticeJson {
          
          for(int i = 0 ; i < list.size() ; i++) {
              JSONObject select = new JSONObject();
-              select.put("num", list.get(i).getQuestion_num());
+             select.put("num", list.get(i).getQuestion_num());
               select.put("logtime", list.get(i).getQuestion_logtime());
               select.put("subject", list.get(i).getQuestion_subject());
               select.put("content", list.get(i).getQuestion_content());
@@ -63,7 +62,6 @@ public class NoticeJson {
       
    }
    
-   @SuppressWarnings("unchecked")
    @RequestMapping(value = "/noticeJson")
    public void noticeJson(HttpServletRequest request, HttpServletResponse response) {
       

@@ -14,7 +14,7 @@
 		<typeAlias type="recommand.dto.RecommandDTO" alias="recommandDTO"/>
 		<typeAlias type="contact.dto.AppContactDTO" alias="appContactDTO"/>
 	 	<typeAlias type="contact.dto.NoticeDTO" alias="noticeDTO"/>
-	 	<typeAlias type="contact.dto.QuestionDTO" alias="questionDTO"/>
+       	<typeAlias type="contact.dto.QuestionDTO" alias="questionDTO"/>
 	 	<typeAlias type="map.dto.MapDTO" alias="mapDTO"/>
 	 </typeAliases>
 	 

@@ -22,7 +22,6 @@ public class MyListJson {
 	@Autowired
 	OurMemoryService ourMemoryService;
 	
-	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/myListJson")
 	public void myListJson(HttpServletRequest request, HttpServletResponse response) {
 		int startNum = Integer.parseInt(request.getParameter("startNum"));
