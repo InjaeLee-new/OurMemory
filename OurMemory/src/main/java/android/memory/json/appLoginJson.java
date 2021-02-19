@@ -22,7 +22,7 @@ public class appLoginJson {
 	@Autowired
 	   OurMemoryService ourMemoryService;
 
-	   // Android에서 추천에 관한 Controller
+	   // Android에서  Login Controller
 	   @RequestMapping(value = "/appLogin")
 	   public void recommendation(HttpServletRequest request, HttpServletResponse response) {
 	      MemberDTO memberDTO = new MemberDTO();

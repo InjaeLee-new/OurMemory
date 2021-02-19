@@ -23,6 +23,13 @@
 	</repositories>
 	
 	<dependencies>
+	<!-- https://mvnrepository.com/artifact/org.json/json -->
+<dependency>
+    <groupId>org.json</groupId>
+    <artifactId>json</artifactId>
+    <version>20201115</version>
+</dependency>
+	
 		<!-- json파일을 사용하기 위한 라이브러리 등록 -->
 		<dependency>
 		    <groupId>com.googlecode.json-simple</groupId>
